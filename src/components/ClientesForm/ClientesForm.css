@@ -1,0 +1,101 @@
+.clientesForm{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.clientesForm .inputContainer.telInput{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.clientesForm .tel{
+    grid-column: 2/4;
+}
+
+.clientesForm h3{
+    color: var(--blink-main);
+    font-size: 23px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.clientesForm .formGrid{
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    gap: 24px;
+}
+
+.clientesForm .formItem{
+   grid-column: span 3;
+}
+
+.clientesForm .formItem.age{
+    grid-column: span 1;
+}
+
+.clientesForm .formItem.situation{
+    grid-column: span 2;
+}
+
+.clientesForm .formItem.email{
+    grid-column: 1 / span 3;
+}
+
+.clientesForm label{
+    color: var(--blink-main);
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.clientesForm .formItem.optional{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.clientesForm .optional p{
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.clientesForm .cotizacion{
+    padding: 20px;
+    box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.clientesForm .cotizacion .title{
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--blink-main);
+}
+
+.clientesForm table { 
+    border-spacing: 16px;
+    border-collapse: separate;
+    display: block;
+    width: fit-content;
+}
+
+.clientesForm tr td:nth-child(1){
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--blink-main);
+}
+
+.clientesForm tr td:nth-child(2){
+    font-size: 19px;
+    font-weight: 500;
+}
+
+.clientesForm .modalButton{
+    margin-top: 10px;
+    display: flex;
+    justify-content: flex-end;
+}

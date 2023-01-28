@@ -1,0 +1,15 @@
+.section .banner{
+    font-size: 93px;
+    font-weight: 800;
+    color: #fff;
+    line-height: 92px;
+}
+
+.section .registerText{
+    cursor: pointer;
+    margin: 35px 0;
+    text-align: center;
+    color: var(--blink-main);
+    font-size: 15px;
+    font-weight: 700;
+}

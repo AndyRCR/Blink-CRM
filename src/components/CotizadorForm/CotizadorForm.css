@@ -1,0 +1,139 @@
+.cotizadorForm{
+    display: flex;
+    justify-content: center;
+    text-align: left;
+}
+
+.cotizadorForm .divisor{
+    height: 100%;
+    border-left: 1px solid rgb(207, 207, 207);
+}
+
+.cotizadorForm .form{
+    display: flex;
+    /* width: 50%; */
+    /* padding: 0 100px; */
+}
+
+.cotizadorForm .subForm{
+    width: 50%;
+    margin: 0 50px;
+}
+
+.cotizadorForm .formItem{
+    margin-bottom: 10px;
+    height: 100px;
+}
+
+.cotizadorForm .formItem.formButton{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.cotizadorForm .formItem p{
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 21px;
+    color: var(--blink-main);
+}
+
+.cotizadorForm .formItem.disabled p{
+    color: var(--gris-blink);
+}
+
+.cotizadorForm .formItem.disabled input{
+    background-color: rgb(241, 241, 241);
+    border-radius: 12px;
+    border-bottom: none;
+}
+
+.cotizadorForm .formItem input,
+.cotizadorForm .formItem .customSelect{
+    min-width: 350px;
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid var(--blink-gray);
+    height: 50px;
+    margin-top: 6px;
+    padding-left: 12px;
+    background-color: #fff;
+}
+
+.cotizadorForm .formItem.errorInput input{
+    border-color: red;
+}
+
+.cotizadorForm .formItem.formItem.errorInput p,
+.cotizadorForm .formItem.formItem.errorInput input{
+    color: red;
+}
+
+.cotizadorForm .formItem input:focus{
+    border-bottom: 2px solid var(--blink-main);
+}
+
+.cotizadorForm .formItem.errorInput input:focus{
+    border-color: red;
+    color: red;
+}
+
+.cotizadorForm p.errorLabel{
+    opacity: 0;
+    color: red;
+    font-weight: normal;
+    font-size: 12px;
+    transition: .5s;
+    position: relative;
+}
+
+.cotizadorForm .formItem.disabled p.errorLabel{
+    opacity: 0;
+}
+
+.cotizadorForm p.errorLabel.visible{
+    opacity: 1;
+}
+
+.cotizadorForm .formItem input:active,
+.cotizadorForm .formItem input:focus,
+.cotizadorForm .formItem .customSelect:active,
+.cotizadorForm .formItem .customSelect:focus{
+    outline: none;
+}
+
+.cotizadorForm .formItem option{
+    padding: 10px 0;
+}
+
+.cotizadorForm .sendButton{
+    width: 100%;
+    height: 50px;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.MuiPaper-root ul li:hover{
+    background-color: rgba(25, 118, 210, 0.12) !important;
+}
+
+.MuiPaper-root ul li.Mui-selected{
+    background-color: rgba(71, 68, 204, 0.15) !important;
+}
+
+.cotizadorForm .switchItem{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cotizadorForm .switchItem p{
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 22px;
+    color: var(--gris-blink);
+}

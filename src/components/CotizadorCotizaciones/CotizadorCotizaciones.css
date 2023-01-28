@@ -1,0 +1,17 @@
+.cotizadorCotizaciones{
+    padding: 0 24px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.cotizadorCotizaciones .secondaryButton{
+    padding: 16px 30px;
+}
+
+.cotizadorCotizaciones .optionIcons{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}

@@ -1,0 +1,37 @@
+.soporteCRMSecciones{
+    padding: 0 142px;
+}
+
+.soporteCRMSecciones .secciones{
+    display: flex;
+    flex-direction: column;
+    gap: 23px;
+    padding-bottom: 20px;
+}
+
+.soporteCRMSecciones .seccion{
+    padding: 40px 25px;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    border-radius: 12px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
+    color: var(--blink-main);
+    cursor: pointer;
+}
+
+.soporteCRMSecciones .title{
+    font-size: 19px;
+    font-weight: 700;
+}
+
+.soporteCRMSecciones p{
+    color: var(--blink-gray);
+    margin-top: 8px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.soporteCRMSecciones .inputContainer{
+    margin-bottom: 40px;
+}

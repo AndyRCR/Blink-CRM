@@ -1,0 +1,132 @@
+.cotizadorFilters{
+    padding: 25px 100px;
+    background-color: #EBEBEB;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cotizadorFilters img{
+    width: 100px;
+    filter: grayscale(1);
+    transition: .2s;
+}
+
+.cotizadorFilters img:hover{
+    /* width: 100px; */
+    filter: grayscale(0);
+}
+
+.cotizadorFilters .form{
+    display: flex;
+}
+
+.cotizadorFilters .filterItem{
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.cotizadorFilters .filter{
+    width: 25%;
+    padding: 0 20px;
+}
+
+.cotizadorFilters .filter.last{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.cotizadorFilters .filter.last input{
+    width: 100px;
+}
+
+.cotizadorFilters .filterItem.formButton{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.cotizadorFilters .filterItem p{
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 21px;
+    color: var(--gris-blink);
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.cotizadorFilters .filterPrice{
+    display: flex;
+    justify-content: space-between;
+}
+
+.cotizadorFilters .divisor{
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    margin: 0 15px;
+}
+
+.cotizadorFilters .filterItem .customSelect{
+    width: 100%;
+}
+
+.cotizadorFilters .filterItem input,
+.cotizadorFilters .filterItem .customSelect{
+    border: 1px solid var(--gris-blink);
+    height: 50px;
+    margin-top: 6px;
+    border-radius: 12px;
+    /* padding-left: 12px; */
+    background-color: #fff;
+}
+
+.cotizadorFilters .filterItem input{
+    text-align: center;
+}
+
+.cotizadorFilters .filterItem input:focus{
+    border: 1px solid var(--blink-main);
+}
+
+.cotizadorFilters .filterItem input:active,
+.cotizadorFilters .filterItem input:focus,
+.cotizadorFilters .filterItem .customSelect:active,
+.cotizadorFilters .filterItem .customSelect:focus{
+    outline: none;
+}
+
+.MuiPaper-root ul li.MuiListSubheader-root:hover{
+    background-color: #fff !important;
+    user-select: none;
+}
+
+.MuiPaper-root ul li.MuiListSubheader-root{
+    font-weight: bold;
+}
+
+.Mui-checked{
+    color: var(--blink-main) !important;
+}
+
+.cotizadorFilters .filter.last .filterItem:nth-child(2){
+    display: flex;
+    justify-content: flex-end;
+}
+
+.cotizadorFilters .sendButton{
+    width: 100%;
+    height: 50px;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.cotizadorFilters .showFilter{
+    display: none;
+}

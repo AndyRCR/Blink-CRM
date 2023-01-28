@@ -1,0 +1,26 @@
+.soporteFAQ{
+    padding: 0 82px 20px;
+}
+
+.soporteFAQ .secondaryButton{
+    position: absolute;
+    right: 24px;
+    z-index: 10;
+}
+
+.soporteFAQ .inputContainer{
+    padding: 0 60px;
+}
+
+.soporteFAQ .accordionContainer {
+    box-shadow: 0px 0px 25px rgb(0 0 0 / 15%);
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 16px;
+    margin-top: 40px;
+}
+
+.soporteFAQ .text{
+    font-size: 15px;
+    font-weight: 500;
+}

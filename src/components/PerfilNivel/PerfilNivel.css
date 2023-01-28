@@ -1,0 +1,61 @@
+.perfilNivel{
+    box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.perfilNivel.status0{
+    background-color: #AEAEAE;
+    color: #fff;
+    padding: 62px 0;
+}
+
+.perfilNivel .nivelHeader{
+    font-size: 19px;
+    font-weight: 700;
+    width: 100%;
+    padding: 22px 10px;
+}
+
+.perfilNivel.status1 .nivelHeader{
+    background-color: var(--blink-main);
+    color: #fff;
+}
+
+
+.perfilNivel.status2 .nivelHeader{
+    background-color: var(--blink-secondary);
+}
+
+.perfilNivel .nivelBody{
+    width: 100%;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.perfilNivel.status1 .nivelBody{
+    padding: 16px;
+    gap: 8px;
+}
+
+.perfilNivel.status2 .nivelBody{
+    justify-content: center;
+    align-items: center;
+    padding: 25px 0;
+}
+
+.perfilNivel .levelItem{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.perfilNivel .levelItem p{
+    font-size: 15px;
+    font-weight: 500;
+}

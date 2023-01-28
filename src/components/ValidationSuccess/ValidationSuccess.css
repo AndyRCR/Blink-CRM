@@ -1,0 +1,26 @@
+.validationSection.validationSuccess .validationForm{
+    width: 100%;
+    padding: 65px 185px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.validationSuccess img{
+    width: 160px;
+}
+
+.validationSuccess .validationSuccessTitle{
+    padding: 40px 0 10px;
+    font-size: 40px;
+    font-weight: 700;
+    color: var(--blink-main);
+}
+
+.validationSuccess .validationSuccessInfo{
+    padding: 10px 0 60px;
+    font-size: 23px;
+    font-weight: 700;
+    color: var(--blink-gray);
+}

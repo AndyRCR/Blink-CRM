@@ -1,0 +1,39 @@
+.switch{
+    padding: 28px 20px;
+}
+
+.switch .switchContainer{
+    display: flex;
+    align-items: center;
+    border-radius: 25px;
+    cursor: pointer;
+    height: 30px;
+    margin: 0 10px;
+    padding: 0 3px;
+    width: 60px;
+    transition: .2s;
+}
+
+.switchContainer.on{
+    background-color: var(--blink-main);
+}
+
+.switchContainer.off {
+    background-color: #aeaeae;
+}
+
+.switch .button {
+    background-color: #fff;
+    border-radius: 25px;
+    height: 22px;
+    width: 22px;
+    transition: .2s;
+}
+
+.switch .button.off{
+    margin-right: 50%;
+}
+
+.switch .button.on{
+    margin-left: 50%;
+}

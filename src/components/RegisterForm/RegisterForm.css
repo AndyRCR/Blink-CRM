@@ -1,0 +1,27 @@
+.registerForm .registerSlogan{
+    text-align: left;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-weight: 700;
+}
+
+.registerForm .registerSlogan h2{
+    font-size: 40px;
+    margin: 100px 0 70px;
+}
+
+.registerForm .registerSlogan ul{
+    max-width: 650px;
+    font-size: 23px;
+}
+
+.registerForm .telInput{
+    display: flex;
+    gap: 8px;
+}
+
+.registerForm .secondaryButton{
+    margin-top: 16px;
+}

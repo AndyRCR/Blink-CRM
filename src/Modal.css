@@ -1,0 +1,96 @@
+.modalTitle {
+  font-size: 23px;
+  font-weight: 700;
+  color: var(--blink-main);
+}
+
+.modalText {
+  font-size: 19px;
+  font-weight: normal;
+  color: var(--blink-gray);
+}
+
+.modalTextStepOne {
+  font-size: 15px;
+  font-weight: normal;
+  color: var(--blink-gray);
+}
+
+.popupContainer {
+  border-radius: 24px !important;
+  padding: 50px 190px !important;
+  width: auto !important;
+}
+
+.popupProfileContainer {
+  border-radius: 24px !important;
+  padding: 20px !important;
+  width: auto !important;
+  position: absolute !important;
+  top: -200px !important;
+  right: 300px !important;
+}
+
+.popupDecisionContainer {
+  border-radius: 24px !important;
+  padding: 40px !important;
+  width: auto !important;
+}
+
+.popupStepOne {
+  border-radius: 24px !important;
+  padding: 50px 110px !important;
+  width: 920px !important;
+}
+
+.modalIcon {
+  border: none !important;
+}
+
+.modalContainer {
+  background: rgba(0, 0, 0, 0.74) !important;
+}
+
+.modalStepContainer {
+  background: none !important;
+}
+
+.activeStep {
+  transition: 0.3s;
+  z-index: 100;
+  box-shadow: 0px 0px 0px 9999px rgba(0, 0, 0, 0.85);
+}
+
+.panelContainer {
+  display: flex;
+  height: calc(100vh - 108px);
+}
+
+.actionsContainer {
+  display: flex;
+  flex-wrap: nowrap !important;
+  gap: 24px;
+}
+
+.singleButtonModal {
+  display: flex;
+  width: 100% !important;
+  justify-content: flex-end !important;
+}
+
+ul.modalTextStepOne {
+  list-style: inside;
+}
+
+ul.modalTextStepOne li {
+  text-align: left;
+}
+
+.panelContainer > div:nth-child(2) {
+  overflow-y: auto;
+  flex-grow: 1;
+}
+
+.panelContainer > div.home {
+  overflow-y: visible;
+}

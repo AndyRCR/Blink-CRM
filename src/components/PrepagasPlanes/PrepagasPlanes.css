@@ -1,0 +1,50 @@
+.prepagasPlanes{
+    padding: 0 82px;
+}
+
+.prepagasPlanes .inputContainer{
+    padding: 0 60px;
+}
+
+.prepagasPlanes .secondaryButton{
+    position: absolute;
+    right: 24px;
+    z-index: 10;
+}
+
+.prepagasPlanes .plansContainer{
+    margin-top: 48px;
+}
+
+.prepagasPlanes h2{
+    padding-left: 8px;
+    font-size: 23px;
+    font-weight: 700;
+    color: var(--blink-main);
+    margin-left: 25px;
+}
+
+.prepagasPlanes .accordionContainer{
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 16px;
+    margin: 16px 0;
+}
+
+.prepagasPlanes img{
+    width: 220px;
+}
+
+.prepagasPlanes .documentItem{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.prepagasPlanes .documentIcons{
+    color: var(--blink-main);
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}

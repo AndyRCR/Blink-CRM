@@ -1,0 +1,17 @@
+.clientesFilter{
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 48px;
+}
+
+.filterItem{
+    gap: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.filterItem p{
+    font-size: 15px;
+    font-weight: 700;
+}

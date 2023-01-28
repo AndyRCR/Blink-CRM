@@ -1,0 +1,26 @@
+.navbar{
+    width: 100%;
+    padding: 25px 120px;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    z-index: 50;
+    background-color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    transition: .3s;
+}
+
+.navbarTransparent{
+    background: rgba(255, 255, 255, 0.48);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(4.4px);
+}
+
+.navbar .logo{
+    font-size: 34px;
+    font-family: 'Comfortaa', sans-serif;
+    color: var(--blink-main);
+    display: flex;
+    align-items: center;
+}

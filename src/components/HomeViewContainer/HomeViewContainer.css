@@ -1,0 +1,83 @@
+.homeViewContainer{
+    padding: 30px 25px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.homeViewContainer .firstContainer{
+    display: flex;
+}
+
+.homeViewContainer .secondaryButton{
+    padding: 16px 20px;
+    height: 60px;
+    gap: 9px;
+}
+
+.homeViewContainer.inactive .firstContainer{
+    color: #AEAEAE;
+}
+
+.homeViewContainer .firstContainer{
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.homeViewContainer .levelContainer{
+    flex-grow: 1;
+}
+
+.homeViewContainer .label{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.homeViewContainer .label p{
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.homeViewContainer .class{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.homeViewContainer .class p{
+    font-size: 19px;
+    font-weight: 500;
+}
+
+.dashboardGrid{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    flex-grow: 1;
+    row-gap: 25px;
+    column-gap: 20px;
+}
+
+.dashboardGrid .dashboardGridItem{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.dashboardGrid .dashboardGridItem > p{
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.homeViewContainer.inactive .dashboardGridItem > p{
+    color: #AEAEAE;
+}
+
+.dashboardGrid .gridCard{
+    flex-grow: 1;
+    border-radius: 20px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    padding: 18px 20px;
+}

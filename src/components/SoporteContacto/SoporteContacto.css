@@ -1,0 +1,40 @@
+.soporteContacto{
+    padding: 0 142px;
+}
+
+.soporteContacto .soporteContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding-top: 20px;
+}
+
+.soporteContacto .item{
+    color: var(--blink-main);
+    padding: 26px;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
+    border-radius: 12px;
+}
+
+.soporteContacto .info{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.soporteContacto h3{
+    font-size: 19px;
+    font-weight: 700;
+}
+
+.soporteContacto p{
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--blink-gray);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}

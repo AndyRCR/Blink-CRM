@@ -1,0 +1,98 @@
+.cotizadorEstado{
+    display: flex;
+    gap: 60px;
+}
+
+.cotizadorEstado .buttonContainer{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.cotizadorEstado .secondaryButton{
+    width: 70%;
+}
+
+.cotizadorEstado .checkboxContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+.cotizadorEstado .checkboxInput{
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.cotizadorEstado .checkboxInput p{
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.cotizadorEstado .dateContainer{
+    display: flex;
+    gap: 14px;
+}
+
+.cotizadorEstado .dateInput{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.cotizadorEstado .hourInput{
+    padding: 21.5px 18px 16px;
+    border: 1px solid var(--blink-main);
+    border-radius: 11px;
+}
+
+.cotizadorEstado .header{
+    color: var(--blink-main);
+    font-size: 15px;
+    font-weight: 600;
+    padding-bottom: 11.5px;
+    border-bottom: 1px solid #AEAEAE;
+}
+
+.cotizadorEstado .body{
+    margin-top: 11.5px;
+    display: flex;
+    gap: 8px;
+}
+
+.cotizadorEstado .input{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.cotizadorEstado .input p{
+    text-align: center;
+}
+
+.cotizadorEstado .hourSwitch{
+    display: flex;
+    color: var(--blink-main);
+    border: 1px solid var(--blink-main);
+    border-radius: 24px;
+    font-size: 13px;
+    font-weight: 500;
+    overflow: hidden;
+    background-color: var(--blink-main);
+}
+
+.cotizadorEstado .hourSwitch > div{
+    padding: 8px 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: .2s;
+}
+
+.cotizadorEstado .hourSwitch .enabled{
+    color: #fff;
+    background-color: var(--blink-main);
+}
+
+.cotizadorEstado .hourSwitch > div:not(.enabled){
+   background-color: #fff;
+}

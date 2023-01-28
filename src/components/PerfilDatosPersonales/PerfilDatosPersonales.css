@@ -1,0 +1,90 @@
+.perfilDatosPersonales{
+    padding: 0 80px;
+}
+
+.perfilGrid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 32px;
+    column-gap: 24px;
+}
+
+.perfilGridItem{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.perfilGridItem label{
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--blink-main);
+}
+
+.perfilGridItem .inputContainer{
+    display: flex;
+    gap: 8px;
+    flex-grow: 1;
+}
+
+.perfilGridItem.direccion{
+    grid-column: 1/3;
+}
+
+.perfilDatosPersonales h3{
+    margin: 32px 0 24px;
+    color: var(--blink-main);
+    font-size: 19px;
+    font-weight: 700;
+}
+
+.filelabel {
+    width: 100%;
+    border: 2px solid var(--blink-main);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    transition: border 300ms ease;
+    cursor: pointer;
+    text-align: center;
+    margin: 0;
+    transition: .3s;
+}
+
+.filelabel.disabled{
+    border: 2px solid var(--blink-gray);
+    cursor: default;
+}
+
+.filelabel:not(.disabled):hover{
+    background-color: var(--blink-main);
+}
+
+.filelabel .fileIcon,
+.filelabel .title {
+    color: var(--blink-main);
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+}
+
+.filelabel.disabled .fileIcon,
+.filelabel.disabled .title {
+    color: var(--blink-gray);
+}
+
+.filelabel:not(.disabled):hover .fileIcon,
+.filelabel:not(.disabled):hover .title{
+    color: #fff;
+}
+
+.filelabel .fileIcon {
+    font-size: 20px;
+    margin: 0 8px;
+}
+
+#fileInput {
+    display: none;
+}

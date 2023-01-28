@@ -1,0 +1,43 @@
+.prepagasClinicas{
+    padding: 0 100px;
+}
+
+.prepagasClinicas .inputContainer{
+    padding: 0 42px;
+}
+
+.prepagasClinicas .clinicsContainer{
+    margin-top: 54px;
+}
+
+.prepagasClinicas h2{
+    padding-left: 8px;
+    font-size: 23px;
+    font-weight: 700;
+    color: var(--blink-main);
+}
+
+.prepagasClinicas .clinicsList{
+    margin-top: 23px;
+}
+
+.prepagasClinicas .clinic{
+    padding: 20px 14px;
+    border-top: 1px solid #AEAEAE;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.prepagasClinicas .clinic p{
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.prepagasClinicas .clinicIcon{
+    color: var(--blink-main);
+}
+
+.prepagasClinicas .paginationContainer{
+    margin-top: 54px;
+}

@@ -1,0 +1,43 @@
+.prepagasDocumentos{
+    padding: 0 80px 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.prepagasDocumentos .accordionContainer{
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 16px;
+}
+
+.prepagasDocumentos .documentHeader{
+    padding: 16px 8px 0;
+}
+
+.prepagasDocumentos .documentHeader img{
+    width: 220px;
+}
+
+.prepagasDocumentos .documentHeader p{
+    font-size: 15px;
+    margin-top: 24px;
+}
+
+.prepagasDocumentos .documentHeader span{
+    color: #B3261E;
+}
+
+.prepagasDocumentos .documentItem{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.prepagasDocumentos .documentIcons{
+    color: var(--blink-main);
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}

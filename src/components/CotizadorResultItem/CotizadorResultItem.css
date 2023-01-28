@@ -1,0 +1,121 @@
+.cotizadorResultsCarousel .result{
+    /* width: 100px; */
+    margin: 0 8px;
+    text-align: center;
+    transition: .3s;
+    z-index: 10;
+}
+
+.background1{
+    background-color: #DADAF5;
+    border-radius: 16px;
+}
+
+.background2{
+    background-color: #D7D7D7;
+    border-radius: 16px;
+}
+
+/*Header*/
+.cotizadorResultsCarousel .check{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    height: 50px;
+}
+
+.cotizadorResultsCarousel .header{
+    height: 80px;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+}
+
+.cotizadorResultsCarousel .result img{
+    width: 200px;
+}
+
+/*Info*/
+.cotizadorResultsCarousel .result .info{
+    /* border-bottom: 1px solid var(--blink-gray); */
+    padding-bottom: 20px;
+    height: 110px;
+}
+
+.cotizadorResultsCarousel .info p{
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 114.5%;
+    text-decoration: line-through;
+}
+
+/*Items*/
+.cotizadorResultsCarousel .benefitItem{
+    height: 70px;
+    border-top: 1px solid var(--blink-gray);
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 28px;
+    color: var(--blink-main);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 15px;
+}
+
+/* .resultsCarousel .benefitItem:nth-child(5){
+    border-bottom: none;
+} */
+
+/* .resultsCarousel .benefitItem:nth-child(18){
+    border-bottom: none;
+} */
+
+/*Pinned*/
+.cotizadorResultsCarousel .result.pinned{
+    position: absolute;
+    transform: translateX(0) !important;
+    z-index: 20;
+}
+
+.pinFix{
+    width: 0;
+    display: none;
+}
+
+.pinFix.visible{
+    /* width: 220px; */
+    height: 100%;
+    padding: 30px 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 8px;
+    z-index: 0;
+    border: 2px dashed var(--blink-main);
+    background-color: rgba(71, 68, 204, 0.1);
+    color: var(--blink-gray);
+    border-radius: 16px;
+    transition: .3s;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 37px;
+    text-align: center;
+    text-transform: uppercase;
+    user-select: none;
+}
+
+/*Button*/
+.cotizadorResultsCarousel .button{
+    padding: 15px 0;
+    height: 100px;
+}
+
+.cotizadorResultsCarousel .primaryButton{
+    padding: 15px;
+    font-weight: 700;
+    font-size: 19px;
+    line-height: 28px;
+}

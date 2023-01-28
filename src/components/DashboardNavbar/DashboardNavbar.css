@@ -1,0 +1,71 @@
+.dashboardNavbar{
+    width: 100%;
+    padding: 0 25px 0 16px;
+    display: flex;
+    justify-content: space-between;
+    z-index: 50;
+    background-color: var(--blink-main);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    transition: .3s;
+    color: #fff;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.dashboardNavbar .logoContainer{
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.dashboardNavbar .logo{
+    font-size: 34px;
+    font-family: 'Comfortaa', sans-serif;
+    display: flex;
+    align-items: center;
+}
+
+.dashboardNavbar .navbarOptions{
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.dashboardNavbar .user, .userStep{
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    text-align: right;
+    flex-grow: 1;
+    padding: 25px;
+    color: white;
+    background-color: var(--blink-main);
+}
+
+.userStep{
+    z-index: 1500;
+    position: absolute;
+    display: none;
+    cursor: pointer;
+}
+
+.userName{
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.userLevel{
+    font-size: 13px;
+}
+
+.userIcon{
+    margin: 0 15px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-color: #fff;
+    color: var(--blink-main);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}

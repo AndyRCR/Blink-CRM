@@ -1,0 +1,48 @@
+.clientesActivos{
+    padding: 0 24px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.paginationContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.paginationContainer p{
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.cotizedBy{
+    font-size: 13px;
+    font-weight: 500;
+    padding: 6px 23px;
+    border-radius: 4px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.cotizedBy.propio{
+    background-color: #304FFE;
+    color: #fff;
+}
+
+.cotizedBy.derivado{
+    background-color: #4744CC;
+    color: #fff;
+}
+
+.cotizedBy.milanding{
+    background-color: #90E1D4;
+    color: #383838;
+}
+
+.cotizedBy.cliente{
+    background-color: #D1C4E9;
+    color: #170296;
+}
