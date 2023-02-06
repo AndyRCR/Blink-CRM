@@ -1,0 +1,41 @@
+.ventasDocumentos .documentsContainer{
+    padding: 50px 100px;
+}
+
+.ventasDocumentos .documentsHeader{
+    padding: 0 8px;
+}
+
+.ventasDocumentos h2{
+    color: var(--blink-main);
+    font-size: 23px;
+    font-weight: 700;
+}
+
+.ventasDocumentos p{
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.ventasDocumentos .documentsBody{
+    margin-top: 16px;
+}
+
+.ventasDocumentos .documentItem{
+    padding: 25px 15px;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #AEAEAE;
+}
+
+.ventasDocumentos .documentItem:last-child{
+    border-bottom: 1px solid #AEAEAE;
+}
+
+.ventasDocumentos .documentItem > div{
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    font-size: 15px;
+    font-weight: 700;
+}

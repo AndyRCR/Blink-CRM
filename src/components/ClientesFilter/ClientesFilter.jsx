@@ -5,7 +5,7 @@ import TuneOutlinedIcon from '@mui/icons-material/TuneOutlined'
 import classes from '../../theme/Styles'
 import './ClientesFilter.css'
 
-const ClientesFilter = ({ handleFilter, filterValue }) => {
+const ClientesFilter = ({ handleFilter, filterValue, setFiltersDisplayed, filtersDisplayed }) => {
     return (
         <div className='clientesFilter'>
             <div className="filterItem">
@@ -70,9 +70,9 @@ const ClientesFilter = ({ handleFilter, filterValue }) => {
                 </button>
             </div>
 
-            {window.location.pathname === '/cotizador' ? (
+            {window.location.pathname === '/cotizador' || window.location.pathname === '/ventas' ? (
                 <div className="filterItem">
-                    <button className='buttonVariant' style={{ maxWidth: '168px' }}>
+                    <button onClick={() => setFiltersDisplayed(!filtersDisplayed)} className='buttonVariant' style={{ maxWidth: '168px' }}>
                         <TuneOutlinedIcon />
                         Filtros
                     </button>

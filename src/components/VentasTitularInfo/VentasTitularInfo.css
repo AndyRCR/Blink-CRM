@@ -1,0 +1,67 @@
+.ventasTitularInfo .saleForm{
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.ventasTitularInfo .rowForm{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.ventasTitularInfo .formItem{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.ventasTitularInfo .inputContainer{
+    display: flex;
+    gap: 8px;
+}
+
+.ventasTitularInfo h1{
+    padding: 0 60px;
+}
+
+.ventasTitularInfo .relativesGrid{
+    padding: 60px;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(220px, 1fr));
+    gap: 56px;
+}
+
+.ventasTitularInfo .relativeCard{
+    position: relative;
+    padding: 28px;
+    border-radius: 20px;
+    background-color: var(--blink-main);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.ventasTitularInfo .relativeCard:hover{
+    transform: scale(1.04);
+}
+
+.ventasTitularInfo .name{
+    font-size: 19px;
+    font-weight: 700;
+}
+
+.ventasTitularInfo .age{
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.ventasTitularInfo .relation{
+    font-size: 15px;
+    font-weight: 700;
+    margin-top: 8px;
+}

@@ -153,6 +153,7 @@ button.secondaryButton:active:hover{
   padding: 0 24px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .sliderHeader{

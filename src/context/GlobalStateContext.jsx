@@ -34,6 +34,7 @@ const formatClinics = clinicList => {
 }
 
 const cotizedBy = ['Propio', 'Derivado', 'Mi landing', 'Cliente']
+const status = ['Ingresada', 'En proceso', 'A liquidar', 'Observada']
 const situation = ['Monotributista', 'Particular']
 const plans = ['Plan 1000', 'Plan 2000', 'Plan 3000', 'Plan 4000', 'Plan 15 AZUL', 'Plan 55 VERDE', 'Plan 80 ORO']
 
@@ -120,6 +121,34 @@ const GlobalStateContext = ({ children }) => {
         { id: '0015', cotizedBy: cotizedBy[random(0, 3)], client: 'Buscaglia test15', capitas: random(1, 5), prepaga: 'OMINT', plan: 'PLAN 4500', situation: situation[random(0, 1)], date: '14/11/2022' }
     ])
 
+    const [ventas, setVentas] = useState([...Array(15).keys()].map((el,i) => {
+        return {
+            id: 3445 + i,
+            status: status[random(0, 3)],
+            prepaga: 'OMINT',
+            plan: 'PLAN 4500',
+            client: `Buscaglia test${i + 1}`,
+            situation: situation[random(0, 1)],
+            quote: '1.267,98',
+            validityDate: '14/11/2022',
+            lote: '11/2022',
+            value: '24.897,73',
+            commission: '7.469,32',
+            capitas: 5,
+            quotations: [
+                {prepaga: 'DOCTORED', plan: '3000', ammount: '20.000'},
+                {prepaga: 'OMINT', plan: '4021', ammount: '10.000'},
+                {prepaga: 'GALENO', plan: 'ORO 550', ammount: '30.000'}
+            ],
+            relatives: [
+                {firstName: 'Homero', lastName: 'Simson', relation: 'Pareja', document: '482354546', birthdate: '20/02/1963'},
+                {firstName: 'Margaret', lastName: 'Simson', relation: 'Otro', document: '482354546', birthdate: '16/06/1973'},
+                {firstName: 'Lisa', lastName: 'Simson', relation: 'Hijo/a', document: '482354546', birthdate: '23/10/2014'},
+                {firstName: 'Hugo', lastName: 'Simson', relation: 'Hijo/a', document: '482354546', birthdate: '05/09/2016'}
+            ]
+        }
+    }))
+
     const [clinics, setClinics] = useState(
         ['Hospital Italiano', ...[...Array(30).keys()].map(el => `Opcion ${el + 1}`)]
             .map(clinic => {
@@ -171,6 +200,7 @@ const GlobalStateContext = ({ children }) => {
                 minBudget, setMinBudget,
                 maxBudget, setMaxBudget,
                 orderBy, setOrderBy,
+                ventas, setVentas,
                 obtainResults
             }}
         >

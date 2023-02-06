@@ -1,0 +1,13 @@
+.ventasLiquidacionViewContainer{
+    /* height: 100%; */
+    /* position: relative; */
+    padding: 25px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.ventasLiquidacionViewContainer .secondaryButton{
+    position: fixed;
+    bottom: 30px;
+    right: 34px;
+}

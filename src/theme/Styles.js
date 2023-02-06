@@ -15,6 +15,9 @@ const classes = {
       border: "none",
       borderBottom: "1px solid black",
     },
+    '& .MuiOutlinedInput-root': {
+      borderRadius: '0px'
+    },
     width: "100%",
   },
   searchBar: {

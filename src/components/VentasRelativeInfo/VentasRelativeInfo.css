@@ -1,0 +1,23 @@
+.ventasRelativeInfo .saleForm{
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.ventasRelativeInfo .rowForm{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.ventasRelativeInfo .formItem{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.ventasRelativeInfo .inputContainer{
+    display: flex;
+    gap: 8px;
+}

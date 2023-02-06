@@ -10,6 +10,9 @@ import PerfilView from '../views/PerfilView'
 import PrepagasView from '../views/PrepagasView'
 import SoporteView from '../views/SoporteView'
 import ValidationView from '../views/ValidationView'
+import VentasLiquidacionView from '../views/VentasLiquidacionView'
+import VentasVentaView from '../views/VentasVentaView'
+import VentasView from '../views/VentasView'
 
 const AnimatedRoutes = () => {
 
@@ -27,6 +30,11 @@ const AnimatedRoutes = () => {
                 <Route path='/prepagas' element={<PrepagasView/>} />
                 <Route path='/soporte' element={<SoporteView/>} />
                 <Route path='/cotizador' element={<CotizadorView/>} />
+                <Route path='/ventas'>
+                    <Route exact path='/ventas' element={<VentasView/>}/>
+                    <Route path='/ventas/liquidacion/:id' element={<VentasLiquidacionView/>}/>
+                    <Route path='/ventas/venta/:id' element={<VentasVentaView/>}/>
+                </Route>
             </Route>
         </Routes>
     </AnimatePresence>

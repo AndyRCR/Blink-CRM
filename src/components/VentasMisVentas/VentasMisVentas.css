@@ -1,0 +1,37 @@
+.ventasMisVentas{
+    padding: 0 24px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.status{
+    font-size: 13px;
+    font-weight: 500;
+    padding: 6px 23px;
+    border-radius: 4px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.status.aliquidar{
+    color: #02961A;
+    background-color: #BDFFB2;
+}
+
+.status.ingresada{
+    color: #024F96;
+    background-color: #B2DAFF;
+}
+
+.status.observada{
+    color: #7B4403;
+    background-color: #F4B974;
+}
+
+.status.enproceso{
+    background-color: #F9FBBC;
+    color: #965202;
+}

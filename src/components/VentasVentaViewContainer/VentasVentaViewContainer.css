@@ -1,0 +1,10 @@
+.ventasVentaViewContainer{
+    height: 1000px;
+    position: relative;
+}
+
+.ventasVentaViewContainer .secondaryButton{
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+}

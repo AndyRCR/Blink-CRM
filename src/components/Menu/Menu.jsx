@@ -42,7 +42,9 @@ const Menu = () => {
                 <QueryStatsOutlinedIcon sx={classes.menuIcon}/>
                 <p>Cotizador</p>
             </div>
-            <div className='menuItem'>
+            <div
+            onClick={() => handleNavigation('/ventas')}
+            className={window.location.pathname.includes('/ventas') ? `menuItem activeMenuItem` : 'menuItem'}>
                 <AccountBalanceWalletOutlinedIcon sx={classes.menuIcon}/>
                 <p>Ventas</p>
             </div>

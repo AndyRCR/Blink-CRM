@@ -5,13 +5,13 @@
     margin-bottom: 48px;
 }
 
-.filterItem{
+.clientesFilter .filterItem{
     gap: 15px;
     display: flex;
     align-items: center;
 }
 
-.filterItem p{
+.clientesFilter .filterItem p{
     font-size: 15px;
     font-weight: 700;
 }
