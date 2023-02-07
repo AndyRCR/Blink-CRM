@@ -75,12 +75,12 @@ const VentasTitularInfo = ({sale, setSelectedRelative, setPosition}) => {
                 </div>
             </div>
 
-            <div className={sale.status !== 'Ingresada' ? 'saleForm' : 'saleForm disabled'}>
+            <div className={sale.status !== 'Ingresada' ? 'saleForm disabled' : 'saleForm'}>
                 <div className="rowForm">
                     <div className="formItem">
                         <label>DNI Frente</label>
                         <div className="inputContainer">
-                            <label className='filelabel disabled' style={{ height: '56px' }}>
+                            <label className={sale.status !== 'Ingresada' ? 'filelabel disabled' : 'filelabel'} style={{ height: '56px' }}>
                                 {files.documentFront === null ? (
                                     <FontAwesomeIcon className="fileIcon" icon={faCloudArrowUp} />
                                 ) : false}
@@ -90,7 +90,7 @@ const VentasTitularInfo = ({sale, setSelectedRelative, setPosition}) => {
                                     id="fileInput"
                                     type="file"
                                     name="documentFront"
-                                    disabled
+                                    disabled={sale.status !== 'Ingresada'}
                                     accept="image/png, image/gif, image/jpeg"
                                     onChange={handleFileChange}
                                 />
@@ -100,7 +100,7 @@ const VentasTitularInfo = ({sale, setSelectedRelative, setPosition}) => {
                     <div className="formItem">
                         <label>DNI Dorso</label>
                         <div className="inputContainer">
-                            <label className='filelabel disabled' style={{ height: '56px' }}>
+                            <label className={sale.status !== 'Ingresada' ? 'filelabel disabled' : 'filelabel'} style={{ height: '56px' }}>
                                 {files.documentFront === null ? (
                                     <FontAwesomeIcon className="fileIcon" icon={faCloudArrowUp} />
                                 ) : false}
@@ -110,7 +110,7 @@ const VentasTitularInfo = ({sale, setSelectedRelative, setPosition}) => {
                                     id="fileInput"
                                     type="file"
                                     name="documentFront"
-                                    disabled
+                                    disabled={sale.status !== 'Ingresada'}
                                     accept="image/png, image/gif, image/jpeg"
                                     onChange={handleFileChange}
                                 />
@@ -124,7 +124,7 @@ const VentasTitularInfo = ({sale, setSelectedRelative, setPosition}) => {
                         <div className="inputContainer">
                             <FormControl sx={{ width: "25%" }}>
                                 <Select
-                                    disabled
+                                    disabled={sale.status !== 'Ingresada'}
                                     value={"DNI"}
                                     sx={classes.input}
                                 >
@@ -137,7 +137,7 @@ const VentasTitularInfo = ({sale, setSelectedRelative, setPosition}) => {
                                 type="text"
                                 name="document"
                                 value='N° 2354546'
-                                disabled
+                                disabled={sale.status !== 'Ingresada'}
                                 sx={{
                                     ...classes.input,
                                     width: "75%",
@@ -153,7 +153,7 @@ const VentasTitularInfo = ({sale, setSelectedRelative, setPosition}) => {
                                     inputFormat="MM/DD/YYYY"
                                     value={new Date()}
                                     onChange={() => { }}
-                                    disabled
+                                    disabled={sale.status !== 'Ingresada'}
                                     renderInput={(params) => (
                                         <TextField sx={classes.input} {...params} />
                                     )}
@@ -166,7 +166,7 @@ const VentasTitularInfo = ({sale, setSelectedRelative, setPosition}) => {
                         <div className="inputContainer">
                             <FormControl sx={{ width: "100%" }}>
                                 <Select
-                                    disabled
+                                    disabled={sale.status !== 'Ingresada'}
                                     value={"Femenino"}
                                     sx={classes.input}
                                 >
@@ -185,7 +185,7 @@ const VentasTitularInfo = ({sale, setSelectedRelative, setPosition}) => {
                                 type="text"
                                 name="document"
                                 value='27-18759854-4'
-                                disabled
+                                disabled={sale.status !== 'Ingresada'}
                                 sx={classes.input}
                             />
                         </div>
@@ -195,7 +195,7 @@ const VentasTitularInfo = ({sale, setSelectedRelative, setPosition}) => {
                         <div className="inputContainer">
                             <FormControl sx={{ width: '100%' }}>
                                 <Select
-                                    disabled
+                                    disabled={sale.status !== 'Ingresada'}
                                     defaultValue={1}
                                     sx={classes.input}
                                 >
@@ -210,7 +210,7 @@ const VentasTitularInfo = ({sale, setSelectedRelative, setPosition}) => {
                         <div className="inputContainer">
                             <FormControl sx={{ width: '100%' }}>
                                 <Select
-                                    disabled
+                                    disabled={sale.status !== 'Ingresada'}
                                     defaultValue={1}
                                     sx={classes.input}
                                 >
@@ -229,7 +229,7 @@ const VentasTitularInfo = ({sale, setSelectedRelative, setPosition}) => {
                                 type="text"
                                 name="document"
                                 value='A. Siempre viva 123, Spinfild, Buenos Aires, Argentina'
-                                disabled
+                                disabled={sale.status !== 'Ingresada'}
                                 sx={classes.input}
                             />
                         </div>
@@ -243,7 +243,7 @@ const VentasTitularInfo = ({sale, setSelectedRelative, setPosition}) => {
                                 type="text"
                                 name="document"
                                 value='Nilda_rn@gmail.com'
-                                disabled
+                                disabled={sale.status !== 'Ingresada'}
                                 sx={classes.input}
                             />
                         </div>
@@ -254,7 +254,7 @@ const VentasTitularInfo = ({sale, setSelectedRelative, setPosition}) => {
                             <OutlinedInput
                                 type="text"
                                 name="telReg"
-                                disabled
+                                disabled={sale.status !== 'Ingresada'}
                                 value='+54'
                                 sx={{
                                     ...classes.input,
@@ -265,7 +265,7 @@ const VentasTitularInfo = ({sale, setSelectedRelative, setPosition}) => {
                             <OutlinedInput
                                 type="number"
                                 name="tel"
-                                disabled
+                                disabled={sale.status !== 'Ingresada'}
                                 value='1174859632'
                                 sx={{
                                     ...classes.input,

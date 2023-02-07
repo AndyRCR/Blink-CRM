@@ -54,7 +54,7 @@
     position: absolute;
     top: 0;
     right: 0;
-    padding: 28px;
+    padding: 28px 28px 0 0;
     color: var(--blink-main);
 }
 

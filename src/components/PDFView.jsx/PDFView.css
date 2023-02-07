@@ -4,6 +4,26 @@
     align-items: center;
 }
 
+.pdfView a{
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.pdfView .controls{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.pdfView .other{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 150px;
+}
+
 .pdfView .pagination{
     display: flex;
     align-items: center;
@@ -42,13 +62,15 @@
 .react-pdf__Document{
     margin: 30px 0;
     height: 600px !important;
+    width: 780px;
     flex-grow: 1;
     overflow: auto;
-    width: 100%;
+    background-color: #E6E6E6;
 }
 
 .react-pdf__Page__canvas{
     margin: auto;
+    border-bottom: 1px solid #AEAEAE;
 }
 
 .react-pdf__Page__textContent, .react-pdf__Page__annotations{

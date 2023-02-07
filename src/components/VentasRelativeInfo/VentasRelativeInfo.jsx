@@ -74,7 +74,7 @@ const VentasRelativeInfo = ({ sale, selectedRelative, setPosition }) => {
                 </button>
             </div>
 
-            <div className={sale.status !== 'Ingresada' ? 'saleForm' : 'saleForm disabled'}>
+            <div className={sale.status !== 'Ingresada' ? 'saleForm disabled' : 'saleForm'}>
                 <div className="rowForm">
                     <div className="formItem">
                         <label>DNI Frente</label>
@@ -89,7 +89,7 @@ const VentasRelativeInfo = ({ sale, selectedRelative, setPosition }) => {
                                     id="fileInput"
                                     type="file"
                                     name="documentFront"
-                                    disabled
+                                    disabled={sale.status !== 'Ingresada'}
                                     accept="image/png, image/gif, image/jpeg"
                                     onChange={handleFileChange}
                                 />
@@ -109,7 +109,7 @@ const VentasRelativeInfo = ({ sale, selectedRelative, setPosition }) => {
                                     id="fileInput"
                                     type="file"
                                     name="documentFront"
-                                    disabled
+                                    disabled={sale.status !== 'Ingresada'}
                                     accept="image/png, image/gif, image/jpeg"
                                     onChange={handleFileChange}
                                 />
@@ -124,7 +124,7 @@ const VentasRelativeInfo = ({ sale, selectedRelative, setPosition }) => {
                         <div className="inputContainer">
                             <FormControl sx={{ width: "25%" }}>
                                 <Select
-                                    disabled
+                                    disabled={sale.status !== 'Ingresada'}
                                     value={"DNI"}
                                     sx={classes.input}
                                 >
@@ -137,7 +137,7 @@ const VentasRelativeInfo = ({ sale, selectedRelative, setPosition }) => {
                                 type="text"
                                 name="document"
                                 value='N° 2354546'
-                                disabled
+                                disabled={sale.status !== 'Ingresada'}
                                 sx={{
                                     ...classes.input,
                                     width: "75%",
@@ -153,7 +153,7 @@ const VentasRelativeInfo = ({ sale, selectedRelative, setPosition }) => {
                                     inputFormat="MM/DD/YYYY"
                                     value={new Date()}
                                     onChange={() => { }}
-                                    disabled
+                                    disabled={sale.status !== 'Ingresada'}
                                     renderInput={(params) => (
                                         <TextField sx={classes.input} {...params} />
                                     )}
@@ -166,7 +166,7 @@ const VentasRelativeInfo = ({ sale, selectedRelative, setPosition }) => {
                         <div className="inputContainer">
                             <FormControl sx={{ width: "100%" }}>
                                 <Select
-                                    disabled
+                                    disabled={sale.status !== 'Ingresada'}
                                     value={"Femenino"}
                                     sx={classes.input}
                                 >
@@ -186,7 +186,7 @@ const VentasRelativeInfo = ({ sale, selectedRelative, setPosition }) => {
                                 type="text"
                                 name="document"
                                 value='27-18759854-4'
-                                disabled
+                                disabled={sale.status !== 'Ingresada'}
                                 sx={classes.input}
                             />
                         </div>
@@ -196,7 +196,7 @@ const VentasRelativeInfo = ({ sale, selectedRelative, setPosition }) => {
                         <div className="inputContainer">
                             <FormControl sx={{ width: '100%' }}>
                                 <Select
-                                    disabled
+                                    disabled={sale.status !== 'Ingresada'}
                                     defaultValue={1}
                                     sx={classes.input}
                                 >
@@ -211,7 +211,7 @@ const VentasRelativeInfo = ({ sale, selectedRelative, setPosition }) => {
                         <div className="inputContainer">
                             <FormControl sx={{ width: '100%' }}>
                                 <Select
-                                    disabled
+                                    disabled={sale.status !== 'Ingresada'}
                                     defaultValue={1}
                                     sx={classes.input}
                                 >

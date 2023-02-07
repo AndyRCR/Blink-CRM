@@ -17,6 +17,16 @@
     gap: 8px;
 }
 
+.ventasTitularInfo .formItem > label{
+    font-size: 15px;
+    font-weight: 500 !important;
+    color: var(--blink-main);
+}
+
+.ventasTitularInfo .saleForm.disabled .formItem > label{
+    color: var(--blink-gray);
+}
+
 .ventasTitularInfo .inputContainer{
     display: flex;
     gap: 8px;
