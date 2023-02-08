@@ -9,10 +9,12 @@ import Rotate90DegreesCcwOutlinedIcon from '@mui/icons-material/Rotate90DegreesC
 import DownloadOutlinedIcon from '@mui/icons-material/DownloadOutlined'
 import RemoveOutlinedIcon from '@mui/icons-material/RemoveOutlined'
 import AddOutlinedIcon from '@mui/icons-material/AddOutlined'
-import { Document, Page } from 'react-pdf/dist/esm/entry.webpack'
+import { Document, Page, pdfjs } from 'react-pdf/dist/esm/entry.webpack'
 import { OutlinedInput } from '@mui/material'
 import classes from '../../theme/Styles'
 import './PDFView.css'
+
+pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 // eslint-disable-next-line
 const reg = /^\d+%?$/
@@ -250,7 +252,7 @@ const PDFView = () => {
                 </div>
             </div>
 
-            <Document rotate={rotateDegs} file='https://blinkfiles.s3.amazonaws.com/documento2.pdf' onLoadSuccess={onDocumentLoadSuccess}>
+            <Document rotate={rotateDegs} file='/documento2.pdf' onLoadSuccess={onDocumentLoadSuccess}>
                 {/* <Page
                 width={document.querySelector('.modalBody')?.clientWidth - 112 ?? 150}
                 pageNumber={pageNumber} /> */}
