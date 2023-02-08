@@ -25,6 +25,7 @@ const PDFView = () => {
 
     const [numPages, setNumPages] = useState(null)
     const [pageNumber, setPageNumber] = useState(1)
+    const [nextPageNumber, setNextPageNumber] = useState(1)
     const [rotateDegs, setRotateDegs] = useState(0)
     const [scale, setScale] = useState(100)
     const [nextScale, setNextScale] = useState('100%')
@@ -35,28 +36,65 @@ const PDFView = () => {
     }
 
     const handlePageChange = evt => {
-        document.getElementById(`page${evt.target.value}`).scrollIntoView()
-        setPageNumber(evt.target.value)
+        setNextPageNumber(evt.target.value)
+    }
+
+    const handlePageKey = e => {
+        if (e.key === 'Enter'){
+            changePageValues(e.target.value)
+        }
+    }
+
+    const handlePageBlur = e => changePageValues(e.target.value)
+
+    const changePageValues = (value) => {
+        setPageNumber(
+            value <= 1
+            ? 1
+            : value >= numPages
+            ? numPages
+            : value
+        )
+
+        setNextPageNumber(
+            value <= 1
+            ? 1
+            : value >= numPages
+            ? numPages
+            : value
+        )
+
+        document.getElementById(`page${
+            value <= 1
+            ? 1
+            : value >= numPages
+            ? numPages
+            : value
+        }`).scrollIntoView()
     }
 
     const handleFirstPage = () => {
         document.getElementById(`page1`).scrollIntoView()
         setPageNumber(1)
+        setNextPageNumber(1)
     }
 
     const handlePrevPage = () => {
         document.getElementById(`page${pageNumber - 1}`).scrollIntoView()
         setPageNumber(pageNumber - 1)
+        setNextPageNumber(nextPageNumber - 1)
     }
 
     const handleNextPage = () => {
         document.getElementById(`page${pageNumber + 1}`).scrollIntoView()
         setPageNumber(pageNumber + 1)
+        setNextPageNumber(nextPageNumber + 1)
     }
 
     const handleLastPage = () => {
         document.getElementById(`page${numPages}`).scrollIntoView()
         setPageNumber(numPages)
+        setNextPageNumber(numPages)
     }
 
     const handleRotate = () => {
@@ -68,6 +106,7 @@ const PDFView = () => {
             const documentHeight = document.querySelector('.page').clientHeight * numPages
             const scroll = e.target.scrollTop === 0 ? 1 : e.target.scrollTop
             setPageNumber(Math.ceil((scroll + 1) * numPages / documentHeight))
+            setNextPageNumber(Math.ceil((scroll + 1) * numPages / documentHeight))
         }
     }
 
@@ -172,10 +211,12 @@ const PDFView = () => {
                     <div className='pageInputContainer'>
                         Pag.
                         <OutlinedInput
-                            type="tel"
+                            type="number"
                             name="page"
                             onChange={handlePageChange}
-                            value={pageNumber}
+                            onBlur={handlePageBlur}
+                            onKeyUp={handlePageKey}
+                            value={nextPageNumber}
                             sx={{
                                 ...classes.input,
                                 width: '35px',

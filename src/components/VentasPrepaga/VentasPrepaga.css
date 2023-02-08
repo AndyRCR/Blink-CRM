@@ -1,5 +1,8 @@
-.ventasPrepaga .quotationGrid{
+.ventasPrepaga .quotationGrid {
     padding: 60px;
+}
+
+.ventasPrepaga .quotationGrid:not(:has(.MuiFormControl-root)) {
     display: grid;
     grid-template-columns: repeat(3, minmax(330px, 1fr));
     gap: 25px;
@@ -18,7 +21,7 @@
     display: flex;
     justify-content: space-between;
     font-size: 19px;
-    font-weight: 700;
+    font-weight: 500;
     color: var(--blink-main);
 }
 

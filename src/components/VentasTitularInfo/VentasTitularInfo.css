@@ -5,6 +5,12 @@
     gap: 24px;
 }
 
+.ventasTitularInfo .sliderHeaderInfoMain{
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
 .ventasTitularInfo .rowForm{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -32,8 +38,11 @@
     gap: 8px;
 }
 
-.ventasTitularInfo h1{
+.ventasTitularInfo .relativesHead{
     padding: 0 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .ventasTitularInfo .relativesGrid{

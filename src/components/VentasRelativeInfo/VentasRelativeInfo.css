@@ -11,6 +11,16 @@
     gap: 24px;
 }
 
+.ventasRelativeInfo .formItem > label{
+    font-size: 15px;
+    font-weight: 500 !important;
+    color: var(--blink-main);
+}
+
+.ventasRelativeInfo .saleForm.disabled .formItem > label{
+    color: var(--blink-gray);
+}
+
 .ventasRelativeInfo .formItem{
     display: flex;
     flex-direction: column;

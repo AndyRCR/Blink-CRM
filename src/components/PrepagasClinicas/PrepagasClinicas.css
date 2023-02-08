@@ -13,7 +13,7 @@
 .prepagasClinicas h2{
     padding-left: 8px;
     font-size: 23px;
-    font-weight: 700;
+    font-weight: 500;
     color: var(--blink-main);
 }
 
@@ -31,7 +31,7 @@
 
 .prepagasClinicas .clinic p{
     font-size: 15px;
-    font-weight: 700;
+    font-weight: 600;
 }
 
 .prepagasClinicas .clinicIcon{

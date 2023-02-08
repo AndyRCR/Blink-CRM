@@ -79,7 +79,7 @@ const VentasRelativeInfo = ({ sale, selectedRelative, setPosition }) => {
                     <div className="formItem">
                         <label>DNI Frente</label>
                         <div className="inputContainer">
-                            <label className='filelabel disabled' style={{ height: '56px' }}>
+                            <label className={sale.status !== 'Ingresada' ? 'filelabel disabled' : 'filelabel'} style={{ height: '56px' }}>
                                 {files.documentFront === null ? (
                                     <FontAwesomeIcon className="fileIcon" icon={faCloudArrowUp} />
                                 ) : false}
@@ -99,7 +99,7 @@ const VentasRelativeInfo = ({ sale, selectedRelative, setPosition }) => {
                     <div className="formItem">
                         <label>DNI Dorso</label>
                         <div className="inputContainer">
-                            <label className='filelabel disabled' style={{ height: '56px' }}>
+                            <label className={sale.status !== 'Ingresada' ? 'filelabel disabled' : 'filelabel'} style={{ height: '56px' }}>
                                 {files.documentFront === null ? (
                                     <FontAwesomeIcon className="fileIcon" icon={faCloudArrowUp} />
                                 ) : false}

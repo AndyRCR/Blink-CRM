@@ -4,8 +4,49 @@
     flex-direction: column;
 }
 
+.ventasVentaViewContainer .sliderBarItem p {
+    background-color: #AEAEAE;
+}
+
+.ventasVentaViewContainer .sliderBarItem .selected {
+    background-color: #120F8D;
+}
+
+.ventasVentaViewContainer .sliderBarItem .completed {
+    background-color: var(--blink-main);
+}
+
+.ventasVentaViewContainer .sliderBarItem p{
+    cursor: default;
+}
+
+.ventasVentaViewContainer .sliderBarItem p:not(.selected):hover {
+    background-color: var(--blink-main);
+    z-index: initial;
+    transition: 0s;
+}
+
+.ventasVentaViewContainer .sliderBarItem p:not(.selected):not(.completed):hover {
+    background-color: #AEAEAE;
+    z-index: initial;
+    transition: 0s;
+}
+
 .ventasVentaViewContainer .secondaryButton{
     position: fixed;
     bottom: 30px;
     right: 34px;
+}
+
+.ventasVentaViewContainer .sliderControls{
+    border: none;
+    height: fit-content;
+    background-color: #fff;
+    color: var(--blink-main);
+    cursor: pointer;
+}
+
+.ventasVentaViewContainer .sliderControls:disabled{
+    color: #AEAEAE;
+    cursor: default;
 }

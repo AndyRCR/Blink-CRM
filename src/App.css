@@ -1,3 +1,12 @@
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
 .primaryButton{
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   border: 2px solid var(--blink-secondary);
@@ -93,7 +102,9 @@ button.secondaryButton:active:hover{
 .sliderBarContainer{
   width: 100%;
   display: flex;
+  align-items: center;
   justify-content: center;
+  gap: 25px;
 }
 
 .sliderBar{
@@ -187,6 +198,9 @@ button.secondaryButton:active:hover{
 .sliderHeaderInfoSecondary{
   font-size: 19px;
   font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
 .sliderHeaderInfoSecondary span{
@@ -213,6 +227,7 @@ button.secondaryButton:active:hover{
   flex: 0 0 auto;
   transition: .4s;
 }
+
 .sliderItem .sliderItem{
   padding: 0;
 }

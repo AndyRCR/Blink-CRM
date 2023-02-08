@@ -1,7 +1,11 @@
 import PersonOutlinedIcon from '@mui/icons-material/PersonOutlined'
+import ModeEditOutlineOutlinedIcon from '@mui/icons-material/ModeEditOutlineOutlined'
+import { FormControl, FormControlLabel, MenuItem, Radio, RadioGroup, Select } from '@mui/material'
+import classes from '../../theme/Styles'
 import './VentasPrepaga.css'
 
 const VentasPrepaga = ({ sale }) => {
+
     return (
         <div className="ventasPrepaga">
             {/* {sale.status !== 'Ingresada' ? 'No se puede editar' : 'Se puede editar'} */}
@@ -24,7 +28,27 @@ const VentasPrepaga = ({ sale }) => {
                     <div className='sliderHeaderInfo'>
                         <div className='sliderHeaderInfoMain'>{sale.client}</div>
                         <div className='sliderHeaderInfoSecondary'>
-                            Nº de cliente {sale.id} | <span>Titular</span>
+                            Nº de cliente {sale.id} |
+                            {sale.status !== 'Ingresada' ? <span> Titular</span> : (
+                                <FormControl sx={{
+                                    '& .MuiSelect-outlined': {padding: '8px 16px'}
+                                }}>
+                                    <Select
+                                        defaultValue={"Titular"}
+                                        sx={{
+                                            ...classes.input,
+                                            color: 'var(--blink-main)',
+                                            fontWeight: '700',
+                                            '& .MuiSelect-outlined': {padding: '8px 16px'}
+                                        }}
+                                    >
+                                        <MenuItem value={"Titular"}>Titular</MenuItem>
+                                        <MenuItem value={"Otro 1"}>Otro 1</MenuItem>
+                                        <MenuItem value={"Otro 2"}>Otro 2</MenuItem>
+                                    </Select>
+                                </FormControl>
+                            )}
+
                         </div>
                     </div>
                 </div>
@@ -52,29 +76,47 @@ const VentasPrepaga = ({ sale }) => {
                         </div>
                     </div>
                 ) : (
-                    sale.quotations.map((quotation, i) => {
-                        return (
-                            <div className='quotationCard' key={`quotation${i + 1}`}>
-                                <div className="quotationHeader">
-                                    <div className="quotationTitle">Cotización</div>
-                                </div>
-                                <div className="quotationBody">
-                                    <ul>
-                                        <li>Prepaga</li>
-                                        <li>Plan</li>
-                                        <li>Monto</li>
-                                        <li>Cuota</li>
-                                    </ul>
-                                    <ul>
-                                        <li>{quotation.prepaga}</li>
-                                        <li>{quotation.plan}</li>
-                                        <li>{quotation.ammount}</li>
-                                        <li>$0.00</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        )
-                    })
+                    <FormControl sx={{width: '100%'}}>
+                        <RadioGroup
+                            defaultValue="1"
+                            name="radioGroup"
+                            sx={{
+                                display: 'grid',
+                                gridTemplateColumns: 'repeat(3, minmax(330px, 1fr))',
+                                gap: '25px',
+                                '& .MuiFormControlLabel-root': { margin: 0 },
+                                '& .MuiButtonBase-root': { padding: 0 }
+                            }}
+                        >
+                            {sale.quotations.map((quotation, i) => {
+                                return (
+                                    <div className='quotationCard' key={`quotation${i + 1}`}>
+                                        <div className="quotationHeader">
+                                            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                                                <FormControlLabel value={`${i + 1}`} control={<Radio />} />
+                                                <div className="quotationTitle">Cotización {i + 1}</div>
+                                            </div>
+                                            <ModeEditOutlineOutlinedIcon />
+                                        </div>
+                                        <div className="quotationBody">
+                                            <ul>
+                                                <li>Prepaga</li>
+                                                <li>Plan</li>
+                                                <li>Monto</li>
+                                                <li>Cuota</li>
+                                            </ul>
+                                            <ul>
+                                                <li>{quotation.prepaga}</li>
+                                                <li>{quotation.plan}</li>
+                                                <li>{quotation.ammount}</li>
+                                                <li>$0.00</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                )
+                            })}
+                        </RadioGroup>
+                    </FormControl>
                 )}
             </div>
 

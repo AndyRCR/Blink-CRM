@@ -1,4 +1,6 @@
 import ReplyOutlinedIcon from '@mui/icons-material/ReplyOutlined'
+import ArrowBackIosOutlinedIcon from '@mui/icons-material/ArrowBackIosOutlined'
+import ArrowForwardIosOutlinedIcon from '@mui/icons-material/ArrowForwardIosOutlined'
 import { useContext, useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { GlobalContext } from '../../context/GlobalStateContext'
@@ -48,29 +50,53 @@ const VentasVentaViewContainer = () => {
                 body={<PDFView />} />
 
             <div className="sliderBarContainer">
+                <button
+                onClick={() => setPosition(position - 1)}
+                disabled={position <= 0}
+                className='sliderControls'>
+                    <ArrowBackIosOutlinedIcon sx={{height: '30px', width: 'auto'}}/>
+                </button>
                 <div className="sliderBar">
                     <div className="sliderBarItem">
                         <p
-                            onClick={() => setPosition(0)}
-                            className={position === 0 ? 'selected' : ''}>
+                            className={
+                                position === 0
+                                ? 'selected'
+                                : position >= 1
+                                ? 'completed'
+                                : ''}>
                             Prepaga
                         </p>
                     </div>
                     <div className="sliderBarItem">
                         <p
-                            onClick={() => setPosition(1)}
-                            className={position === 1 ? 'selected' : ''}>
+                            className={
+                                position === 1
+                                ? 'selected'
+                                : position >= 2
+                                ? 'completed'
+                                : ''}>
                             Datos familiares
                         </p>
                     </div>
                     <div className="sliderBarItem">
                         <p
-                            onClick={() => setPosition(2)}
-                            className={position === 2 ? 'selected' : ''}>
+                            className={
+                                position === 2
+                                ? 'selected'
+                                : position >= 3
+                                ? 'completed'
+                                : ''}>
                             Documentos
                         </p>
                     </div>
                 </div>
+                <button
+                onClick={() => setPosition(position + 1)}
+                disabled={position >= 2}
+                className='sliderControls'>
+                    <ArrowForwardIosOutlinedIcon sx={{height: '30px', width: 'auto'}}/>
+                </button>
             </div>
 
             <div className="sliderContainer firstLevelSlider" style={{ flexGrow: '1' }}>
