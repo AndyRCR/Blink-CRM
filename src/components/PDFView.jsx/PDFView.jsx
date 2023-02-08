@@ -250,7 +250,7 @@ const PDFView = () => {
                 </div>
             </div>
 
-            <Document rotate={rotateDegs} file='/documento2.pdf' onLoadSuccess={onDocumentLoadSuccess}>
+            <Document rotate={rotateDegs} file='https://blinkfiles.s3.amazonaws.com/documento2.pdf' onLoadSuccess={onDocumentLoadSuccess}>
                 {/* <Page
                 width={document.querySelector('.modalBody')?.clientWidth - 112 ?? 150}
                 pageNumber={pageNumber} /> */}
