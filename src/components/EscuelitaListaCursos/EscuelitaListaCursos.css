@@ -1,0 +1,53 @@
+.escuelitaListaCursos{
+    padding: 20px 140px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.escuelitaCard{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 26px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
+    border-radius: 12px;
+}
+
+.escuelitaCard.locked{
+    background-color: #AEAEAE;
+    color: var(--blink-gray);
+}
+
+.escuelitaCard.notApprobed{
+    color: var(--blink-main);
+    cursor: pointer;
+}
+
+.escuelitaCard.approbed{
+    background-color: var(--blink-main);
+    color: #fff;
+    cursor: pointer;
+}
+
+.escuelitaCard .cardTitle{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.escuelitaCard .stars{
+    display: flex;
+    align-items: center;
+}
+
+.escuelitaCard .cardOptions{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.escuelitaCard .title{
+    font-size: 19px;
+    font-weight: 700;
+}

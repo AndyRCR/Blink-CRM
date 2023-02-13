@@ -74,7 +74,7 @@ const GlobalStateContext = ({ children }) => {
         firstname: "Julián",
         surname: "Gómez",
         username: "Julian",
-        level: 1,
+        level: 0,
         email: "test@gmail.com",
         birth: null,
         tel: null,
@@ -175,6 +175,16 @@ const GlobalStateContext = ({ children }) => {
         setResultClinics(Array.from(new Set(clinicArr)).sort())
     }
 
+    const [tests, setTests] = useState([
+        {enabled: true, approbed: false},
+        {enabled: false, approbed: false},
+        {enabled: false, approbed: false},
+        {enabled: false, approbed: false},
+        {enabled: false, approbed: false},
+        {enabled: false, approbed: false},
+        {enabled: false, approbed: false}
+    ])
+
     return (
         <GlobalContext.Provider
             value={{
@@ -201,6 +211,7 @@ const GlobalStateContext = ({ children }) => {
                 maxBudget, setMaxBudget,
                 orderBy, setOrderBy,
                 ventas, setVentas,
+                tests, setTests,
                 obtainResults
             }}
         >

@@ -60,7 +60,9 @@ const Menu = () => {
                 <MedicalServicesOutlinedIcon sx={classes.menuIcon}/>
                 <p>Prepagas</p>
             </div>
-            <div className='menuItem'>
+            <div
+            onClick={() => handleNavigation('/escuelita')}
+            className={window.location.pathname === '/escuelita' ? `menuItem activeMenuItem` : 'menuItem'}>
                 <SchoolOutlinedIcon sx={classes.menuIcon}/>
                 <p>Escuelita</p>
             </div>

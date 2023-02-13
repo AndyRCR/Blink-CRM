@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 const HomeView = () => {
   return (
     <motion.div
-    className='home'
+    className='homeView'
     initial={{opacity: 0}}
     animate={{opacity: 1}}
     exit={{opacity: 0}}>

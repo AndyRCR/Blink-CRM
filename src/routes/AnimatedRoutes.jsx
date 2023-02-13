@@ -4,6 +4,7 @@ import { Route, Routes, useLocation } from 'react-router-dom'
 import Layout from '../components/Layout'
 import ClientesView from '../views/ClientesView'
 import CotizadorView from '../views/CotizadorView'
+import EscuelitaView from '../views/EscuelitaView'
 import HomeView from '../views/HomeView'
 import LoginView from '../views/LoginView'
 import PerfilView from '../views/PerfilView'
@@ -35,6 +36,7 @@ const AnimatedRoutes = () => {
                     <Route path='/ventas/liquidacion/:id' element={<VentasLiquidacionView/>}/>
                     <Route path='/ventas/venta/:id' element={<VentasVentaView/>}/>
                 </Route>
+                <Route path='/escuelita' element={<EscuelitaView/>} />
             </Route>
         </Routes>
     </AnimatePresence>

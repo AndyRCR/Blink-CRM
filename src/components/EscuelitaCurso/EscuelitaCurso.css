@@ -1,0 +1,50 @@
+.escuelitaCurso{
+    padding: 0 24px;
+    display: flex;
+    gap: 24px;
+}
+
+.escuelitaCurso video{
+    width: 800px;
+}
+
+.escuelitaCurso .videoMenu{
+    flex-grow: 1;
+    color: var(--blink-main);
+}
+
+.escuelitaCurso .menuHeader{
+    display: flex;
+}
+
+.escuelitaCurso .menuHeaderItem{
+    flex-grow: 1;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.escuelitaCurso .menuHeaderItem p{
+    width: 100%;
+    padding: 17px 0;
+}
+
+.escuelitaCurso .animatedBorder {
+    border-bottom: 2px solid var(--blink-main);
+    width: 0%;
+    right: 0;
+    position: relative;
+    transition: width .3s ease-in-out;
+}
+
+.escuelitaCurso #border1{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.escuelitaCurso .menuHeaderItem.active .animatedBorder {
+    width: 100%;
+    right: auto;
+}
