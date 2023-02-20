@@ -3,7 +3,7 @@
     padding: 0 25px 0 16px;
     display: flex;
     justify-content: space-between;
-    z-index: 50;
+    position: relative;
     background-color: var(--blink-main);
     border: 1px solid rgba(255, 255, 255, 0.03);
     transition: .3s;

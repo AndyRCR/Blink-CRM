@@ -2,7 +2,6 @@ import { Accordion, AccordionDetails, AccordionSummary, FormControl, InputAdornm
 import ReplyOutlinedIcon from '@mui/icons-material/ReplyOutlined'
 import SearchIcon from '@mui/icons-material/Search'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
-import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined'
 import { useEffect, useState } from 'react'
 import classes from '../../theme/Styles'
 import './PrepagasPlanes.css'
@@ -71,13 +70,6 @@ const PrepagasPlanes = ({setPosition,selectedClinic}) => {
                     <AccordionDetails key={`plan${i+1}`}>
                       <div className='documentItem'>
                         <p>{plan}</p>
-                        <div className='documentIcons'>
-                          <VisibilityOutlinedIcon sx={{
-                            width: 'auto',
-                            height: '24px',
-                            cursor: 'pointer'
-                          }}/>
-                        </div>
                       </div>
                     </AccordionDetails>
                   )

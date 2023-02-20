@@ -109,11 +109,11 @@ button.secondaryButton:active:hover{
 
 .sliderBar{
   width: 920px;
-  padding: 0 32px;
   height: 75px;
   display: grid;
   grid-auto-columns: 1fr;
   border-radius: 64px;
+  overflow: hidden;
 }
 
 .sliderBarItem{
@@ -123,10 +123,11 @@ button.secondaryButton:active:hover{
   overflow: visible;
   position: relative;
   height: 75px;
+  background-color: var(--blink-main);
 }
 
 .sliderBarItem p{
-  width: calc(100% + 64px);
+  width: 100%;
   height: 75px;
   display: flex;
   align-items: center;

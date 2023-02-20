@@ -56,7 +56,11 @@ const VentasVentaViewContainer = () => {
                 className='sliderControls'>
                     <ArrowBackIosOutlinedIcon sx={{height: '30px', width: 'auto'}}/>
                 </button>
-                <div className="sliderBar">
+                <div
+                className="sliderBar"
+                style={{
+                    backgroundColor: position === 0 ? '#AEAEAE' : 'var(--blink-main)'
+                }}>
                     <div className="sliderBarItem">
                         <p
                             className={

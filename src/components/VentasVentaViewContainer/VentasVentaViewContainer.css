@@ -8,6 +8,24 @@
     background-color: #AEAEAE;
 }
 
+.ventasVentaViewContainer .sliderBarItem:has(p:not(.selected):not(.completed)){
+    background-color: #AEAEAE;
+}
+
+.ventasVentaViewContainer .sliderBarItem::before{
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    background-color: #AEAEAE;
+}
+
+.ventasVentaViewContainer .sliderBarItem:has(p.completed)::before{
+    background-color: var(--blink-main);
+}
+
 .ventasVentaViewContainer .sliderBarItem .selected {
     background-color: #120F8D;
 }

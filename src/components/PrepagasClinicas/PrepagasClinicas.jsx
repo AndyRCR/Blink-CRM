@@ -56,18 +56,7 @@ const PrepagasClinicas = ({ setSelectedClinic, setPosition }) => {
         </FormControl>
       </div>
 
-      <div className="paginationContainer">
-        <p>{filteredResult.length} resultados</p>
-        <Pagination
-          showFirstButton
-          showLastButton
-          sx={classes.pagination}
-          defaultValue={page}
-          onChange={(e,pageNumber) => setPage(pageNumber)}
-          count={Math.ceil(filteredResult.length/10)}
-          shape="rounded" />
-        {/* <p style={{visibility: 'hidden'}}>{filteredResult.length} resultados</p> */}
-      </div>
+      <p className="resultsLabel">{filteredResult.length} resultados</p>
 
       <div className="clinicsContainer">
         <h2>Clínicas y Sanatorios</h2>
@@ -90,6 +79,18 @@ const PrepagasClinicas = ({ setSelectedClinic, setPosition }) => {
             )
           })}
         </div>
+      </div>
+
+      <div className="paginationContainer">
+        <Pagination
+          showFirstButton
+          showLastButton
+          sx={classes.pagination}
+          defaultValue={page}
+          onChange={(e,pageNumber) => setPage(pageNumber)}
+          count={Math.ceil(filteredResult.length/10)}
+          shape="rounded" />
+        {/* <p style={{visibility: 'hidden'}}>{filteredResult.length} resultados</p> */}
       </div>
     </div>
   )

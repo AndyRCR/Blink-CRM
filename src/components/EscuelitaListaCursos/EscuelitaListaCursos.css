@@ -45,6 +45,8 @@
     display: flex;
     align-items: center;
     gap: 16px;
+    font-size: 15px;
+    font-weight: 700;
 }
 
 .escuelitaCard .title{

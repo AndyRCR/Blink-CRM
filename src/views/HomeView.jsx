@@ -1,15 +1,10 @@
 import HomeViewContainer from "../components/HomeViewContainer/HomeViewContainer"
-import { motion } from 'framer-motion'
 
 const HomeView = () => {
   return (
-    <motion.div
-    className='homeView'
-    initial={{opacity: 0}}
-    animate={{opacity: 1}}
-    exit={{opacity: 0}}>
+    <div className='homeView'>
       <HomeViewContainer/>
-    </motion.div>
+    </div>
   )
 }
 export default HomeView

@@ -4,3 +4,10 @@
     display: flex;
     flex-direction: column;
 }
+
+.escuelitaViewContainer .secondaryButton{
+    position: fixed;
+    bottom: 30px;
+    right: 34px;
+    z-index: 30;
+}

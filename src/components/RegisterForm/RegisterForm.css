@@ -7,6 +7,10 @@
     font-weight: 700;
 }
 
+.registerForm.section{
+    margin-top: 108px;
+}
+
 .registerForm .registerSlogan h2{
     font-size: 40px;
     margin: 100px 0 70px;

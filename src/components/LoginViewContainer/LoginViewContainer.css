@@ -7,7 +7,6 @@
     align-items: center;
     justify-content: space-between;
     flex-flow: row nowrap;
-    padding-top: 105px;
 }
     
 .loginViewContainer .section{

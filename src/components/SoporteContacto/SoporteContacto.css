@@ -2,6 +2,11 @@
     padding: 0 142px;
 }
 
+.soporteContacto a{
+    text-decoration: none;
+    color: var(--blink-main);
+}
+
 .soporteContacto .soporteContainer{
     display: flex;
     flex-direction: column;
@@ -30,7 +35,7 @@
     font-weight: 700;
 }
 
-.soporteContacto p{
+.soporteContacto .supportDivision{
     font-size: 13px;
     font-weight: 500;
     color: var(--blink-gray);

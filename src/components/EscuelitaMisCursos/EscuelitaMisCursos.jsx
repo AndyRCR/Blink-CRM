@@ -34,7 +34,7 @@ const EscuelitaMisCursos = () => {
                     <EscuelitaListaCursos setPosition={setPosition} />
                 </div>
                 <div className="sliderItem" style={{ margin: 0 }}>
-                    <EscuelitaCurso setPosition={setPosition} />
+                    <EscuelitaCurso position={position} setPosition={setPosition} />
                 </div>
             </div>
         </div>

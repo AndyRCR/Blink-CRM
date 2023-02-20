@@ -1,0 +1,130 @@
+.escuelitaCertificado .certificate{
+    padding: 50px;
+    border: 1px solid #000;
+    border-radius: 24px;
+    margin: 50px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    align-items: center;
+    width: 920px;
+    overflow: hidden;
+}
+
+.escuelitaCertificado .certificateIcon{
+    position: absolute;
+    top: 24px;
+    right: 40px;
+}
+
+.escuelitaCertificado h4{
+    font-size: 19px;
+    font-weight: 700;
+}
+
+.escuelitaCertificado h1{
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.escuelitaCertificado p{
+    font-size: 19px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.escuelitaCertificado .certificate p{
+    width: 570px;
+}
+
+.escuelitaCertificado .date{
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.escuelitaCertificado .firm{
+    width: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.escuelitaCertificado .firmText{
+    padding: 8px 47px;
+    font-size: 15px;
+    font-weight: 700;
+    border-top: 1px solid #000;
+}
+
+.escuelitaCertificado .firm img{
+    height: 70px;
+    transform: translateY(8px);
+}
+
+.escuelitaCertificado .socials{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+.escuelitaCertificado .circle{
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    background-color: var(--blink-main);
+    position: absolute;
+}
+
+.escuelitaCertificado #circle1{
+    top: -50px;
+    left: -50px;
+}
+
+.escuelitaCertificado #circle2{
+    bottom: -50px;
+    right: -50px;
+}
+
+.escuelitaCertificado #circle1::after,
+.escuelitaCertificado #circle1::before,
+.escuelitaCertificado #circle2::after,
+.escuelitaCertificado #circle2::before{
+    content: "";
+    background-color: var(--blink-main);
+    border-radius: 50%;
+    position: absolute;
+}
+
+.escuelitaCertificado #circle1::after,
+.escuelitaCertificado #circle2::after{
+    width: 72px;
+    height: 72px;
+}
+
+.escuelitaCertificado #circle1::before,
+.escuelitaCertificado #circle2::before{
+    width: 50px;
+    height: 50px;
+}
+
+.escuelitaCertificado #circle1::after{
+    bottom: -90px;
+    left: 50px;
+}
+
+.escuelitaCertificado #circle1::before{
+    top: 60px;
+    right: -40px;
+}
+
+.escuelitaCertificado #circle2::after{
+    top: -100px;
+    right: 30px;
+}
+
+.escuelitaCertificado #circle2::before{
+    top: -10px;
+    left: -40px;
+}

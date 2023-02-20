@@ -1,6 +1,7 @@
-import React, { useContext, useState } from "react"
+import React, { useState } from "react"
 import VisibilityOffOutlinedIcon from '@mui/icons-material/VisibilityOffOutlined'
 import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined'
+import MailOutlineIcon from "@mui/icons-material/MailOutline"
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined'
 import {
   Checkbox,
@@ -10,13 +11,10 @@ import {
   OutlinedInput,
 } from "@mui/material"
 import classes from "../../theme/Styles"
-import { GlobalContext } from "../../context/GlobalStateContext"
 import { useNavigate } from "react-router-dom"
 import "./LoginForm.css"
 
-const LoginForm = () => {
-
-  const {setLoginState} = useContext(GlobalContext)
+const LoginForm = ({setPosition}) => {
 
   const navigate = useNavigate()
 
@@ -44,6 +42,11 @@ const LoginForm = () => {
             <OutlinedInput
               type='email'
               sx={classes.input}
+              startAdornment={
+                <InputAdornment position="start">
+                  <MailOutlineIcon />
+                </InputAdornment>
+              }
             />
           </div>
 
@@ -97,7 +100,7 @@ const LoginForm = () => {
           </button>
 
           <div
-          onClick={() => setLoginState(1)}
+          onClick={() => setPosition(1)}
           className="registerText">
             Quiero sumarme a la comunidad
           </div>

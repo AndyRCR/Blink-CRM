@@ -4,15 +4,13 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import VisibilityOffOutlinedIcon from "@mui/icons-material/VisibilityOffOutlined";
 import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
 import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
-import React, { useContext, useState } from "react";
-import { GlobalContext } from "../../context/GlobalStateContext";
+import React, { useState } from "react";
 import classes from "../../theme/Styles";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 import "./RegisterForm.css";
 
-const RegisterForm = () => {
-  const { setLoginState } = useContext(GlobalContext);
+const RegisterForm = ({ setPosition }) => {
 
   const navigate = useNavigate()
 
@@ -105,7 +103,8 @@ const RegisterForm = () => {
             <label>Celular</label>
             <div className="telInput">
               <OutlinedInput
-                type="number"
+                type="text"
+                defaultValue={'+54'}
                 sx={{
                   ...classes.input,
                   width: "25%",
@@ -182,7 +181,7 @@ const RegisterForm = () => {
             Registrarme
           </button>
 
-          <div onClick={() => setLoginState(0)} className="registerText">
+          <div onClick={() => setPosition(0)} className="registerText">
             Ya tengo cuenta
           </div>
         </div>

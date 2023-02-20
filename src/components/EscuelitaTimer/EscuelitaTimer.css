@@ -1,0 +1,12 @@
+.escuelitaTimer{
+    font-size: 23px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.escuelitaTimer p{
+    width: 70px;
+    text-align: left;
+}

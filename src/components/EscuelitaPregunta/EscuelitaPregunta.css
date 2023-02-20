@@ -1,0 +1,25 @@
+.escuelitaPregunta{
+    padding: 48px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 0px 25px 15px rgba(0, 0, 0, 0.25);
+    border-radius: 24px;
+}
+.escuelitaViewContainer .escuelitaPregunta .secondaryButton{
+    position: initial;
+    max-width: 220px;
+}
+
+.escuelitaPregunta .questionTitle{
+    font-size: 19px;
+    font-weight: 500;
+}
+
+.escuelitaPregunta .questionAnswers{
+    padding: 24px 16px;
+}
+
+.escuelitaPregunta .nextButton{
+    display: flex;
+    justify-content: flex-end;
+}

@@ -1,0 +1,63 @@
+.escuelitaExamen{
+    display: flex;
+    flex-direction: column;
+}
+
+.escuelitaExamen .sliderContainer .sliderItem{
+    transition: .4s;
+    padding: 40px 80px;
+}
+
+.escuelitaExamen .levelInfo{
+    color: var(--blink-main);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 80px;
+}
+
+.escuelitaExamen .level{
+    font-size: 33px;
+    font-weight: 700;
+}
+
+.escuelitaExamen .questionCount{
+    text-align: center;
+    color: var(--blink-main);
+    font-size: 23px;
+    font-weight: 700;
+}
+
+.escuelitaExamen img{
+    width: 160px;
+}
+
+.escuelitaExamen .resultCard{
+    gap: 40px;
+    align-items: center;
+    text-align: center;
+}
+
+.escuelitaExamen .resultTitle{
+    font-size: 40px;
+    font-weight: 700;
+    color: var(--blink-main);
+}
+
+.escuelitaExamen .resultCard p{
+    width: 550px;
+    font-size: 19px;
+    font-weight: 500;
+    margin-top: 15px;
+}
+
+.escuelitaExamen .escuelitaPregunta.resultCard .secondaryButton{
+    max-width: initial;
+}
+
+.escuelitaExamen .resultButtons{
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    width: 100%;
+}

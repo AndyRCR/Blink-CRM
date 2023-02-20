@@ -17,6 +17,10 @@
     -webkit-backdrop-filter: blur(4.4px);
 }
 
+.navbarTransparent:hover{
+    background-color: #fff;
+}
+
 .navbar .logo{
     font-size: 34px;
     font-family: 'Comfortaa', sans-serif;

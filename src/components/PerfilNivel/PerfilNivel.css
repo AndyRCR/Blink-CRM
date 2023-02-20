@@ -1,61 +1,98 @@
-.perfilNivel{
-    box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-}
-
-.perfilNivel.status0{
-    background-color: #AEAEAE;
-    color: #fff;
-    padding: 62px 0;
-}
-
-.perfilNivel .nivelHeader{
-    font-size: 19px;
-    font-weight: 700;
+.perfilNivel {
     width: 100%;
-    padding: 22px 10px;
+    height: 290px;
+    perspective: 1000px;
+    position: relative;
 }
 
-.perfilNivel.status1 .nivelHeader{
-    background-color: var(--blink-main);
-    color: #fff;
+.perfilNivel .cardFront,
+.perfilNivel .cardBack {
+  box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  transition: .5s;
 }
 
-
-.perfilNivel.status2 .nivelHeader{
-    background-color: var(--blink-secondary);
+.cardFront {
+  z-index: 2;
 }
 
-.perfilNivel .nivelBody{
-    width: 100%;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
+.cardBack {
+  transform: rotateY(180deg);
 }
 
-.perfilNivel.status1 .nivelBody{
-    padding: 16px;
-    gap: 8px;
+.card:not(:has(.status0)):hover .cardFront {
+  transform: rotateY(-180deg);
 }
 
-.perfilNivel.status2 .nivelBody{
-    justify-content: center;
-    align-items: center;
-    padding: 25px 0;
+.card:not(:has(.status0)):hover .cardBack {
+  transform: rotateY(0deg);
 }
 
-.perfilNivel .levelItem{
-    display: flex;
-    align-items: center;
-    gap: 16px;
+.perfilNivel .status0 {
+  background-color: #aeaeae;
+  color: #fff;
+  padding: 62px 0;
 }
 
-.perfilNivel .levelItem p{
-    font-size: 15px;
-    font-weight: 500;
+.perfilNivel .nivelHeader {
+  font-size: 19px;
+  font-weight: 700;
+  width: 100%;
+  padding: 22px 10px;
+}
+
+.perfilNivel .status1 .nivelHeader {
+  background-color: var(--blink-main);
+  color: #fff;
+}
+
+.perfilNivel .status2 .nivelHeader {
+  background-color: var(--blink-secondary);
+}
+
+.perfilNivel .status2.cardBack .nivelBody{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 16px;
+}
+
+.perfilNivel .nivelBody {
+  width: 100%;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.perfilNivel .status1 .nivelBody {
+  padding: 16px;
+  gap: 8px;
+}
+
+.perfilNivel .status2 .nivelBody {
+  justify-content: center;
+  align-items: center;
+  padding: 25px 0;
+}
+
+.perfilNivel .levelItem {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.perfilNivel .levelItem p {
+  font-size: 14px;
+  font-weight: 500;
 }

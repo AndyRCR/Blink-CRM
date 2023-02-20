@@ -1,11 +1,14 @@
 import { useEffect, useState } from 'react'
 import EscuelitaMisCursos from '../EscuelitaMisCursos/EscuelitaMisCursos'
 import EscuelitaMisExamenes from '../EscuelitaMisExamenes/EscuelitaMisExamenes'
+import EscuelitaCertificado from '../EscuelitaCertificado/EscuelitaCertificado'
+import CustomModal from '../Modal/CustomModal'
 import './EscuelitaViewContainer.css'
 
 const EscuelitaViewContainer = () => {
 
     const [position, setPosition] = useState(0)
+    const [open, setOpen] = useState(false)
 
     const handleResize3 = () => {
         const width = document.querySelector(".escuelitaViewContainer > .sliderContainer").clientWidth
@@ -29,6 +32,18 @@ const EscuelitaViewContainer = () => {
 
     return (
         <div className="escuelitaViewContainer">
+            {/* <button
+                onClick={() => setPosition(0)}
+                className='secondaryButton'>
+                <ReplyOutlinedIcon />
+                Volver
+            </button> */}
+
+            <CustomModal
+            open={open}
+            setOpen={setOpen}
+            body={<EscuelitaCertificado/>}/>
+
             <div className="sliderBarContainer">
                 <div className="sliderBar">
                     <div className="sliderBarItem">
@@ -50,10 +65,10 @@ const EscuelitaViewContainer = () => {
 
             <div className="sliderContainer" style={{ flexGrow: '1' }}>
                 <div className="sliderItem">
-                    <EscuelitaMisCursos/>
+                    <EscuelitaMisCursos />
                 </div>
                 <div className="sliderItem">
-                    <EscuelitaMisExamenes/>
+                    <EscuelitaMisExamenes setOpen = {setOpen} />
                 </div>
             </div>
         </div>

@@ -65,9 +65,19 @@ const GlobalStateContext = ({ children }) => {
     const [maxBudget, setMaxBudget] = useState('')
     const [orderBy, setOrderBy] = useState('default')
 
+    /**
+     * General
+     */
     const [menuState, setMenuState] = useState(false)
     const [loginState, setLoginState] = useState(0)
     const [validationState, setValidationState] = useState(0)
+
+    /**
+     * Questions
+     */
+    const [currentLevel, setCurrentLevel] = useState(null)
+    const [questionTimer, setQuestionTimer] = useState(false)
+    const secondsForTest = 20
 
     const [user, setUser] = useState({
         id: 18,
@@ -176,13 +186,13 @@ const GlobalStateContext = ({ children }) => {
     }
 
     const [tests, setTests] = useState([
-        {enabled: true, approbed: false},
-        {enabled: false, approbed: false},
-        {enabled: false, approbed: false},
-        {enabled: false, approbed: false},
-        {enabled: false, approbed: false},
-        {enabled: false, approbed: false},
-        {enabled: false, approbed: false}
+        {approbed: false, attempts: 0, date: null},
+        {approbed: false, attempts: 0, date: null},
+        {approbed: false, attempts: 0, date: null},
+        {approbed: false, attempts: 0, date: null},
+        {approbed: false, attempts: 0, date: null},
+        {approbed: false, attempts: 0, date: null},
+        {approbed: false, attempts: 0, date: null}
     ])
 
     return (
@@ -212,7 +222,10 @@ const GlobalStateContext = ({ children }) => {
                 orderBy, setOrderBy,
                 ventas, setVentas,
                 tests, setTests,
-                obtainResults
+                obtainResults,
+                questionTimer, setQuestionTimer,
+                currentLevel, setCurrentLevel,
+                secondsForTest
             }}
         >
             {children}

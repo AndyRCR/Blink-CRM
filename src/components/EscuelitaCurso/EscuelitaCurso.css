@@ -4,12 +4,20 @@
     gap: 24px;
 }
 
+.escuelitaCurso .sliderContainer .sliderItem{
+    transition: .4s;
+}
+
 .escuelitaCurso video{
-    width: 800px;
+    width: 100%;
+}
+
+.escuelitaCurso .videoContainer{
+    flex-grow: 1;
+    min-width: 710px;
 }
 
 .escuelitaCurso .videoMenu{
-    flex-grow: 1;
     color: var(--blink-main);
 }
 

@@ -1,0 +1,65 @@
+.escuelitaModulos{
+    padding: 24px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.escuelitaModulos .mainContent{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--blink-main);
+}
+
+.escuelitaModulos .textContent{
+    padding: 24px 0;
+}
+
+.escuelitaModulos .title{
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.escuelitaModulos .subtitle{
+    font-size: 10px;
+    font-weight: 400;
+}
+
+.escuelitaModulos .circleContent{
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.escuelitaModulos .circleIndicator{
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 2px solid var(--blink-main);
+    background-color: #fff;
+}
+
+.escuelitaModulos .Mui-expanded .MuiAccordionDetails-root .circleIndicator:after{
+    content: '';
+    position: absolute;
+    height: calc(50% - 14px);
+    top: 0;
+    right: 50%;
+    border: 1px solid var(--blink-main);
+}
+
+.escuelitaModulos .MuiAccordionDetails-root .circleIndicator:before,
+.escuelitaModulos .MuiAccordionSummary-root.Mui-expanded .circleIndicator:before{
+    content: '';
+    position: absolute;
+    height: calc(50% - 14px);
+    bottom: 0;
+    right: 50%;
+    border: 1px solid var(--blink-main);
+}
+
+.escuelitaModulos .MuiAccordionDetails-root:last-child .circleIndicator:before{
+    display: none;
+}

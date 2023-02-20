@@ -1,0 +1,7 @@
+.escuelitaMisExamenes{
+    height: 100%;
+}
+
+.escuelitaMisExamenes .sliderItem{
+    transition: .0s;
+}

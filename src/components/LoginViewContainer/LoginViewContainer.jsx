@@ -1,5 +1,4 @@
-import React, { useContext, useEffect } from 'react'
-import { GlobalContext } from '../../context/GlobalStateContext'
+import React, { useEffect, useState } from 'react'
 import Background from '../Background/Background'
 import LoginForm from '../LoginForm/LoginForm'
 import RegisterForm from '../RegisterForm/RegisterForm'
@@ -7,17 +6,24 @@ import './LoginViewContainer.css'
 
 const LoginViewContainer = () => {
 
-    const {loginState} = useContext(GlobalContext)
+    const [position, setPosition] = useState(0)
 
     const handleResize = () => {
         const width = document.querySelector('.loginViewContainer').clientWidth
 
         document.querySelectorAll('.loginViewContainer .section').forEach(el => {
-            el.style.transform = `translateX(-${width * loginState}px)`
+            el.style.transform = `translateX(-${width * position}px)`
         })
     }
 
     useEffect(() => {
+        if(position === 0){
+            window.scrollTo({top: 0, behavior: 'smooth'})
+            document.body.style.overflowY = 'hidden'
+        } else{
+            document.body.style.overflowY = 'visible'
+        }
+
         handleResize()
 
         window.addEventListener('resize', handleResize)
@@ -25,14 +31,14 @@ const LoginViewContainer = () => {
         return () => window.removeEventListener('resize', handleResize)
 
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [loginState])
+    }, [position])
 
   return (
-    <div style={{overflow: 'hidden', loginState: 'relative'}}>
+    <div style={{overflow: 'hidden'}}>
         <Background/>
         <div className='loginViewContainer'>
-            <LoginForm/>
-            <RegisterForm/>
+            <LoginForm setPosition={setPosition}/>
+            <RegisterForm setPosition={setPosition}/>
         </div>
     </div>
   )
