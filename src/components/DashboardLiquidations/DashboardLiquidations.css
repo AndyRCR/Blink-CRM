@@ -29,5 +29,6 @@
     color: var(--blink-main);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    gap: 24px;
+    justify-content: center;
 }

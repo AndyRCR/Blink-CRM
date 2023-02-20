@@ -1,6 +1,11 @@
-.validationSection.validationSuccess .validationForm{
-    width: 100%;
-    padding: 65px 185px;
+.validationSuccess{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.validationSuccess .validationItem{
+    width: 80%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -11,14 +16,14 @@
     width: 160px;
 }
 
-.validationSuccess .validationSuccessTitle{
+.validationForm .validationSuccess p.validationSuccessTitle{
     padding: 40px 0 10px;
     font-size: 40px;
     font-weight: 700;
     color: var(--blink-main);
 }
 
-.validationSuccess .validationSuccessInfo{
+.validationForm .validationSuccess p.validationSuccessInfo{
     padding: 10px 0 60px;
     font-size: 23px;
     font-weight: 700;

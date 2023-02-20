@@ -11,6 +11,7 @@ import { useContext, useState } from "react"
 import { GlobalContext } from "../../context/GlobalStateContext"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCloudArrowUp } from "@fortawesome/free-solid-svg-icons"
+import KeyboardArrowDownOutlinedIcon from '@mui/icons-material/KeyboardArrowDownOutlined'
 import classes from "../../theme/Styles"
 import $ from 'jquery'
 import "./PerfilDatosPersonales.css"
@@ -135,6 +136,7 @@ const PerfilDatosPersonales = ({ disabledStatus }) => {
                 disabled={disabledStatus}
                 value={"DNI"}
                 sx={classes.input}
+                IconComponent={KeyboardArrowDownOutlinedIcon}
               >
                 <MenuItem value={"DNI"}>DNI</MenuItem>
                 <MenuItem value={"Pasaporte"}>Pasaporte</MenuItem>

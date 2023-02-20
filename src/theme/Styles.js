@@ -12,6 +12,9 @@ const classes = {
         borderRadius: "4px 4px 0 0",
         borderBottom: "1px solid #383838",
         fontFamily: "'Poppins', sans-serif",
+        '&.Mui-focused .MuiSelect-icon': {
+            color: 'var(--blink-main)'
+        },
         '&.Mui-focused .MuiInputAdornment-root': {
             color: 'var(--blink-main)'
         },
@@ -74,6 +77,7 @@ const classes = {
         },
     },
     customSlider: {
+        // pointerEvents: 'none',
         zIndex: "100",
         height: 24,
         "& .MuiSlider-thumb": {
@@ -91,22 +95,22 @@ const classes = {
             fontSize: "15px",
             fontWeight: "500",
             padding: "20px 25px",
-            borderRadius: "12px",
+            borderRadius: "8px 12px 12px 12px",
             backgroundColor: "var(--blink-main)",
             transformOrigin: "bottom left",
             transform: "translate(50%, -30%) scale(0)",
             "&:before": {
-            content: '""',
-            position: "absolute",
-            width: "20px",
-            height: "20px",
-            top: "-10px",
-            left: "calc(50% - 10px)",
-            transform: "rotateX(45deg) rotateZ(45deg)",
-            backgroundColor: "var(--blink-main)",
-            },
-            "&.MuiSlider-valueLabelOpen": {
-            transform: "translate(0, 90%)",
+                    content: '""',
+                    position: "absolute",
+                    width: "20px",
+                    height: "20px",
+                    top: "-10px",
+                    left: "10px",
+                    transform: "rotateX(45deg) rotateZ(45deg)",
+                    backgroundColor: "var(--blink-main)",
+                },
+                "&.MuiSlider-valueLabelOpen": {
+                    transform: "translate(120px, 90%)",
             },
         },
     },

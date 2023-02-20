@@ -135,11 +135,9 @@ const HomeViewContainer = () => {
                     </div>
                     <Slider
                         sx={classes.customSlider}
-                        defaultValue={
+                        value={
                             user.status === userStatuses["completo"] ? parseInt(100 / 6) : 0
                         }
-                        // min = {user.status === userStatuses['completo'] ? parseInt(100 / 6) : 0}
-                        // max = {user.status === userStatuses['completo'] ? parseInt(100 / 6) : 0}
                         step={100 / 30}
                         disabled={user.status !== userStatuses["completo"]}
                         aria-label="Default"

@@ -19,7 +19,9 @@ const DashboardLastSales = () => {
       <p>Últimas ventas aprobadas</p>
       <div className="gridCard">
         {user.status === userStatuses['completo'] ? (
-          <TableContainer sx={{ maxHeight: '380px' }}>
+          <TableContainer
+          // sx={{ maxHeight: '380px' }}
+          >
             <Table stickyHeader sx={classes.table}>
               <TableHead>
                 <TableRow style={{ height: 33 }}>

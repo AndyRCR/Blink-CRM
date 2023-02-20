@@ -69,8 +69,6 @@ const GlobalStateContext = ({ children }) => {
      * General
      */
     const [menuState, setMenuState] = useState(false)
-    const [loginState, setLoginState] = useState(0)
-    const [validationState, setValidationState] = useState(0)
 
     /**
      * Questions
@@ -199,8 +197,6 @@ const GlobalStateContext = ({ children }) => {
         <GlobalContext.Provider
             value={{
                 userStatuses,
-                loginState, setLoginState,
-                validationState, setValidationState,
                 user, setUser,
                 lastSales, setLastSales,
                 quotes, setQuotes,

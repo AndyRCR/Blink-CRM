@@ -3,8 +3,9 @@ import { FormControl, MenuItem, OutlinedInput, Select } from '@mui/material'
 import { faCloudArrowUp, faFilePdf } from "@fortawesome/free-solid-svg-icons"
 import classes from '../../theme/Styles'
 import $ from 'jquery'
-import './PerfilDatosBancarios.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import KeyboardArrowDownOutlinedIcon from '@mui/icons-material/KeyboardArrowDownOutlined'
+import './PerfilDatosBancarios.css'
 
 const PerfilDatosBancarios = ({disabledStatus}) => {
 
@@ -76,6 +77,7 @@ const PerfilDatosBancarios = ({disabledStatus}) => {
                 disabled={disabledStatus}
                 defaultValue={1}
                 sx={classes.input}
+                IconComponent={KeyboardArrowDownOutlinedIcon}
               >
                 <MenuItem value={1}>Monotributista</MenuItem>
                 <MenuItem value={2}>Particular</MenuItem>
@@ -124,6 +126,7 @@ const PerfilDatosBancarios = ({disabledStatus}) => {
                 disabled={disabledStatus}
                 defaultValue={1}
                 sx={classes.input}
+                IconComponent={KeyboardArrowDownOutlinedIcon}
               >
                 <MenuItem value={1}>Caja de ahorros en pesos</MenuItem>
                 <MenuItem value={2}>Cuenta corriente</MenuItem>

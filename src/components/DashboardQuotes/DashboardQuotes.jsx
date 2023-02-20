@@ -13,7 +13,9 @@ const DashboardQuotes = () => {
       <p>Cotizaciones</p>
       <div className="gridCard">
         {user.status === userStatuses['completo'] ? (
-          <TableContainer sx={{ maxHeight: "140px" }}>
+          <TableContainer
+          // sx={{ maxHeight: "140px" }}
+          >
             <Table stickyHeader sx={classes.table}>
               <TableHead>
                 <TableRow style={{ height: 33 }}>

@@ -1,77 +1,97 @@
-import React, { useContext } from "react";
-import { FormControlLabel, Radio, RadioGroup } from "@mui/material";
-import classes from "../../theme/Styles";
-import { GlobalContext } from "../../context/GlobalStateContext";
+import React, { useEffect, useState } from "react"
+import { FormControlLabel, Radio, RadioGroup } from "@mui/material"
+import classes from "../../theme/Styles"
+import ValidationSuccess from "../ValidationSuccess/ValidationSuccess"
+import './ValidationForm.css'
+
+const questions = [
+    {
+        question: '¿Tenés experiencia en ventas?', answer: null, options: [
+            'Sí',
+            'No'
+        ]
+    },
+    {
+        question: '¿Tenés experiencia en comercialización de Medicina Privada u Obras Sociales?', answer: null, options: [
+            'Sí',
+            'No'
+        ]
+    },
+    {
+        question: '¿Te encontrás actualmente comercializando Medicina Privada u Obra Social?', answer: null, options: [
+            'Sí',
+            'No'
+        ]
+    },
+    {
+        question: '¿Trabajas en relación de dependencia en alguna compañía o como intermediario a través de un Broker?', answer: null, options: [
+            'En relación de dependencia',
+            'Como intermediario o a través de un broker'
+        ]
+    }
+]
 
 const ValidationForm = () => {
 
-    const {setValidationState} = useContext(GlobalContext)
+    const [position, setPosition] = useState(0)
+    const [answers, setAnswers] = useState([...Array(4).fill(null)])
 
-  return (
-    <div className="validationSection">
-      <div className="validationForm">
-        <div className="validationItem">
-          <p>1. ¿Tenés experiencia en ventas?</p>
-          <RadioGroup sx={classes.radioGroup}>
-            <FormControlLabel value="si" control={<Radio />} label="Sí" />
-            <FormControlLabel value="no" control={<Radio />} label="No" />
-          </RadioGroup>
+    const markAnswer = (numberQuestion, answer) => {
+        const newArr = answers
+        newArr[numberQuestion] = parseInt(answer)
+        setAnswers(newArr)
+    }
+
+    useEffect(() => {
+        const handleResize = () => {
+            const width = document.querySelector(".validationForm > .sliderContainer").clientWidth
+        
+            document
+              .querySelectorAll(".validationForm > .sliderContainer .sliderItem")
+              .forEach((el) => {
+                el.style.transform = `translateX(-${width * position}px)`
+              })
+        }
+
+        handleResize()
+
+        window.addEventListener("resize", handleResize)
+
+        return () => window.removeEventListener("resize", handleResize)
+    }, [position])
+
+    return (
+        <div className="validationForm">
+            <div className="sliderContainer" style={{ flexGrow: '1' }}>
+                {questions.map((question, i) => {
+                    return (
+                        <div className="sliderItem" key={`question${i + 1}`}>
+                            <div className="validationItem">
+                                <p>{i + 1}. {question.question}</p>
+                                <RadioGroup sx={classes.radioGroup} onChange={(evt, value) => markAnswer(i, value)}>
+                                    {question.options.map((option, j) => {
+                                        return <FormControlLabel key={`option${j + 1}`} value={j + 1} control={<Radio />} label={option} />
+                                    })}
+                                </RadioGroup>
+
+                                <div className="validationButton">
+                                    <button
+                                        onClick={() => {
+                                            window.scrollTo({ top: 0, behavior: 'smooth' })
+                                            setPosition(position + 1)
+                                        }}
+                                        className="secondaryButton">
+                                        Siguiente
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    )
+                })}
+
+                <ValidationSuccess answers={answers}/>
+            </div>
         </div>
-
-        <div className="validationItem">
-          <p>
-            2. ¿Tenés experiencia en comercialización de Medicina Privada u
-            Obras Sociales?
-          </p>
-          <RadioGroup sx={classes.radioGroup}>
-            <FormControlLabel value="si" control={<Radio />} label="Sí" />
-            <FormControlLabel value="no" control={<Radio />} label="No" />
-          </RadioGroup>
-        </div>
-
-        <div className="validationItem">
-          <p>
-            3. ¿Te encontrás actualmente comercializando Medicina Privada u Obra
-            Social?
-          </p>
-          <RadioGroup sx={classes.radioGroup}>
-            <FormControlLabel value="si" control={<Radio />} label="Sí" />
-            <FormControlLabel value="no" control={<Radio />} label="No" />
-          </RadioGroup>
-        </div>
-
-        <div className="validationItem">
-          <p>
-            4. ¿Trabajas en relación de dependencia en alguna compañía o como
-            intermediario a través de un Broker?
-          </p>
-          <RadioGroup sx={classes.radioGroup}>
-            <FormControlLabel
-              value="1"
-              control={<Radio />}
-              label="En relación de dependencia"
-            />
-            <FormControlLabel
-              value="2"
-              control={<Radio />}
-              label="Como intermediario o a través de un broker"
-            />
-          </RadioGroup>
-        </div>
-
-        <div className="validationButton">
-            <button
-            onClick={() => {
-                window.scrollTo({top: 0, behavior: 'smooth'})
-                setValidationState(1)
-            }}
-            className="secondaryButton">
-                Finalizar
-            </button>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-export default ValidationForm;
+    )
+}
+export default ValidationForm

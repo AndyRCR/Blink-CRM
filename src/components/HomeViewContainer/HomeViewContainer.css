@@ -2,8 +2,6 @@
     padding: 30px 25px;
     display: flex;
     flex-direction: column;
-    height: 100%;
-
     /* padding: 25px 0;
     display: flex;
     flex-direction: column; */
@@ -58,7 +56,7 @@
 .dashboardGrid{
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-rows: repeat(3, minmax(250px, auto));
     flex-grow: 1;
     row-gap: 25px;
     column-gap: 20px;
