@@ -52,7 +52,9 @@ const ClientesProspect = ({handleClientModal}) => {
       <div>
         <ClientesFilter handleFilter = {handleFilter} filterValue = {filter}/>
 
-        <TableContainer sx={{maxHeight: '500px'}}>
+        <TableContainer
+        // sx={{maxHeight: '500px'}}
+        >
           <Table stickyHeader sx={classes.table}>
             <TableHead>
               <TableRow>

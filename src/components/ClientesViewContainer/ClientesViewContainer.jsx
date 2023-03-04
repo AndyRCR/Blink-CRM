@@ -42,7 +42,7 @@ const ClientesViewContainer = () => {
             <CustomModal
             open={open}
             setOpen={setOpen}
-            body={<ClientesForm client={client}/>}/>
+            body={<ClientesForm disabled={true} client={client}/>}/>
         ) : false}
         
         <div className="sliderBarContainer">

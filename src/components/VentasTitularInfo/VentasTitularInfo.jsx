@@ -85,7 +85,7 @@ const VentasTitularInfo = ({ sale, setSelectedRelative, setPosition }) => {
                             {sale.status !== 'Ingresada' ? false : (
                                 editable ? (
                                     <SaveOutlinedIcon
-                                    onClick={() => setEditable(!editable)}
+                                        onClick={() => setEditable(!editable)}
                                         sx={{
                                             width: '40px',
                                             height: 'auto',
@@ -95,7 +95,7 @@ const VentasTitularInfo = ({ sale, setSelectedRelative, setPosition }) => {
                                     />
                                 ) : (
                                     <ModeEditOutlineOutlinedIcon
-                                    onClick={() => setEditable(!editable)}
+                                        onClick={() => setEditable(!editable)}
                                         sx={{
                                             width: '40px',
                                             height: 'auto',
@@ -193,7 +193,14 @@ const VentasTitularInfo = ({ sale, setSelectedRelative, setPosition }) => {
                                     onChange={() => { }}
                                     disabled={!editable}
                                     renderInput={(params) => (
-                                        <TextField sx={classes.input} {...params} />
+                                        <TextField
+                                            sx={{
+                                                ...classes.input,
+                                                '& .MuiOutlinedInput-root': {
+                                                    fontFamily: '"Poppins", sans-serif;'
+                                                }
+                                            }}
+                                            {...params} />
                                     )}
                                 />
                             </LocalizationProvider>
@@ -317,10 +324,13 @@ const VentasTitularInfo = ({ sale, setSelectedRelative, setPosition }) => {
 
             <div className='relativesHead'>
                 <h1>Grupo familiar</h1>
-                <button style={{ position: 'initial' }} className='secondaryButton'>
-                    <PersonAddAltOutlinedIcon />
-                    Agregar
-                </button>
+                {sale.status !== 'En proceso' ? (
+
+                    <button disabled={!editable} style={{ position: 'initial' }} className='secondaryButton'>
+                        <PersonAddAltOutlinedIcon />
+                        Agregar
+                    </button>
+                ) : false}
             </div>
 
             <div className="relativesGrid">

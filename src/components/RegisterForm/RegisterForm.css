@@ -13,12 +13,12 @@
 
 .registerForm .registerSlogan h2{
     font-size: 40px;
-    margin: 100px 0 70px;
+    margin: 20px 0 40px;
 }
 
 .registerForm .registerSlogan ul{
     max-width: 650px;
-    font-size: 23px;
+    font-size: 17px;
 }
 
 .registerForm .telInput{

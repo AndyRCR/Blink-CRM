@@ -10,16 +10,16 @@ const cotizaciones = [
     { prepaga: 'GALENO', plan: 'ORO 550', monto: '30.000', cuota: '0.00' }
 ]
 
-const ClientesForm = ({ client }) => {
+const ClientesForm = ({disabled, client }) => {
     const [request, setRequest] = useState({
         name: client.client,
         situation: client.situation,
         telReg: "+54",
     })
 
-    const [optionals, setOptinals] = useState({
-        couple: true,
-        childs: true,
+    const [optionals, setOptionals] = useState({
+        couple: disabled ? false : true,
+        childs: disabled ? false : true,
     })
 
     const handleChange = (evt) => {
@@ -45,11 +45,12 @@ const ClientesForm = ({ client }) => {
                 <h3>Datos de cotización</h3>
                 <div className="formGrid">
                     <div className="formItem">
-                        <label>Nombre completo</label>
+                        <label style={{ color: disabled ? 'var(--blink-gray)' : 'var(--blink-main)' }}>Nombre completo</label>
                         <div className="inputContainer">
                             <OutlinedInput
                                 type="text"
                                 name="name"
+                                disabled={disabled}
                                 onChange={handleChange}
                                 value={request.name ?? ""}
                                 sx={classes.input}
@@ -57,18 +58,23 @@ const ClientesForm = ({ client }) => {
                         </div>
                     </div>
                     <div className="formItem age">
-                        <label>Edad</label>
+                        <label style={{ color: disabled ? 'var(--blink-gray)' : 'var(--blink-main)' }}>Edad</label>
                         <div className="inputContainer">
-                            <OutlinedInput type="number" name="age" sx={classes.input} />
+                            <OutlinedInput
+                            type="number"
+                            name="age"
+                            disabled={disabled}
+                            sx={classes.input} />
                         </div>
                     </div>
                     <div className="formItem situation">
-                        <label>Situación laboral</label>
+                        <label style={{ color: disabled ? 'var(--blink-gray)' : 'var(--blink-main)' }}>Situación laboral</label>
                         <div className="inputContainer">
                             <FormControl sx={{ width: "100%" }}>
                                 <Select
                                     defaultValue={request.situation ?? ""}
                                     sx={classes.input}
+                                    disabled={disabled}
                                 >
                                     <MenuItem value={"Monotributista"}>Monotributista</MenuItem>
                                     <MenuItem value={"Particular"}>Particular</MenuItem>
@@ -77,18 +83,23 @@ const ClientesForm = ({ client }) => {
                         </div>
                     </div>
                     <div className="formItem email">
-                        <label>Correo electrónico*</label>
+                        <label style={{ color: disabled ? 'var(--blink-gray)' : 'var(--blink-main)' }}>Correo electrónico*</label>
                         <div className="inputContainer">
-                            <OutlinedInput type="email" name="email" sx={classes.input} />
+                            <OutlinedInput
+                            type="email"
+                            name="email"
+                            disabled={disabled}
+                            sx={classes.input} />
                         </div>
                     </div>
                     <div className="formItem">
-                        <label>Celular</label>
+                        <label style={{ color: disabled ? 'var(--blink-gray)' : 'var(--blink-main)' }}>Celular</label>
                         <div className="inputContainer telInput">
                             <OutlinedInput
                                 className="telReg"
                                 type="text"
                                 name="telReg"
+                                disabled={disabled}
                                 onChange={handleChange}
                                 value={client.telReg ?? ""}
                                 sx={classes.input}
@@ -98,15 +109,19 @@ const ClientesForm = ({ client }) => {
                                 className="tel"
                                 type="number"
                                 name="tel"
+                                disabled={disabled}
                                 sx={classes.input}
                             />
                         </div>
                     </div>
                     <div className="formItem">
-                        <label>Zona</label>
+                        <label style={{ color: disabled ? 'var(--blink-gray)' : 'var(--blink-main)' }}>Zona</label>
                         <div className="inputContainer">
                             <FormControl sx={{ width: "100%" }}>
-                                <Select defaultValue={1} sx={classes.input}>
+                                <Select
+                                disabled={disabled}
+                                defaultValue={1}
+                                sx={classes.input}>
                                     <MenuItem value={1}>Elija una zona</MenuItem>
                                     <MenuItem value={"CABA"}>CABA</MenuItem>
                                     <MenuItem value={"GBA Norte"}>GBA Norte</MenuItem>
@@ -118,11 +133,11 @@ const ClientesForm = ({ client }) => {
                     </div>
                     <div className="formItem optional">
                         <p>Quiero incluir a mi pareja</p>
-                        <Switch setState={setOptinals} state={optionals} name="couple" />
+                        <Switch disabled={disabled} setState={setOptionals} state={optionals} name="couple" />
                     </div>
                     <div className="formItem optional">
                         <div className="formItem">
-                            <label>Edad pareja</label>
+                            <label style={{ color: disabled ? 'var(--blink-gray)' : 'var(--blink-main)' }}>Edad pareja</label>
                             <div className="inputContainer">
                                 <OutlinedInput
                                     type="number"
@@ -138,9 +153,9 @@ const ClientesForm = ({ client }) => {
                         <p>Quiero incluir a mis hijos/as</p>
                     </div>
                     <div className="formItem optional">
-                        <Switch setState={setOptinals} state={optionals} name="childs" />
+                        <Switch disabled={disabled} setState={setOptionals} state={optionals} name="childs" />
                         <div className="formItem">
-                            <label>Cantidad de hijos/as</label>
+                            <label style={{ color: disabled ? 'var(--blink-gray)' : 'var(--blink-main)' }}>Cantidad de hijos/as</label>
                             <div className="inputContainer">
                                 <OutlinedInput
                                     type="number"

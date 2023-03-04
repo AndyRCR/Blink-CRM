@@ -48,6 +48,15 @@
     cursor: pointer;
 }
 
+.pdfView button:enabled svg{
+    fill: white;
+}
+
+.pdfView button:disabled svg{
+    fill: var(--blink-gray);
+}
+
+
 .pdfView button:disabled{
     background-color: #AEAEAE;
     color: var(--blink-gray);

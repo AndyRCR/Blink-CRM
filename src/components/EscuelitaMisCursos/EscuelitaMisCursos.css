@@ -5,3 +5,7 @@
 .escuelitaMisCursos > .sliderContainer{
     overflow: hidden;
 }
+
+.escuelitaMisCursos > .sliderContainer > .sliderItem{
+    transition: 0s;
+}

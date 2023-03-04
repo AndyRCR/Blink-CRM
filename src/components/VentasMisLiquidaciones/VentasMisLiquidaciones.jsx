@@ -45,7 +45,7 @@ const VentasMisLiquidaciones = () => {
     }
 
     useEffect(() => {
-        let result = ventas.filter(el => el.status !== 'Ingresada')
+        let result = ventas.filter(el => el.status === 'En proceso')
         result = filterByName(result)
         result = filterBySitutation(result)
         setFilteredResult(result)
@@ -60,7 +60,9 @@ const VentasMisLiquidaciones = () => {
 
                 <Filters displayed={filtersDisplayed} />
 
-                <TableContainer sx={{ maxHeight: '500px' }}>
+                <TableContainer
+                // sx={{ maxHeight: '500px' }}
+                >
                     <Table stickyHeader sx={classes.table}>
                         <TableHead>
                             <TableRow>

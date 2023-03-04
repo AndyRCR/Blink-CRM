@@ -1,3 +1,7 @@
 .soporteCRM{
     height: 100%;
 }
+
+.soporteCRM .sliderItem{
+    transition: 0s;
+}

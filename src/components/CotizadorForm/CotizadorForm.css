@@ -117,11 +117,7 @@
     justify-content: center;
 }
 
-.MuiPaper-root ul li:hover{
-    background-color: rgba(25, 118, 210, 0.12) !important;
-}
-
-.MuiPaper-root ul li.Mui-selected{
+.MuiPaper-root ul li.Mui-selected, .MuiPaper-root ul li:hover{
     background-color: rgba(71, 68, 204, 0.15) !important;
 }
 

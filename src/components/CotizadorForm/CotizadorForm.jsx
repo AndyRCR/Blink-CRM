@@ -4,6 +4,7 @@ import ReCAPTCHA from 'react-google-recaptcha'
 import Swal from 'sweetalert2'
 import classes from '../../theme/Styles'
 import Switch from '../Switch/Switch'
+import KeyboardArrowDownOutlinedIcon from '@mui/icons-material/KeyboardArrowDownOutlined'
 import './CotizadorForm.css'
 
 const emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
@@ -184,6 +185,7 @@ const CotizadorForm = ({setState}) => {
                 value={user.zone}
                 onChange={handleInputChange}
                 sx={classes.input}
+                IconComponent={KeyboardArrowDownOutlinedIcon}
               >
                 <MenuItem value="CABA">CABA</MenuItem>
                 <MenuItem value="GBA Norte">GBA Norte</MenuItem>
@@ -203,6 +205,7 @@ const CotizadorForm = ({setState}) => {
                 value={user.situation}
                 onChange={handleInputChange}
                 sx={classes.input}
+                IconComponent={KeyboardArrowDownOutlinedIcon}
               >
                 <MenuItem value="Monotributista">Monotributista</MenuItem>
                 <MenuItem value="Relación en dependencia">Relación en dependencia</MenuItem>

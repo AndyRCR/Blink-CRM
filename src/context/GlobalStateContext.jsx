@@ -34,7 +34,7 @@ const formatClinics = clinicList => {
 }
 
 const cotizedBy = ['Propio', 'Derivado', 'Mi landing', 'Cliente']
-const status = ['Ingresada', 'En proceso', 'A liquidar', 'Observada']
+const status = ['Ingresada', 'En proceso', 'Incompleto', 'Observada']
 const situation = ['Monotributista', 'Particular']
 const plans = ['Plan 1000', 'Plan 2000', 'Plan 3000', 'Plan 4000', 'Plan 15 AZUL', 'Plan 55 VERDE', 'Plan 80 ORO']
 

@@ -17,6 +17,7 @@ body {
   --blink-main: #4744cc;
   --blink-secondary: #34e8ca;
   --blink-gray: #383838;
+  --toastify-color-success: #4744cc;
 }
 
 #root:has(.panelContainer) {

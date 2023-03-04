@@ -3,7 +3,8 @@ import { GlobalContext } from '../../context/GlobalStateContext'
 import { Checkbox, FormControlLabel, FormGroup, ListItemText, MenuItem, Select } from '@mui/material'
 import ExpandLessRoundedIcon from '@mui/icons-material/ExpandLessRounded'
 import ExpandMoreRoundedIcon from '@mui/icons-material/ExpandMoreRounded'
-import classes from '../../theme/Styles';
+import KeyboardArrowDownOutlinedIcon from '@mui/icons-material/KeyboardArrowDownOutlined'
+import classes from '../../theme/Styles'
 import './CotizadorFilters.css'
 
 const ITEM_HEIGHT = 48;
@@ -164,6 +165,7 @@ const CotizadorFilters = () => {
                         renderValue={(selected) => selected.join(', ')}
                         // className={`customSelect`}
                         sx={classes.input}
+                        IconComponent={KeyboardArrowDownOutlinedIcon}
                         MenuProps={MenuProps}
                     >
                         {resultClinics !== null && (
@@ -185,6 +187,7 @@ const CotizadorFilters = () => {
                         onChange={(e) => setOrderBy(e.target.value)}
                         // className={`customSelect`}
                         sx={classes.input}
+                        IconComponent={KeyboardArrowDownOutlinedIcon}
                         name='orderBy'>
                         <MenuItem value="default">Más relevantes</MenuItem>
                         <MenuItem value="min">Menor precio</MenuItem>

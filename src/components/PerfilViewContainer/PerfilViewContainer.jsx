@@ -6,11 +6,15 @@ import SaveOutlinedIcon from '@mui/icons-material/SaveOutlined'
 import ModeEditOutlinedIcon from '@mui/icons-material/ModeEditOutlined'
 import { GlobalContext } from '../../context/GlobalStateContext'
 import './PerfilViewContainer.css'
+import { toast } from 'react-toastify'
+import { CircularProgress } from '@mui/material'
 
 const PerfilViewContainer = () => {
 
   const { user } = useContext(GlobalContext)
 
+  const [isLoading, setIsLoading] = useState(false)
+  const [mouseOn, setMouseOn] = useState(false)
   const [position, setPosition] = useState(0)
   const [disabledStatus, setDisabledStatus] = useState(false)
 
@@ -93,12 +97,47 @@ const PerfilViewContainer = () => {
         </div>
 
         <button
-          onClick={() => setDisabledStatus(!disabledStatus)}
+          onMouseEnter={() => setMouseOn(true)}
+          onMouseLeave={() => setMouseOn(false)}
+          onClick={() => {
+            setDisabledStatus(!disabledStatus)
+            if (!disabledStatus) {
+              setIsLoading(true)
+              setTimeout(() => setIsLoading(false), 3000)
+
+              const timeout = new Promise(resolve => setTimeout(resolve, 3000));
+              toast.promise(
+                timeout,
+                {
+                  pending: {
+                    render() {
+                      return 'Guardando cambios...'
+                    },
+                    icon: ({theme, type}) =>  <div className="loaderTitle">b</div>
+                  },
+                  success: {
+                    render() {
+                      return 'Tus cambios fueron guardados.'
+                    },
+                    position: "bottom-center",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "colored",
+                    icon: ""
+                  }
+                }
+              )
+            }
+          }}
           className={position !== 2 ? 'secondaryButton' : 'secondaryButton disabled'}>
           {disabledStatus === true ? (
             <>
-              <ModeEditOutlinedIcon />
-              Editar
+              {isLoading ? <CircularProgress size={'24px'} style={{color: mouseOn ? '#fff' : '#383838'}}/> : <ModeEditOutlinedIcon />}
+              {isLoading ? 'Guardando' : 'Editar'}
             </>
           ) : (
             <>

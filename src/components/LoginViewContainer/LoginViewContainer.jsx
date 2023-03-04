@@ -1,3 +1,4 @@
+import { AnimatePresence } from 'framer-motion'
 import React, { useEffect, useState } from 'react'
 import Background from '../Background/Background'
 import LoginForm from '../LoginForm/LoginForm'
@@ -8,13 +9,13 @@ const LoginViewContainer = () => {
 
     const [position, setPosition] = useState(0)
 
-    const handleResize = () => {
-        const width = document.querySelector('.loginViewContainer').clientWidth
+    // const handleResize = () => {
+    //     const width = document.querySelector('.loginViewContainer').clientWidth
 
-        document.querySelectorAll('.loginViewContainer .section').forEach(el => {
-            el.style.transform = `translateX(-${width * position}px)`
-        })
-    }
+    //     document.querySelectorAll('.loginViewContainer .section').forEach(el => {
+    //         el.style.transform = `translateX(-${width * position}px)`
+    //     })
+    // }
 
     useEffect(() => {
         if(position === 0){
@@ -24,21 +25,23 @@ const LoginViewContainer = () => {
             document.body.style.overflowY = 'visible'
         }
 
-        handleResize()
-
-        window.addEventListener('resize', handleResize)
-
-        return () => window.removeEventListener('resize', handleResize)
-
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [position])
 
   return (
     <div style={{overflow: 'hidden'}}>
         <Background/>
-        <div className='loginViewContainer'>
-            <LoginForm setPosition={setPosition}/>
-            <RegisterForm setPosition={setPosition}/>
+        <div
+        style={{
+            backgroundColor: position === 0 ? 'transparent' : 'var(--blink-main)'
+        }}
+        className='loginViewContainer'>
+            <AnimatePresence>
+                <LoginForm position={position} setPosition={setPosition}/>
+            </AnimatePresence>
+            <AnimatePresence>
+                <RegisterForm position={position} setPosition={setPosition}/>
+            </AnimatePresence>
         </div>
     </div>
   )

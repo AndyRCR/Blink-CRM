@@ -232,3 +232,36 @@ button.secondaryButton:active:hover{
 .sliderItem .sliderItem{
   padding: 0;
 }
+
+.Toastify__toast{
+  min-height: 48px !important;
+}
+.Toastify__toast .loaderTitle {
+  font-size: 20px;
+  margin-left: 30px;
+}
+
+.Toastify__toast-theme--colored:not(.Toastify__toast--success){
+  background-color: var(--blink-main) !important;
+  color: #fff !important;
+}
+
+.Toastify__toast--success {
+  background-color: var(--blink-main) !important;
+  border-radius: 12px !important;
+}
+
+.Toastify__progress-bar{
+  background-color: #6C69D6 !important;
+}
+
+.Toastify__toast-body{
+  font-family: "Poppins", sans-serif;
+  font-size: 10px;
+  text-align: center;
+}
+
+.Toastify__toast--success .Toastify__toast-icon,
+.Toastify__toast--success .Toastify__close-button {
+  display: none !important;
+}

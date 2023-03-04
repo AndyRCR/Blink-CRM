@@ -1,8 +1,13 @@
 .clientesFilter{
     display: flex;
     justify-content: space-between;
-    gap: 30px;
+    gap: 8px;
     margin-bottom: 48px;
+}
+
+.clientesFilter .filterButtons{
+    display: flex;
+    gap: 10px;
 }
 
 .clientesFilter .filterItem{
@@ -14,4 +19,8 @@
 .clientesFilter .filterItem p{
     font-size: 15px;
     font-weight: 700;
+}
+
+.clientesFilter .secondaryButton{
+    padding: 16px 20px;
 }

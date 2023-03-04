@@ -1,3 +1,7 @@
 .prepagasPrestadores{
     height: 100%;
 }
+
+.prepagasPrestadores .sliderItem{
+    transition: 0s;
+}

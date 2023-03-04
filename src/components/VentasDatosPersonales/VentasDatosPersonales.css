@@ -1,3 +1,7 @@
 .ventasDatosPersonales{
     position: relative;
 }
+
+.ventasDatosPersonales .sliderItem{
+    transition: 0s;
+}

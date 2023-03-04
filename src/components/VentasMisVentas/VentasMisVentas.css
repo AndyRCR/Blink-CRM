@@ -16,9 +16,11 @@
     justify-content: center;
 }
 
-.status.aliquidar{
-    color: #02961A;
-    background-color: #BDFFB2;
+.status.incompleto{
+    /* color: #02961A;
+    background-color: #BDFFB2; */
+    background-color: #F9FBBC;
+    color: #965202;
 }
 
 .status.ingresada{
@@ -32,6 +34,8 @@
 }
 
 .status.enproceso{
-    background-color: #F9FBBC;
-    color: #965202;
+    /* background-color: #F9FBBC;
+    color: #965202; */
+    color: #02961A;
+    background-color: #BDFFB2;
 }

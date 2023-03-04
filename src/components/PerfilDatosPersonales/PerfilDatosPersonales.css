@@ -45,7 +45,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 5px;
+    padding: 5px 18px;
     transition: border 300ms ease;
     cursor: pointer;
     text-align: center;
@@ -53,13 +53,32 @@
     transition: .3s;
 }
 
+.filelabel svg{
+    fill: #4744CC;
+    margin-right: 16px;
+}
+
+.filelabel.withFile {
+    background-color: var(--blink-main);
+}
+
 .filelabel.disabled{
-    border: 2px solid var(--blink-gray);
+    border: none;
     cursor: default;
+    background-color: #AEAEAE;
+    color: var(--blink-gray);
+}
+
+.filelabel.disabled svg{
+    fill: var(--blink-gray);
 }
 
 .filelabel:not(.disabled):hover{
     background-color: var(--blink-main);
+}
+
+.filelabel:not(.disabled):hover svg{
+    fill: #fff;
 }
 
 .filelabel .fileIcon,
@@ -68,6 +87,11 @@
     font-weight: 500;
     font-size: 14px;
     line-height: 21px;
+}
+
+.filelabel.withFile .fileIcon,
+.filelabel.withFile .title{
+    color: #fff !important;
 }
 
 .filelabel.disabled .fileIcon,

@@ -60,7 +60,9 @@ const VentasMisVentas = () => {
 
                 <Filters displayed={filtersDisplayed}/>
 
-                <TableContainer sx={{ maxHeight: '500px' }}>
+                <TableContainer
+                // sx={{ maxHeight: '500px' }}
+                >
                     <Table stickyHeader sx={classes.table}>
                         <TableHead>
                             <TableRow>
@@ -108,7 +110,8 @@ const VentasMisVentas = () => {
                                             <div style={{display: 'flex', flexDirection: 'column', gap: '20px'}}>
                                                 <VisibilityOutlinedIcon
                                                     onClick={() => {
-                                                        navigate(venta.status === 'Ingresada' ? `/ventas/venta/${venta.id}` : `/ventas/liquidacion/${venta.id}`)
+                                                        // navigate(venta.status === 'Ingresada' || venta.status === 'Observada' ? `/ventas/liquidacion/${venta.id}` : `/ventas/venta/${venta.id}`)
+                                                        navigate(`/ventas/liquidacion/${venta.id}`)
                                                     }}
                                                     sx={{
                                                         ...classes.menuIcon,

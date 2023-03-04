@@ -52,7 +52,9 @@ const ClientesActivos = ({handleClientModal}) => {
       <div>
         <ClientesFilter handleFilter = {handleFilter} filterValue = {filter}/>
 
-        <TableContainer sx={{maxHeight: '500px'}}>
+        <TableContainer
+        // sx={{maxHeight: '500px'}}
+        >
           <Table stickyHeader sx={classes.table}>
             <TableHead>
               <TableRow>
@@ -95,7 +97,6 @@ const ClientesActivos = ({handleClientModal}) => {
                     <TableCell>{client.date}</TableCell>
                     <TableCell>
                       <VisibilityOutlinedIcon
-                        onClick={() => handleClientModal(client)}
                         sx={{
                           ...classes.menuIcon,
                           color: "var(--blink-main)",

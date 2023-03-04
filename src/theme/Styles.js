@@ -9,14 +9,24 @@ const classes = {
     },
     input: {
         backgroundColor: "white",
+        height: '57px',
         borderRadius: "4px 4px 0 0",
-        borderBottom: "1px solid #383838",
+        borderBottom: "0px solid #383838",
         fontFamily: "'Poppins', sans-serif",
+        '&.Mui-focused': {
+            borderBottom: "1px solid var(--blink-main)",
+        },
         '&.Mui-focused .MuiSelect-icon': {
             color: 'var(--blink-main)'
         },
         '&.Mui-focused .MuiInputAdornment-root': {
             color: 'var(--blink-main)'
+        },
+        '& .MuiInputAdornment-root svg': {
+            fill: 'var(--blink-gray)'
+        },
+        '& .Mui-focused .MuiInputAdornment-root svg': {
+            fill: 'var(--blink-main)'
         },
         '&.Mui-focused .MuiIconButton-root': {
             color: 'var(--blink-main)'
@@ -27,6 +37,10 @@ const classes = {
         },
         "& .MuiOutlinedInput-root": {
             borderRadius: "0px",
+        },
+        '& .MuiTypography-root': {
+            color: 'var(--blink-main)',
+            fontWeight: '700'
         },
         width: "100%",
     },
