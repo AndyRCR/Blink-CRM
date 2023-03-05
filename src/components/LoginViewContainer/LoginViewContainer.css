@@ -8,62 +8,34 @@
     justify-content: space-between;
     flex-flow: row nowrap;
     transition: .3s;
-}
-    
-.loginViewContainer .section{
-    width: 100%;
-    display: flex;
-    padding: 0 120px;
-    justify-content: space-between;
-    align-items: center;
-    /* border: 1px dashed black; */
-    box-sizing: border-box;
-    flex: 0 0 auto;
-    /* transition: .4s; */
+    background-color: var(--blink-main);
+    min-height: 100vh;
 }
 
-.loginViewContainer .section .form{
-    padding: 60px 70px 35px;
-    border-radius: 24px;
-    background-color: rgba(255, 255, 255, 0.6);
+.loginViewContainer:has(.largeSection){
+    min-height: 1024px;
 }
 
-.loginViewContainer .section .formItem{
-    display: flex;
-    flex-direction: column;
-    margin: 8px 0;
-    width: 330px;
+
+@media (max-width: 1200px) {
+    .loginViewContainer{
+        margin-top: 100px;
+        align-items: flex-start;
+    }
 }
 
-.loginViewContainer .formSection p{
-    color: #fff;
-    font-size: 23px;
-    font-weight: 700;
-    margin-bottom: 30px;
+@media (max-width: 700px) {
+    .loginViewContainer{
+        margin-top: 0;
+        align-items: center;
+    }
 }
 
-.loginViewContainer .section label{
-    margin-bottom: 8px;
-    font-size: 15px;
-    font-weight: 600;
-    color: var(--blink-main);
-}
-
-.loginViewContainer .formOptions{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 18px;
-}
-
-.loginViewContainer .formOptions p{
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--blink-main);
-    margin: 0;
-    cursor: pointer;
-}
-
-.loginViewContainer .secondaryButton{
-    width: 100%;
+@media (max-width: 500px) {
+    .loginViewContainer{
+        margin-top: 62px;
+        align-items: flex-start;
+        min-height: auto;
+        height: 100%;
+    }
 }

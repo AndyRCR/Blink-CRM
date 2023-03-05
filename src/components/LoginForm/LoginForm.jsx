@@ -30,21 +30,23 @@ const LoginForm = ({ position, setPosition }) => {
   return (
     position === 0 ? (
       <motion.div
-        className="section"
+        className="loginForm section"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}>
         <div className="banner">
-          Lorem
-          <br />
-          ipsum dolor
-          <br />
-          sit amet
+          ¡Te damos la bienvenida!
         </div>
         <div className="formSection">
           <p>¡Que bueno verte!</p>
 
           <div className="form">
+            <div className="banner responsive" style={{color: 'var(--blink-main)'}}>
+              ¡Te damos la bienvenida!
+            </div>
+
+            <p className="responsive" style={{color: 'var(--blink-main)'}}>¡Que bueno verte!</p>
+
             <div className="formItem">
               <label>Correo electrónico</label>
               <OutlinedInput

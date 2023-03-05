@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import './App.css';
 import './Modal.css'
 import './Calendar.css'
+import './Buttons.css'
 import Loader from './components/Loader/Loader';
 import GlobalStateContext from './context/GlobalStateContext';
 import Rutas from './routes/Rutas';

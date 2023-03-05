@@ -11,6 +11,7 @@
 body {
   overflow-x: hidden;
   color: var(--blink-gray);
+  background-color: #B5B4EA;
 }
 
 :root {

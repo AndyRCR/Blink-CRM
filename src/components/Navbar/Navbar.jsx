@@ -1,8 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { GlobalContext } from '../../context/GlobalStateContext'
 import './Navbar.css'
 
 const Navbar = () => {
+
+  const {windowHeight} = useContext(GlobalContext)
 
   const [scroll, setScroll] = useState(0)
 
@@ -16,11 +19,15 @@ const Navbar = () => {
     return () =>{
         window.removeEventListener('scroll', handleScroll)
     }
+
+    // eslint-disable-next-line
 }, [scroll])
 
   return (
     <div className={scroll < 10 ? 'navbar' : 'navbar navbarTransparent'}>
-        <div className='logo'>blink</div>
+        <div className='logo'>
+          {windowHeight < 500 ? 'b' : 'blink'}
+        </div>
         <button
         onClick={() => {
           document.body.style.overflowY = 'auto'

@@ -28,3 +28,15 @@
     display: flex;
     align-items: center;
 }
+
+@media (max-width: 900px) {
+    .navbar{
+        padding: 25px 25px;
+    }
+}
+
+@media (max-width: 500px) {
+    .navbar{
+        padding: 10px 25px;
+    }
+}

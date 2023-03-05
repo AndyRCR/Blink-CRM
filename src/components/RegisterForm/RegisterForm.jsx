@@ -44,7 +44,7 @@ const RegisterForm = ({ position, setPosition }) => {
   return (
     position === 1 ? (
       <motion.div
-        className="registerForm section"
+        className="registerForm section largeSection"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}>

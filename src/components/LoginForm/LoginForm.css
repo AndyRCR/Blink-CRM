@@ -1,15 +1,149 @@
-.section .banner{
-    font-size: 93px;
-    font-weight: 800;
-    color: #fff;
-    line-height: 92px;
+.section .banner {
+  font-size: 93px;
+  font-weight: 800;
+  color: #fff;
+  line-height: 110px;
+  max-width: 650px;
 }
 
-.section .registerText{
-    cursor: pointer;
-    margin: 35px 0;
+.section .responsive {
+  display: none;
+}
+
+.section .registerText {
+  cursor: pointer;
+  margin: 35px 0;
+  text-align: center;
+  color: var(--blink-main);
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.section {
+  width: 100%;
+  display: flex;
+  padding: 0 120px;
+  justify-content: space-around;
+  align-items: center;
+  /* border: 1px dashed black; */
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  /* transition: .4s; */
+}
+
+.section .form {
+  padding: 60px 70px 35px;
+  border-radius: 24px;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.section .formItem {
+  display: flex;
+  flex-direction: column;
+  margin: 8px 0;
+  width: 330px;
+}
+
+.section .formSection p {
+  color: #fff;
+  font-size: 23px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.section label {
+  margin-bottom: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--blink-main);
+}
+
+.section .formOptions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.section .formOptions p {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--blink-main);
+  margin: 0;
+  cursor: pointer;
+}
+
+.section .secondaryButton {
+  width: 100%;
+}
+
+@media (max-width: 1400px) {
+  .section .banner {
+    font-size: 60px;
+    line-height: 90px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .section {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    padding: 20px;
+  }
+
+  .section .banner {
     text-align: center;
-    color: var(--blink-main);
-    font-size: 15px;
-    font-weight: 700;
+  }
+
+  .section .formSection p {
+    text-align: center;
+  }
+}
+
+@media (max-width: 700px) {
+  .section {
+    gap: 15px;
+  }
+
+  .section .banner {
+    font-size: 40px;
+    line-height: 60px;
+  }
+
+  .section .formSection p {
+    text-align: center;
+  }
+}
+
+@media (max-width: 500px) {
+  .section {
+    padding: 0;
+  }
+
+  .section .form{
+    border-radius: 0;
+    padding: 20px 20px 10px 20px;
+  }
+
+  .section .formSection {
+    height: 100%;
+  }
+
+  .section > .banner,
+  .section .formSection > p {
+    display: none;
+  }
+
+  .section .responsive {
+    display: block;
+  }
+
+  .section .secondaryButton {
+    margin-bottom: 30px;
+  }
+
+  .section .registerText{
+    margin: 0;
+  }
 }

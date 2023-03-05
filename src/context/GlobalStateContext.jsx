@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react'
+import React, { createContext, useEffect, useState } from 'react'
 import result from './ExampleResult'
 
 export const GlobalContext = createContext()
@@ -69,6 +69,7 @@ const GlobalStateContext = ({ children }) => {
      * General
      */
     const [menuState, setMenuState] = useState(false)
+    const [windowHeight, setWindowHeight] = useState(document.body.clientWidth)
 
     /**
      * Questions
@@ -129,7 +130,7 @@ const GlobalStateContext = ({ children }) => {
         { id: '0015', cotizedBy: cotizedBy[random(0, 3)], client: 'Buscaglia test15', capitas: random(1, 5), prepaga: 'OMINT', plan: 'PLAN 4500', situation: situation[random(0, 1)], date: '14/11/2022' }
     ])
 
-    const [ventas, setVentas] = useState([...Array(15).keys()].map((el,i) => {
+    const [ventas, setVentas] = useState([...Array(15).keys()].map((el, i) => {
         return {
             id: 3445 + i,
             status: status[random(0, 3)],
@@ -144,15 +145,15 @@ const GlobalStateContext = ({ children }) => {
             commission: '7.469,32',
             capitas: 5,
             quotations: [
-                {prepaga: 'DOCTORED', plan: '3000', ammount: '20.000'},
-                {prepaga: 'OMINT', plan: '4021', ammount: '10.000'},
-                {prepaga: 'GALENO', plan: 'ORO 550', ammount: '30.000'}
+                { prepaga: 'DOCTORED', plan: '3000', ammount: '20.000' },
+                { prepaga: 'OMINT', plan: '4021', ammount: '10.000' },
+                { prepaga: 'GALENO', plan: 'ORO 550', ammount: '30.000' }
             ],
             relatives: [
-                {firstName: 'Homero', lastName: 'Simson', relation: 'Pareja', document: '482354546', birthdate: '20/02/1963'},
-                {firstName: 'Margaret', lastName: 'Simson', relation: 'Otro', document: '482354546', birthdate: '16/06/1973'},
-                {firstName: 'Lisa', lastName: 'Simson', relation: 'Hijo/a', document: '482354546', birthdate: '23/10/2014'},
-                {firstName: 'Hugo', lastName: 'Simson', relation: 'Hijo/a', document: '482354546', birthdate: '05/09/2016'}
+                { firstName: 'Homero', lastName: 'Simson', relation: 'Pareja', document: '482354546', birthdate: '20/02/1963' },
+                { firstName: 'Margaret', lastName: 'Simson', relation: 'Otro', document: '482354546', birthdate: '16/06/1973' },
+                { firstName: 'Lisa', lastName: 'Simson', relation: 'Hijo/a', document: '482354546', birthdate: '23/10/2014' },
+                { firstName: 'Hugo', lastName: 'Simson', relation: 'Hijo/a', document: '482354546', birthdate: '05/09/2016' }
             ]
         }
     }))
@@ -184,14 +185,27 @@ const GlobalStateContext = ({ children }) => {
     }
 
     const [tests, setTests] = useState([
-        {approbed: false, attempts: 0, date: null},
-        {approbed: false, attempts: 0, date: null},
-        {approbed: false, attempts: 0, date: null},
-        {approbed: false, attempts: 0, date: null},
-        {approbed: false, attempts: 0, date: null},
-        {approbed: false, attempts: 0, date: null},
-        {approbed: false, attempts: 0, date: null}
+        { approbed: false, attempts: 0, date: null },
+        { approbed: false, attempts: 0, date: null },
+        { approbed: false, attempts: 0, date: null },
+        { approbed: false, attempts: 0, date: null },
+        { approbed: false, attempts: 0, date: null },
+        { approbed: false, attempts: 0, date: null },
+        { approbed: false, attempts: 0, date: null }
     ])
+
+
+    const handleResize = () => setWindowHeight(document.body.clientWidth)
+
+    useEffect(() => {
+        window.addEventListener('resize', handleResize)
+
+        return () => {
+            window.removeEventListener('resize', handleResize)
+        }
+
+        // eslint-disable-next-line
+    }, [])
 
     return (
         <GlobalContext.Provider
@@ -221,7 +235,7 @@ const GlobalStateContext = ({ children }) => {
                 obtainResults,
                 questionTimer, setQuestionTimer,
                 currentLevel, setCurrentLevel,
-                secondsForTest
+                secondsForTest, windowHeight
             }}
         >
             {children}
