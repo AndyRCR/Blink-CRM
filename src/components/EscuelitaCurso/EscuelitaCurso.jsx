@@ -32,16 +32,6 @@ const EscuelitaCurso = ({position, setPosition}) => {
 
     return (
         <div className="escuelitaCurso">
-            <button
-            onClick={() => setPosition(0)}
-            className='secondaryButton'
-            style={{
-                display: position === 0 ? 'none' : 'flex'
-            }}>
-                <ReplyOutlinedIcon/>
-                Volver
-            </button>
-
             <div className='videoContainer'>
                 <video key={videoSource} controls>
                     <source src={videoSource} type='video/mp4' />
@@ -75,6 +65,15 @@ const EscuelitaCurso = ({position, setPosition}) => {
                 </div>
             </div>
 
+            <button
+            onClick={() => setPosition(0)}
+            className='secondaryButton'
+            style={{
+                display: position === 0 ? 'none' : 'flex'
+            }}>
+                <ReplyOutlinedIcon/>
+                Volver
+            </button>
         </div>
     )
 }

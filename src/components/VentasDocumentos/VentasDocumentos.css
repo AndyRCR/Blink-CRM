@@ -39,3 +39,9 @@
     font-size: 15px;
     font-weight: 700;
 }
+
+@media (max-width: 1200px){
+    .ventasDocumentos .documentsContainer {
+        padding: 20px;
+    }
+}

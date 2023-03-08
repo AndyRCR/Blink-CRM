@@ -6,10 +6,6 @@
   max-width: 650px;
 }
 
-.section .responsive {
-  display: none;
-}
-
 .section .registerText {
   cursor: pointer;
   margin: 35px 0;
@@ -78,6 +74,11 @@
 }
 
 @media (max-width: 1400px) {
+  .section {
+    gap: 40px;
+    padding: 40px;
+  }
+
   .section .banner {
     font-size: 60px;
     line-height: 90px;
@@ -89,6 +90,10 @@
     flex-direction: column;
     align-items: center;
     gap: 40px;
+    padding: 0 80px 30px;
+  }
+
+  .section.loginForm {
     padding: 20px;
   }
 
@@ -96,8 +101,9 @@
     text-align: center;
   }
 
-  .section .formSection p {
+  .section .formSection > p {
     text-align: center;
+    font-size: 18px;
   }
 }
 
@@ -114,6 +120,14 @@
   .section .formSection p {
     text-align: center;
   }
+
+  .registerForm .registerSlogan h2 {
+    font-size: 20px;
+  }
+
+  .section.largeSection {
+    padding: 0 20px 20px;
+  }
 }
 
 @media (max-width: 500px) {
@@ -121,8 +135,7 @@
     padding: 0;
   }
 
-  .section .form{
-    border-radius: 0;
+  .section .form {
     padding: 20px 20px 10px 20px;
   }
 
@@ -130,20 +143,13 @@
     height: 100%;
   }
 
-  .section > .banner,
-  .section .formSection > p {
-    display: none;
-  }
-
-  .section .responsive {
-    display: block;
-  }
-
   .section .secondaryButton {
     margin-bottom: 30px;
   }
+}
 
-  .section .registerText{
-    margin: 0;
+@media (max-width: 500px) {
+  .section .formItem {
+    margin: 15px 0;
   }
 }

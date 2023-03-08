@@ -43,3 +43,23 @@
     align-items: center;
     gap: 16px;
 }
+
+@media (max-width: 1200px){
+    .soporteContacto {
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 500px){
+    .soporteContacto{
+        padding: 0 20px 20px;
+    }
+    
+    .soporteContacto .item {
+        flex-direction: column;
+    }
+
+    .soporteContacto h3{
+        text-align: center;
+    }
+}

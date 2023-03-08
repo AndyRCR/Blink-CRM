@@ -11,3 +11,12 @@
     right: 34px;
     z-index: 30;
 }
+
+@media (max-width: 1300px){
+    .escuelitaViewContainer .escuelitaCurso .secondaryButton {
+        position: relative;
+        bottom: 0;
+        right: 0;
+        top: 0 !important;
+    }
+}

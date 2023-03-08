@@ -9,7 +9,7 @@
     flex-flow: row nowrap;
     transition: .3s;
     background-color: var(--blink-main);
-    min-height: 100vh;
+    min-height: calc(100vh - 100px);
 }
 
 .loginViewContainer:has(.largeSection){
@@ -18,7 +18,7 @@
 
 
 @media (max-width: 1200px) {
-    .loginViewContainer{
+    .loginViewContainer:has(.loginForm){
         margin-top: 100px;
         align-items: flex-start;
     }
@@ -32,10 +32,20 @@
 }
 
 @media (max-width: 500px) {
+    .login > div{
+        min-height: 100vh;
+    }
+
     .loginViewContainer{
         margin-top: 62px;
-        align-items: flex-start;
+        align-items: center;
         min-height: auto;
         height: 100%;
+        padding: 30px 10px 0;
+        min-height: calc(100vh - 62px);
+    }
+
+    .loginViewContainer:has(.loginForm) {
+        margin-top: 62px;
     }
 }

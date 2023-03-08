@@ -8,9 +8,7 @@ import CotizadorResultItem from '../CotizadorResultItem/CotizadorResultItem'
 
 const CotizadorResultsCarousel = () => {
 
-    const { obtainResults, results, setResults, filteredResults, position, setPosition, setFilteredResults } = useContext(GlobalContext)
-
-    const [resize, setResize] = useState(window.innerWidth < 900)
+    const {windowHeight, obtainResults, results, setResults, filteredResults, position, setPosition, setFilteredResults } = useContext(GlobalContext)
 
     const pixelToInt = (pixels) => {
         return parseInt(pixels.slice(0, pixels.indexOf('p')))
@@ -20,7 +18,6 @@ const CotizadorResultsCarousel = () => {
         const carousel = document.querySelector('.carousel')
         const style = window.getComputedStyle(document.querySelector('.carousel .result'))
         const width = style.getPropertyValue('width')
-        setResize(window.innerWidth < 900)
         carousel.style.width = `${pixelToInt(width) * 4 + 16 * 4}px`
     }
 
@@ -116,10 +113,10 @@ const CotizadorResultsCarousel = () => {
         }
 
         // eslint-disable-next-line
-    }, [position, resize])
+    }, [position, windowHeight])
 
     return (
-        <div className='cotizadorResultsCarousel' style={{ width: resize ? 'fit-content' : '100%' }}>
+        <div className='cotizadorResultsCarousel' style={{ width: windowHeight < 900 ? 'fit-content' : '100%' }}>
             <CotizadorBenefits />
             <div className='scrollButton' onClick={moveRight}>
                 <ArrowBackIosRoundedIcon className='scrollIcon'/>

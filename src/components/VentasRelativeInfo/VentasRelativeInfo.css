@@ -31,3 +31,16 @@
     display: flex;
     gap: 8px;
 }
+
+@media (max-width: 1200px){
+    .ventasRelativeInfo .saleForm {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 700px){
+    .ventasRelativeInfo .rowForm {
+        display: flex;
+        flex-direction: column;
+    }
+}

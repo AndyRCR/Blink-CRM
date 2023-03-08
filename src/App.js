@@ -4,6 +4,7 @@ import './App.css';
 import './Modal.css'
 import './Calendar.css'
 import './Buttons.css'
+import './SliderBar.css'
 import Loader from './components/Loader/Loader';
 import GlobalStateContext from './context/GlobalStateContext';
 import Rutas from './routes/Rutas';

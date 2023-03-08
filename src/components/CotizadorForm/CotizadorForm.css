@@ -133,3 +133,84 @@
     line-height: 22px;
     color: var(--gris-blink);
 }
+
+@media(max-width: 1680px){
+    .cotizadorForm .form{
+        width: 80%;
+    }
+}
+
+@media(max-width: 1520px){
+    .cotizadorForm .form{
+        width: 90%;
+    }
+}
+
+@media(max-width: 1240px){
+    .cotizadorForm .subForm {
+        margin: 0 20px;
+    }
+}
+
+@media(max-width: 1140px){
+    .cotizadorForm .formItem input, .cotizadorForm .formItem .customSelect {
+        min-width: 200px;
+    }
+}
+
+@media(max-width: 780px){
+    .cotizadorForm .form{
+        flex-direction: column;
+        width: 80%;
+    }
+
+    .cotizadorForm .subForm{
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 30px;
+    }
+
+    .cotizadorForm .divisor{
+        width: 100%;
+        border-bottom: 1px solid rgb(207, 207, 207);
+        margin: 20px 0;
+    }
+
+    .cotizadorForm .formCaptcha,
+    .cotizadorForm .formButton{
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+
+    .cotizadorForm .formItem.formButton{
+        width: 100%;
+        justify-content: center;
+    }
+
+    .cotizadorForm .sendButton{
+        width: 50%;
+    }
+
+    .cotizadorForm .formItem p {
+        font-size: 12px;
+    }
+}
+
+@media(max-width: 540px){
+    .cotizadorForm .subForm{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .cotizadorForm .form {
+        overflow-x: hidden;
+        width: 70%;
+    }
+
+    .cotizadorForm .sendButton{
+        width: 100%;
+    }
+}

@@ -41,12 +41,6 @@ const LoginForm = ({ position, setPosition }) => {
           <p>¡Que bueno verte!</p>
 
           <div className="form">
-            <div className="banner responsive" style={{color: 'var(--blink-main)'}}>
-              ¡Te damos la bienvenida!
-            </div>
-
-            <p className="responsive" style={{color: 'var(--blink-main)'}}>¡Que bueno verte!</p>
-
             <div className="formItem">
               <label>Correo electrónico</label>
               <OutlinedInput

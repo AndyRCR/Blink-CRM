@@ -3,3 +3,9 @@
     margin: 0 auto;
     top: 0;
 }
+
+@media (max-width: 1200px){
+    .background{
+        display: none;
+    }
+}

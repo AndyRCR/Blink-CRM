@@ -1,0 +1,57 @@
+.responsiveMenu{
+    position: absolute;
+    top: 108px;
+    left: -100%;
+    width: 100vw;
+    height: calc(100vh - 108px);
+    background: rgba(71, 68, 204, 0.77);
+    backdrop-filter: blur(7.3px);
+    -webkit-backdrop-filter: blur(7.3px);
+    z-index: 10;
+    transition: .5s;
+    display: none;
+}
+
+.responsiveMenu.extended{
+    left: 0;
+}
+
+.responsiveMenu .responsiveMenuItem{
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.responsiveMenu .responsiveMenuItem:hover{
+    color: var(--blink-secondary);
+}
+
+.responsiveMenu .responsiveMenuItem.active{
+    color: var(--blink-secondary);
+}
+
+.responsiveMenu .menuOptions{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+@media (max-width: 900px){
+    .responsiveMenu{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        padding: 10px 0;
+    }
+}
+
+@media (max-width: 600px){
+    .responsiveMenu{
+        top: 82px;
+        height: calc(100vh - 82px);
+    }
+}

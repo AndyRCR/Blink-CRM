@@ -47,3 +47,10 @@
     background-color: #D1C4E9;
     color: #170296;
 }
+
+@media (max-width: 500px){
+    .paginationContainer{
+        flex-direction: column-reverse;
+        gap: 15px;
+    }
+}

@@ -1,6 +1,6 @@
 .ventasMisVentas{
     padding: 0 24px;
-    height: 100%;
+    height: fit-content;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

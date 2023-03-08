@@ -8,7 +8,11 @@ const VentasViewContainer = () => {
     const [position, setPosition] = useState(0)
 
     const handleResize = () => {
-        const width = document.querySelector(".ventasViewContainer .sliderContainer").clientWidth
+        // const width = document.querySelector(".ventasViewContainer .sliderContainer").clientWidth
+
+        const sliderContainer = document.querySelector(".ventasViewContainer > .sliderContainer")
+        const width = sliderContainer.clientWidth
+        sliderContainer.style.minHeight = document.querySelector(`.ventasViewContainer > .sliderContainer .sliderItem:nth-child(${position + 1}) > div`).clientHeight + 100 + 'px'
 
         document
             .querySelectorAll(".ventasViewContainer .sliderContainer .sliderItem")

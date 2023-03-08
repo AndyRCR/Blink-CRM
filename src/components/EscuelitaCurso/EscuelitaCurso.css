@@ -56,3 +56,15 @@
     width: 100%;
     right: auto;
 }
+
+@media (max-width: 1450px){
+    .escuelitaCurso .videoContainer {
+        min-width: auto;
+    }
+}
+
+@media (max-width: 1300px){
+    .escuelitaCurso {
+        flex-direction: column;
+    }
+}

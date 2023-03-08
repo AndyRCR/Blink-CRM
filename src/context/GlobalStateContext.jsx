@@ -53,6 +53,7 @@ const GlobalStateContext = ({ children }) => {
      */
     const [isDisplayed, setIsDisplayed] = useState(false)
     const [filtersDisplayed, setFiltersDisplayed] = useState(false)
+    const [responsiveMenuDisplayed, setResponsiveMenuDisplayed] = useState(false)
 
     /**
      *  Filters
@@ -235,7 +236,8 @@ const GlobalStateContext = ({ children }) => {
                 obtainResults,
                 questionTimer, setQuestionTimer,
                 currentLevel, setCurrentLevel,
-                secondsForTest, windowHeight
+                secondsForTest, windowHeight,
+                responsiveMenuDisplayed, setResponsiveMenuDisplayed
             }}
         >
             {children}

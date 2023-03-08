@@ -214,6 +214,54 @@ const RegisterForm = ({ position, setPosition }) => {
             </div>
           </div>
         </div>
+
+        <div className="registerSlogan">
+          <h2 className="responsive">
+            Nuestros beneficios
+          </h2>
+
+          <ul className="responsive">
+            <li>
+              Te ofrecemos una herramienta basada en IA para comparar planes de salud y sus
+              beneficios, todo online.
+            </li>
+            <li>
+              Gestiona la venta de planes de salud de manera rápida y sencilla, con opciones de
+              pago seguras.
+            </li>
+            <li>
+              Servicio de atención al cliente asistido por nuestro equipo de soporte para ayudar a
+              tus clientes a resolver cualquier duda o problema que puedan tener.
+            </li>
+            <li>
+              Condiciones comerciales: Rentabiliza tu cartera de clientes con el mejor programa
+              de beneficios del mercado.
+            </li>
+            <li>
+              Recordatorios de pagos automáticos a tus afiliados para asegurarse de que no se
+              olviden ningún pago y que su cobertura de salud no se vea comprometida.
+            </li>
+            <li>
+              Información actualizada sobre la red de prestadores de la prepaga, incluyendo
+              médicos especialistas, clínicas y farmacias.
+            </li>
+            <li>
+              Acceso a descuentos y promociones: ofrecer a los usuarios acceso a descuentos y
+              promociones especiales en planes de salud y servicios relacionados con la salud.
+            </li>
+            <li>
+              Capacitación constante, Escuelita e-learning para que puedas explotar tu potencial
+              sumando nuevos conocimientos.
+            </li>
+            <li>
+              Campañas de marketing digital focalizadas para sumar leads a tu cartera.
+            </li>
+            <li>
+              Protección de datos personales, utilizamos estándares de calidad robustos para
+              garantizar la seguridad de los datos
+            </li>
+          </ul>
+        </div>
       </motion.div>
     ) : false
   );

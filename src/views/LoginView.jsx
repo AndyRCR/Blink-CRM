@@ -6,6 +6,7 @@ const LoginView = () => {
   return (
     <motion.div
     className='login'
+    style={{minHeight: '100vh'}}
     initial={{opacity: 0}}
     animate={{opacity: 1}}
     exit={{opacity: 0}}>

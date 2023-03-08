@@ -7,6 +7,8 @@
     justify-content: space-between;
     overflow: hidden;
     transition: .3s;
+    background-color: #fff;
+    /* z-index: 10; */
 }
 
 .menu.folded{
@@ -87,4 +89,10 @@
     font-weight: 700;
     padding-left: 24px;
     transition: .3s;
+}
+
+@media (max-width: 900px){
+    .menu{
+        display: none;
+    }
 }

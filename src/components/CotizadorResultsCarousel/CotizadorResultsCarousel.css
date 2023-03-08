@@ -63,7 +63,7 @@
     font-size: 25px;
 }
 
-@media(max-width: 1400px){
+@media(max-width: 1640px){
     .cotizadorResultsCarousel h2 {
         font-size: 25px;
     }
@@ -73,7 +73,7 @@
     }
 }
 
-@media(max-width: 1245px){
+@media(max-width: 1485px){
     .cotizadorResultsCarousel h2 {
         font-size: 20px;
     }

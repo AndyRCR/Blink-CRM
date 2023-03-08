@@ -10,7 +10,12 @@ const DashboardNavbar = () => {
 
     const navigate = useNavigate()
 
-    const { user, menuState, setMenuState } = useContext(GlobalContext)
+    const {windowHeight, user, menuState, setMenuState, setResponsiveMenuDisplayed, responsiveMenuDisplayed } = useContext(GlobalContext)
+
+    const handleMenu = () => {
+        if(windowHeight <= 900) setResponsiveMenuDisplayed(!responsiveMenuDisplayed)
+        else setMenuState(!menuState)
+    }
 
     return (
         <div className='dashboardNavbar'>
@@ -19,17 +24,24 @@ const DashboardNavbar = () => {
                     <IconButton
                         color="inherit"
                         aria-label="Open drawer"
-                        onClick={() => setMenuState(!menuState)}
+                        onClick={handleMenu}
                     >
                         <MenuIcon
-                            sx={!menuState
+                            sx={
+                                windowHeight <= 900
+                                ? (!responsiveMenuDisplayed
                                 ? classes.menuButtonIconOpen
-                                : classes.menuButtonIconClosed
+                                : classes.menuButtonIconClosed)
+                                : (!menuState
+                                ? classes.menuButtonIconOpen
+                                : classes.menuButtonIconClosed)
                             }
                         />
                     </IconButton>
                 </div>
-                <div className='logo'>blink</div>
+                <div className='logo'>
+                    blink
+                </div>
             </div>
             <div className='navbarOptions'>
                 <div className='user'>

@@ -8,6 +8,7 @@ import Navbar from './Navbar/Navbar'
 import Swal from 'sweetalert2'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import ResponsiveMenu from './ResponsiveMenu/ResponsiveMenu'
 
 const Layout = () => {
 
@@ -39,6 +40,7 @@ const Layout = () => {
           </div>
         </div>
         <DashboardNavbar />
+        <ResponsiveMenu />
         <div className='panelContainer'>
           <Menu />
           <Outlet />

@@ -24,3 +24,13 @@
     font-size: 15px;
     font-weight: 500;
 }
+
+@media (max-width: 1200px){
+    .soporteFAQ {
+        padding: 0 20px 20px;
+    }
+
+    .soporteFAQ .inputContainer {
+        padding: 0 20px;
+    }
+}

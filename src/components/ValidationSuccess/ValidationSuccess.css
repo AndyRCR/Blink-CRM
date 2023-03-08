@@ -29,3 +29,25 @@
     font-weight: 700;
     color: var(--blink-gray);
 }
+
+@media (max-width: 800px){
+    .validationSuccess .validationItem {
+        width: 100%;
+    }
+}
+
+@media (max-width: 700px){
+    .validationSuccess img {
+        width: 120px;
+    }
+
+    .validationForm .validationSuccess p.validationSuccessTitle {
+        font-size: 25px;
+    }
+
+    .validationForm .validationSuccess p.validationSuccessInfo {
+        padding: 10px 0 30px;
+        font-size: 15px;
+    }
+}
+

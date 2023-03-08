@@ -24,6 +24,7 @@
 .homeViewContainer .firstContainer{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     gap: 24px;
 }
 
@@ -82,4 +83,38 @@
     border-radius: 20px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     padding: 18px 20px;
+}
+
+@media (max-width: 1200px){
+    .dashboardGraph {
+        grid-column: 1/6;
+        grid-row: 1/2;
+    }
+
+    .dashboardLastSales {
+        grid-column: 1/6;
+        grid-row: 2/3;
+    }
+
+    .dashboardQuotes {
+        grid-column: 1/6;
+        grid-row: 3/4;
+    }
+
+    .dashboardLiquidations {
+        grid-column: 1/6;
+        grid-row: 4/5;
+    }
+}
+
+@media (max-width: 600px){
+    .homeViewContainer .firstContainer {
+        flex-direction: column;
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+
+    .homeViewContainer .levelContainer {
+        width: 100%;
+    }
 }

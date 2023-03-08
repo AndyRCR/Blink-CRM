@@ -61,3 +61,40 @@
     gap: 24px;
     width: 100%;
 }
+
+@media (max-width: 1200px){
+    .escuelitaExamen .sliderContainer .sliderItem {
+        padding: 40px 20px;
+    }
+
+    .escuelitaExamen .levelInfo {
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 700px){
+    .escuelitaPregunta {
+        padding: 40px 20px;
+    }
+
+    .escuelitaPregunta .nextButton {
+        justify-content: center;
+    }
+
+    .escuelitaExamen .resultTitle {
+        font-size: 30px;
+    }
+
+    .escuelitaExamen .resultCard p {
+        width: auto;
+        font-size: 15px;
+    }
+
+    .escuelitaExamen img {
+        width: 120px;
+    }
+
+    .escuelitaExamen .resultButtons {
+        justify-content: center !important;
+    }
+}

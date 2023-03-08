@@ -14,7 +14,9 @@ const CotizadorViewContainer = () => {
     const [client, setClient] = useState(null)
 
     const handleResize = () => {
-        const width = document.querySelector(".cotizadorViewContainer .sliderContainer").clientWidth
+        const sliderContainer = document.querySelector(".cotizadorViewContainer .sliderContainer")
+        const width = sliderContainer.clientWidth
+        sliderContainer.style.height = document.querySelector(`.cotizadorViewContainer .sliderContainer .sliderItem:nth-child(${position + 1}) > div`).clientHeight + 100 + 'px'
 
         document
             .querySelectorAll(".cotizadorViewContainer .sliderContainer .sliderItem")

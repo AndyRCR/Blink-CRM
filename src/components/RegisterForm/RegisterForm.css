@@ -14,12 +14,31 @@
 .registerForm .registerSlogan h2{
     font-size: 40px;
     margin: 20px 0 40px;
+}
+
+.registerForm .registerSlogan:not(:has(.responsive)) h2{
     max-width: 720px;
 }
 
 .registerForm .registerSlogan ul{
-    max-width: 650px;
     font-size: 17px;
+    text-align: justify;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.registerForm .registerSlogan:not(:has(.responsive)) ul{
+    max-width: 650px;
+}
+
+.registerForm .registerSlogan .responsive {
+    display: none;
+    max-width: 900px;
+}
+
+.registerForm .registerSlogan ul.responsive {
+    max-width: 900px;
 }
 
 .registerForm .telInput{
@@ -30,3 +49,58 @@
 .registerForm .secondaryButton{
     margin-top: 16px;
 }
+
+@media (max-width: 1400px) {
+    .registerForm .registerSlogan h2 {
+        font-size: 30px;
+    }
+
+    .registerForm .registerSlogan ul {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .registerForm .registerSlogan h2 {
+        text-align: center;
+    }
+
+    .registerForm .registerSlogan:not(:has(.responsive)) h2 {
+        margin-bottom: 0;
+    }
+
+    .registerForm .registerSlogan ul {
+        display: none;
+    }
+
+    .registerForm .registerSlogan ul.responsive {
+        display: flex;
+    }
+
+    .registerForm .registerSlogan h2.responsive {
+        display: block;
+    }
+}
+
+@media (max-width: 900px) {
+    .registerForm .registerSlogan h2 {
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 700px) {
+    .registerForm .registerSlogan h2 {
+        font-size: 20px;
+    }
+
+    .registerForm .registerSlogan ul.responsive {
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 500px) {
+    .registerForm.section {
+        margin-top: 0;
+    }
+}
+

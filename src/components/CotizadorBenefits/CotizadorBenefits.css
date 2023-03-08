@@ -34,3 +34,49 @@
     color: var(--blink-gray);
     margin: 0 16px;
 }
+
+@media(max-width: 1640px){
+    .cotizadorBenefits .benefitsHeader h3 {
+        font-size: 25px;
+    }
+
+    .cotizadorBenefits.benefitContainer .benefitItem p {
+        font-size: 12px;
+    }
+}
+
+@media(max-width: 1485px){
+    .cotizadorBenefits .benefitsHeader {
+        height: 200px;
+    }
+
+    .cotizadorBenefits .benefitItem img{
+        width: 25px;
+    }
+
+    .cotizadorBenefits.benefitContainer {
+        width: 180px;
+    }
+}
+
+@media(max-width: 1300px){
+    .cotizadorBenefits.benefitContainer .benefitItem p {
+        font-size: 10px;
+    }
+
+    .cotizadorBenefits .benefitItem {
+        padding: 0 10px;
+    }
+
+    .cotizadorBenefits .benefitItem img {
+        width: 20px;
+    }
+
+    .cotizadorBenefits.benefitContainer {
+        width: 145px;
+    }
+
+    .cotizadorBenefits .benefitsHeader {
+        height: 170px;
+    }
+}

@@ -92,7 +92,7 @@ const classes = {
     },
     customSlider: {
         // pointerEvents: 'none',
-        zIndex: "100",
+        zIndex: "5",
         height: 24,
         "& .MuiSlider-thumb": {
             height: 32,

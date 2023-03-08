@@ -13,7 +13,7 @@ const ClientesFilter = ({ handleFilter, filterValue, setFiltersDisplayed, filter
 
     return (
         <div className='clientesFilter'>
-            <div className="filterItem">
+            <div className="filterItem paginationFilter">
                 <FormControl>
                     <Select
                         name='perPage'
@@ -32,7 +32,7 @@ const ClientesFilter = ({ handleFilter, filterValue, setFiltersDisplayed, filter
                 </FormControl>
                 <p>{window.location.pathname === '/clientes' ? 'Clientes' : 'Ventas'} por página</p>
             </div>
-            <div className="filterItem" style={{width: '30%'}}>
+            <div className="filterItem searchBar">
                 <FormControl sx={{ width: '100%'}}>
                     <OutlinedInput
                         placeholder='Buscar'

@@ -32,3 +32,15 @@
     gap: 24px;
     justify-content: center;
 }
+
+@media (max-width: 1200px){
+    .liquidationsContainer .row {
+        justify-content: space-around;
+    }
+}
+
+@media (max-width: 500px){
+    .liquidationsContainer {
+        flex-direction: column;
+    }
+}

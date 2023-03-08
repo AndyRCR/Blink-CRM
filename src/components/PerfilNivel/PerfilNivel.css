@@ -1,8 +1,8 @@
 .perfilNivel {
-    width: 100%;
-    height: 290px;
-    perspective: 1000px;
-    position: relative;
+  width: 100%;
+  height: 290px;
+  perspective: 1000px;
+  position: relative;
 }
 
 .perfilNivel .cardFront,
@@ -18,7 +18,7 @@
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
-  transition: .5s;
+  transition: 0.5s;
 }
 
 .cardFront {
@@ -59,7 +59,7 @@
   background-color: var(--blink-secondary);
 }
 
-.perfilNivel .status2.cardBack .nivelBody{
+.perfilNivel .status2.cardBack .nivelBody {
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -95,4 +95,14 @@
 .perfilNivel .levelItem p {
   font-size: 14px;
   font-weight: 500;
+}
+
+@media (max-width: 600px) {
+  .perfilNivel {
+    max-width: 350px;
+  }
+
+  .perfilNivel .nivelHeader {
+    text-align: center;
+}
 }

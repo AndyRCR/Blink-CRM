@@ -89,8 +89,40 @@ ul.modalTextStepOne li {
 .panelContainer > div:nth-child(2) {
   overflow-y: auto;
   flex-grow: 1;
+  /* background-color: #fff; */
 }
 
 .panelContainer > div.home {
   overflow-y: visible;
+}
+
+@media (max-width: 1440px){
+  .panelContainer > div:nth-child(2) .buttonVariant, 
+  .panelContainer > div:nth-child(2) .secondaryButton {
+    font-size: 13px;
+    padding: 10px 40px;
+    height: fit-content;
+  }
+}
+
+@media (max-width: 750px){
+  .popupContainer {
+    padding: 50px !important;
+  }
+}
+
+@media (max-width: 600px){
+  .panelContainer {
+    height: calc(100vh - 82px);
+  }
+
+  .popupDecisionContainer {
+    padding: 20px 10px !important;
+  }
+}
+
+@media (max-width: 500px){
+  .popupContainer {
+    padding: 50px 20px !important;
+  }
 }

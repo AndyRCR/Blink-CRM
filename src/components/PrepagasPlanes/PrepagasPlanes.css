@@ -48,3 +48,19 @@
     align-items: center;
     gap: 24px;
 }
+
+@media (max-width: 1200px){
+    .prepagasPlanes{
+        padding: 0 20px;
+    }
+
+    .prepagasPlanes .inputContainer{
+        padding: 0;
+    }
+}
+
+@media (max-width: 600px){
+    .prepagasPlanes img {
+        width: 150px;
+    }
+}

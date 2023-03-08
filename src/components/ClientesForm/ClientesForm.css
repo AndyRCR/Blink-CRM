@@ -99,3 +99,40 @@
     display: flex;
     justify-content: flex-end;
 }
+
+@media (max-width: 900px){
+    .clientesForm .formSection .formGrid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+
+    .clientesForm .formSection:nth-child(1) .formGrid {
+        padding: 0 20px;
+    }
+
+    .clientesForm .cotizacion {
+        grid-column: span 1/span 1;
+    }
+
+    .clientesForm .formItem.optional {
+        justify-content: center;
+    }
+
+    .clientesForm .modalButton {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 600px){
+    .clientesForm .formSection:nth-child(2) .formGrid {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 24px;
+        padding: 0 50px;
+    }
+
+    .clientesForm .cotizacion {
+        grid-column: span 1/span 1;
+    }
+}

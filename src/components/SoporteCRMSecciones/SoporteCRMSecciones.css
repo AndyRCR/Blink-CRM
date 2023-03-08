@@ -35,3 +35,9 @@
 .soporteCRMSecciones .inputContainer{
     margin-bottom: 40px;
 }
+
+@media (max-width: 1200px){
+    .soporteCRMSecciones {
+        padding: 0 20px;
+    }
+}

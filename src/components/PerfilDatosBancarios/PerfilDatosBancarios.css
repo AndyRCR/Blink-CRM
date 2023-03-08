@@ -1,3 +1,9 @@
 .perfilDatosBancarios{
     padding: 0 80px;
 }
+
+@media (max-width: 900px){
+    .perfilDatosBancarios {
+        padding: 0 20px;
+    }
+}

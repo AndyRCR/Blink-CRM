@@ -5,6 +5,10 @@
     margin-bottom: 48px;
 }
 
+.clientesFilter .searchBar{
+    width: 30%;
+}
+
 .clientesFilter .filterButtons{
     display: flex;
     gap: 10px;
@@ -23,4 +27,81 @@
 
 .clientesFilter .secondaryButton{
     padding: 16px 20px;
+}
+
+@media (max-width: 1200px){
+    .clientesFilter{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+        grid-auto-flow: dense;
+    }
+
+    .clientesFilter .searchBar{
+        width: 100%;
+        grid-column: 1/3;
+        order: 1;
+    }
+
+    .clientesFilter .paginationFilter{
+        order: 2;
+    }
+
+    .clientesFilter .filterButtons{
+        order: 3;
+        justify-content: flex-end;
+    }
+}
+
+@media (max-width: 900px){
+    .clientes .clientesFilter .paginationFilter{
+        grid-row: 3/4;
+        grid-column: 1/3;
+        justify-content: center;
+    }
+
+    .clientes .clientesFilter .filterButtons{
+        grid-column: 1/3;
+        justify-content: space-around;
+    }
+}
+
+@media (max-width: 700px){
+    .clientesFilter {
+        margin-bottom: 20px;
+    }
+
+    .clientesFilter .paginationFilter{
+        grid-column: 1/3;
+        order: 3;
+        justify-content: center;
+    }
+
+    .clientesFilter .filterButtons{
+        grid-column: 1/3;
+        order: 2;
+        justify-content: space-around;
+    }
+}
+
+@media (max-width: 600px){
+    .clientesFilter .filterButtons:has(.secondaryButton){
+        display: grid;
+        gap: 25px;
+        padding: 0 50px;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .clientes .clientesFilter .filterButtons{
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        align-items: center;
+    }
+
+    .clientesFilter .filterButtons .filterItem:has(.secondaryButton){
+        grid-column: 1 / 3;
+        display: flex;
+        justify-content: center;
+    }
 }

@@ -7,22 +7,27 @@ const SoporteViewContainer = () => {
 
     const [position, setPosition] = useState(0)
 
-    useEffect(() => {
-        const handleResize = () => {
-            const width = document.querySelector(".soporteViewContainer .sliderContainer.firstLevelSlider").clientWidth
-        
-            document
-              .querySelectorAll(".soporteViewContainer .sliderContainer.firstLevelSlider .sliderItem.firstLevelItem")
-              .forEach((el) => {
-                el.style.transform = `translateX(-${width * position}px)`
-              })
-        }
+    const handleResize = () => {
+        const width = document.querySelector(".soporteViewContainer .sliderContainer.firstLevelSlider").clientWidth
+        // const sliderContainer = document.querySelector(".soporteViewContainer > .sliderContainer")
+        // const width = sliderContainer.clientWidth
+        // sliderContainer.style.minHeight = document.querySelector(`.soporteViewContainer > .sliderContainer .sliderItem:nth-child(${position + 1}) > div`).clientHeight + 100 + 'px'
 
+        document
+          .querySelectorAll(".soporteViewContainer > .sliderContainer.firstLevelSlider .sliderItem.firstLevelItem")
+          .forEach((el) => {
+            el.style.transform = `translateX(-${width * position}px)`
+          })
+    }
+
+    useEffect(() => {
         handleResize()
 
         window.addEventListener("resize", handleResize)
 
         return () => window.removeEventListener("resize", handleResize)
+
+        // eslint-disable-next-line
     }, [position])
 
     return (

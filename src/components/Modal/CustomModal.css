@@ -28,7 +28,7 @@
     width: fit-content;
     max-width: 1150px;
     /* max-height: 90%; */
-    min-width: 900px;
+    /* min-width: 900px; */
     overflow: hidden;
 }
 
@@ -64,4 +64,33 @@
     right: 0;
     padding: 10px 28px;
     color: #fff;
+}
+
+@media (max-width: 1200px){
+    .customModal .customMmodalContainer:has(.clientesForm) {
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+    }
+
+    .customModal .modalBody:has(.pdfView) {
+        padding: 56px 20px;
+    }
+
+    .customModal .modalBody:has(.clientesForm) {
+        overflow: auto;
+        padding: 25px;
+    }
+}
+
+@media (max-width: 600px){
+    .customModal .customMmodalContainer {
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+    }
+
+    .customModal .modalBody {
+        overflow: auto;
+    }
 }

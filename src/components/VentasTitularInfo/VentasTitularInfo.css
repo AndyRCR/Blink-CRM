@@ -63,6 +63,7 @@
     align-items: center;
     cursor: pointer;
     transition: .3s;
+    text-align: center;
 }
 
 .ventasTitularInfo .relativeCard:hover{
@@ -83,4 +84,50 @@
     font-size: 15px;
     font-weight: 700;
     margin-top: 8px;
+}
+
+@media (max-width: 1400px){
+    .ventasTitularInfo .relativesGrid {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 1200px){
+    .ventasTitularInfo .saleForm {
+        padding: 40px 20px;
+    }
+
+    .ventasTitularInfo .relativesHead {
+        padding: 0 20px;
+    }
+
+    .ventasTitularInfo .relativesGrid {
+        padding: 20px;
+        grid-template-columns: repeat(3, minmax(170px, 1fr));
+    }
+}
+
+@media (max-width: 750px){
+    .ventasTitularInfo .relativesGrid {
+        grid-template-columns: repeat(2, minmax(170px, 1fr));
+    }
+}
+
+@media (max-width: 700px){
+    .ventasTitularInfo .rowForm {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 500px){
+    .ventasTitularInfo .relativesGrid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .ventasTitularInfo .relativeCard {
+        width: 250px;
+    }
 }

@@ -85,7 +85,15 @@ const VentasPrepaga = ({ sale }) => {
                                 gridTemplateColumns: 'repeat(3, minmax(330px, 1fr))',
                                 gap: '25px',
                                 '& .MuiFormControlLabel-root': { margin: 0 },
-                                '& .MuiButtonBase-root': { padding: 0 }
+                                '& .MuiButtonBase-root': { padding: 0 },
+                                '@media (max-width: 1400px)' : {
+                                    gridTemplateColumns: 'repeat(2, minmax(330px, 1fr))'
+                                },
+                                '@media (max-width: 750px)' : {
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    alignItems: 'center'
+                                }
                             }}
                         >
                             {sale.quotations.map((quotation, i) => {

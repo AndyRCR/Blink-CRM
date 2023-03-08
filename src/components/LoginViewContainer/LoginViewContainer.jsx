@@ -26,7 +26,7 @@ const LoginViewContainer = () => {
     }, [])
 
   return (
-    <div style={{overflow: 'auto', backgroundColor: 'var(--blink-main)'}}>
+    <div style={{overflow: 'auto'}}>
         {/* <Background/> */}
         <div
         // style={{
