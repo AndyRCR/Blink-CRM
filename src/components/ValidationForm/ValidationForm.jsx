@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react"
+import React, { useContext, useEffect, useState } from "react"
 import { FormControlLabel, Radio, RadioGroup } from "@mui/material"
+import { GlobalContext } from "../../context/GlobalStateContext"
 import classes from "../../theme/Styles"
 import ValidationSuccess from "../ValidationSuccess/ValidationSuccess"
 import './ValidationForm.css'
@@ -31,7 +32,9 @@ const questions = [
     }
 ]
 
-const ValidationForm = () => {
+const ValidationForm = ({setShowTitle}) => {
+
+    const {windowWidth} = useContext(GlobalContext)
 
     const [position, setPosition] = useState(0)
     const [answers, setAnswers] = useState([...Array(4).fill(null)])
@@ -60,6 +63,10 @@ const ValidationForm = () => {
         return () => window.removeEventListener("resize", handleResize)
     }, [position])
 
+    useEffect(() => {
+        document.body.style.overflow = 'hidden'
+    }, [])
+
     return (
         <div className="validationForm">
             <div className="sliderContainer" style={{ flexGrow: '1' }}>
@@ -79,9 +86,16 @@ const ValidationForm = () => {
                                         onClick={() => {
                                             window.scrollTo({ top: 0, behavior: 'smooth' })
                                             setPosition(position + 1)
+                                            if(position >= 3){
+                                                setShowTitle(false)
+                                                if(windowWidth <= 768){
+                                                    document.querySelector('.sliderItem.validationSuccess').style.padding = '0'
+                                                    document.querySelector('.validationViewContainer .validationContainer').style.padding = '0'
+                                                }
+                                            }
                                         }}
                                         className="secondaryButton">
-                                        Siguiente
+                                        {i === 3 ? 'Finalizar' : 'Siguiente'}
                                     </button>
                                 </div>
                             </div>

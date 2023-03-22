@@ -1,7 +1,8 @@
 .loginViewContainer{
     overflow: hidden;
     position: relative;
-    min-height: 1024px;
+    /* min-height: 1024px; */
+    /* height: 100%; */
     max-width: 100%;
     display: flex;
     align-items: center;
@@ -40,9 +41,8 @@
         margin-top: 62px;
         align-items: center;
         min-height: auto;
-        height: 100%;
         padding: 30px 10px 0;
-        min-height: calc(100vh - 62px);
+        /* height: calc(100vh - 62px); */
     }
 
     .loginViewContainer:has(.loginForm) {

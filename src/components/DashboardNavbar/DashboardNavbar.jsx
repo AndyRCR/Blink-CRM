@@ -1,10 +1,14 @@
 import { useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { GlobalContext } from '../../context/GlobalStateContext'
-import classes from '../../theme/Styles'
 import { IconButton } from '@mui/material'
-import MenuIcon from '@mui/icons-material/Menu'
 import './DashboardNavbar.css'
+
+const obtainTranslateX = (el) => {
+    return parseInt(el.style.transform
+    .replace('translateX(', '')
+    .replace(')', ''))
+}
 
 const DashboardNavbar = () => {
 
@@ -14,7 +18,24 @@ const DashboardNavbar = () => {
 
     const handleMenu = () => {
         if(windowHeight <= 900) setResponsiveMenuDisplayed(!responsiveMenuDisplayed)
-        else setMenuState(!menuState)
+        else{
+            setMenuState(!menuState)
+            if(menuState){
+                document
+                .querySelectorAll(".sliderItem")
+                .forEach((el) => {
+                    const translate = obtainTranslateX(el) === 0 ? 0 : obtainTranslateX(el) + 170
+                    el.style.transform = `translateX(${translate}px)`
+                })
+            } else{
+                document
+                .querySelectorAll(".sliderItem")
+                .forEach((el) => {
+                    const translate = obtainTranslateX(el) === 0 ? 0 : obtainTranslateX(el) - 170
+                    el.style.transform = `translateX(${translate}px)`
+                })
+            }
+        }
     }
 
     return (
@@ -26,17 +47,19 @@ const DashboardNavbar = () => {
                         aria-label="Open drawer"
                         onClick={handleMenu}
                     >
-                        <MenuIcon
-                            sx={
-                                windowHeight <= 900
+                        <div className={
+                            windowHeight <= 900
                                 ? (!responsiveMenuDisplayed
-                                ? classes.menuButtonIconOpen
-                                : classes.menuButtonIconClosed)
+                                ? 'buttonMenu'
+                                : 'buttonMenu buttonMenuClosed')
                                 : (!menuState
-                                ? classes.menuButtonIconOpen
-                                : classes.menuButtonIconClosed)
-                            }
-                        />
+                                ? 'buttonMenu'
+                                : 'buttonMenu buttonMenuClosed')
+                        }>
+                            <div className='line'></div>
+                            <div className='line'></div>
+                            <div className='line'></div>
+                        </div>
                     </IconButton>
                 </div>
                 <div className='logo'>

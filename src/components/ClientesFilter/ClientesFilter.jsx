@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import { FormControl, InputAdornment, InputLabel, MenuItem, OutlinedInput, Select } from '@mui/material'
 import SearchIcon from '@mui/icons-material/Search'
 import IosShareIcon from '@mui/icons-material/IosShare'
@@ -6,8 +6,11 @@ import TuneOutlinedIcon from '@mui/icons-material/TuneOutlined'
 import classes from '../../theme/Styles'
 import KeyboardArrowDownOutlinedIcon from '@mui/icons-material/KeyboardArrowDownOutlined'
 import './ClientesFilter.css'
+import { GlobalContext } from '../../context/GlobalStateContext'
 
 const ClientesFilter = ({ handleFilter, filterValue, setFiltersDisplayed, filtersDisplayed }) => {
+
+    const {windowHeight} = useContext(GlobalContext)
 
     const [mouseOn, setMouseOn] = useState(false)
 
@@ -33,23 +36,41 @@ const ClientesFilter = ({ handleFilter, filterValue, setFiltersDisplayed, filter
                 <p>{window.location.pathname === '/clientes' ? 'Clientes' : 'Ventas'} por página</p>
             </div>
             <div className="filterItem searchBar">
-                <FormControl sx={{ width: '100%'}}>
-                    <OutlinedInput
-                        placeholder='Buscar'
-                        name='client'
-                        value={filterValue.client}
-                        onChange={handleFilter}
-                        sx={classes.searchBar}
-                        startAdornment={
-                            <InputAdornment position="start">
-                                <SearchIcon />
-                            </InputAdornment>
-                        }
-                    />
-                </FormControl>
+                {windowHeight <= 1400 && (
+                    <FormControl sx={{ width: '100%'}}>
+                        <OutlinedInput
+                            placeholder='Buscar'
+                            name='client'
+                            value={filterValue.client}
+                            onChange={handleFilter}
+                            sx={classes.searchBar}
+                            startAdornment={
+                                <InputAdornment position="start">
+                                    <SearchIcon />
+                                </InputAdornment>
+                            }
+                        />
+                    </FormControl>
+                )}
             </div>
 
             <div className='filterButtons'>
+                {windowHeight > 1400 && (
+                    <FormControl sx={{ width: '100%'}}>
+                        <OutlinedInput
+                            placeholder='Buscar'
+                            name='client'
+                            value={filterValue.client}
+                            onChange={handleFilter}
+                            sx={classes.searchBar}
+                            startAdornment={
+                                <InputAdornment position="start">
+                                    <SearchIcon />
+                                </InputAdornment>
+                            }
+                        />
+                    </FormControl>
+                )}
                 {window.location.pathname === '/clientes' ? (
                     <div className="filterItem">
                         <FormControl sx={{ width: '330px' }}>

@@ -86,7 +86,13 @@ const SoporteCRMSecciones = ({ setPosition }) => {
                 {sections.map((section, i) => {
                     return (
                         <div
-                            onClick={() => setPosition(1)}
+                            onClick={() => {
+                                setPosition(1)
+                                document.querySelector('.soporte').scrollTo({
+                                    top: 0,
+                                    behavior: 'smooth'
+                                })
+                            }}
                             className="seccion"
                             key={`seccion${i + 1}`}>
                             {section.icon}

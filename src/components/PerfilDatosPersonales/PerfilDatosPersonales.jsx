@@ -267,16 +267,16 @@ const PerfilDatosPersonales = ({ disabledStatus }) => {
 
             <div className="perfilGrid">
                 <div className="perfilGridItem">
-                    <label>Contraseña actual</label>
-                    <OutlinedInput type="password" sx={classes.input} />
+                    <label style={{ color: disabledStatus ? 'var(--blink-gray)' : 'var(--blink-main)' }}>Contraseña actual</label>
+                    <OutlinedInput disabled={disabledStatus} type="password" sx={classes.input} />
                 </div>
                 <div className="perfilGridItem">
-                    <label>Nueva contraseña</label>
-                    <OutlinedInput type="password" sx={classes.input} />
+                    <label style={{ color: disabledStatus ? 'var(--blink-gray)' : 'var(--blink-main)' }}>Nueva contraseña</label>
+                    <OutlinedInput disabled={disabledStatus} type="password" sx={classes.input} />
                 </div>
                 <div className="perfilGridItem">
-                    <label>Confirmar contraseña</label>
-                    <OutlinedInput type="password" sx={classes.input} />
+                    <label style={{ color: disabledStatus ? 'var(--blink-gray)' : 'var(--blink-main)' }}>Confirmar contraseña</label>
+                    <OutlinedInput disabled={disabledStatus} type="password" sx={classes.input} />
                 </div>
             </div>
         </div>

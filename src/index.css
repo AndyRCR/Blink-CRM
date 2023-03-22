@@ -21,6 +21,10 @@ html:has(.panelContainer){
   overflow-y: hidden;
 }
 
+li{
+  font-family: "Poppins", sans-serif !important;
+}
+
 :root {
   --blink-main: #4744cc;
   --blink-secondary: #34e8ca;

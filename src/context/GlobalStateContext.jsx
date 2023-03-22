@@ -1,5 +1,4 @@
 import React, { createContext, useEffect, useState } from 'react'
-import result from './ExampleResult'
 
 export const GlobalContext = createContext()
 
@@ -25,6 +24,7 @@ const formatClinics = clinicList => {
             .replaceAll(', ', '-')
             .replaceAll('\r\n\r\n', '-')
             .replaceAll('\r\n', '-')
+            .replaceAll('Cliãœï¿½Nica', 'Clinica')
             .split('-')
             .map(el => {
                 return el.trim().split(" ").length === 1 && el.trim().length < 6
@@ -71,6 +71,7 @@ const GlobalStateContext = ({ children }) => {
      */
     const [menuState, setMenuState] = useState(false)
     const [windowHeight, setWindowHeight] = useState(document.body.clientWidth)
+    const [windowWidth, setWindowWidth] = useState(document.body.clientHeight)
 
     /**
      * Questions
@@ -78,6 +79,20 @@ const GlobalStateContext = ({ children }) => {
     const [currentLevel, setCurrentLevel] = useState(null)
     const [questionTimer, setQuestionTimer] = useState(false)
     const secondsForTest = 20
+
+    /**
+     * Plan query
+     */
+    const [dataQuery, setDataQuery] = useState({
+        name: '',
+        age: '',
+        email: '',
+        phone: '',
+        zone: 'CABA',
+        situation: 'Monotributista',
+        partnerAge: '',
+        childrens: ''
+    })
 
     const [user, setUser] = useState({
         id: 18,
@@ -174,15 +189,32 @@ const GlobalStateContext = ({ children }) => {
     )
 
     const obtainResults = () => {
-        let resultArr = []
-        let clinicArr = []
+        let idZone = dataQuery.zone === 'CABA'
+        ? 1
+        : dataQuery.zone === 'GBA Norte'
+            ? 2
+            : dataQuery.zone === 'GBA Sur'
+            ? 3
+            : 4
 
-        result.forEach(arr => arr.forEach(el => resultArr.push(el)))
-        let newArr = resultArr.map((el, index) => { return { ...el, clinics: formatClinics(el.clinics), pos: index } })
-        setResults(newArr)
+        let idSituation = dataQuery.situation === 'Monotributista'
+        ? 1
+        : dataQuery.situation === 'Relación en dependencia'
+            ? 2
+            : 3
 
-        newArr.forEach(el => el.clinics.forEach(clinic => clinicArr.push(clinic)))
-        setResultClinics(Array.from(new Set(clinicArr)).sort())
+        fetch(`https://quoter.blinksalud.com/api/v1/quote?firstname=${dataQuery.name}&email=${dataQuery.email}&phone=${dataQuery.phone}&age=${dataQuery.age}&employ=${idSituation}&couple=${dataQuery.partnerAge === '' ? 0 : 1}&coupleage=${dataQuery.partnerAge === '' ? 0 : dataQuery.partnerAge}&sons=${dataQuery.childrens === '' ? 0 : dataQuery.childrens}&zone=${idZone}`)
+        .then(res => res.json())
+        .then(data => {
+            let resultArr = data[0]
+            let clinicArr = []
+
+            let newArr = resultArr.map((el, index) => { return { ...el, clinics: formatClinics(el.clinics), pos: index } })
+            setResults(newArr)
+
+            newArr.forEach(el => el.clinics.forEach(clinic => clinicArr.push(clinic)))
+            setResultClinics(Array.from(new Set(clinicArr)).sort())
+        })
     }
 
     const [tests, setTests] = useState([
@@ -196,7 +228,10 @@ const GlobalStateContext = ({ children }) => {
     ])
 
 
-    const handleResize = () => setWindowHeight(document.body.clientWidth)
+    const handleResize = () => {
+        setWindowHeight(document.body.clientWidth)
+        setWindowWidth(document.body.clientHeight)
+    }
 
     useEffect(() => {
         window.addEventListener('resize', handleResize)
@@ -213,6 +248,7 @@ const GlobalStateContext = ({ children }) => {
             value={{
                 userStatuses,
                 user, setUser,
+                dataQuery, setDataQuery,
                 lastSales, setLastSales,
                 quotes, setQuotes,
                 clients, setClients,
@@ -236,7 +272,7 @@ const GlobalStateContext = ({ children }) => {
                 obtainResults,
                 questionTimer, setQuestionTimer,
                 currentLevel, setCurrentLevel,
-                secondsForTest, windowHeight,
+                secondsForTest, windowHeight, windowWidth,
                 responsiveMenuDisplayed, setResponsiveMenuDisplayed
             }}
         >

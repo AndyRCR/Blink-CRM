@@ -1,16 +1,20 @@
-import React from "react"
+import React, { useState } from "react"
 import ValidationForm from "../ValidationForm/ValidationForm"
 import "./ValidationViewContainer.css"
 
 const ValidationViewContainer = () => {
 
+    const [showTitle, setShowTitle] = useState(true)
+    
     return (
         <div className="validationViewContainer">
             <div className="validationContainer">
-                <div className="validationTitle">
+                <div className="validationTitle" style={{
+                    display: showTitle ? 'block' : 'none'
+                }}>
                     Contános un poco de tu experiencia
                 </div>
-                <ValidationForm/>
+                <ValidationForm setShowTitle={setShowTitle}/>
             </div>
         </div>
     )

@@ -65,10 +65,10 @@ const ClientesViewContainer = () => {
         </div>
 
         <div className="sliderContainer" style={{flexGrow: '1'}}>
-            <div className="sliderItem">
+            <div className="sliderItem firstLevelItem">
                 <ClientesActivos handleClientModal={handleClientModal}/>
             </div>
-            <div className="sliderItem">
+            <div className="sliderItem firstLevelItem">
                 <ClientesProspect handleClientModal={handleClientModal}/>
             </div>
         </div>

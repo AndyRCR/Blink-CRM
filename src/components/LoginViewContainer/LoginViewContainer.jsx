@@ -1,5 +1,5 @@
 import { AnimatePresence } from 'framer-motion'
-import React, { useEffect, useState, useContext } from 'react'
+import React, { useState, useContext } from 'react'
 import { GlobalContext } from '../../context/GlobalStateContext'
 import Background from '../Background/Background'
 import LoginForm from '../LoginForm/LoginForm'
@@ -12,27 +12,10 @@ const LoginViewContainer = () => {
 
     const [position, setPosition] = useState(0)
 
-    // const handleResize = () => {
-    //     const width = document.querySelector('.loginViewContainer').clientWidth
-
-    //     document.querySelectorAll('.loginViewContainer .section').forEach(el => {
-    //         el.style.transform = `translateX(-${width * position}px)`
-    //     })
-    // }
-
-    useEffect(() => {
-
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
-
   return (
-    <div style={{overflow: 'auto'}}>
+    <div style={{overflow: 'auto', height: '100vh'}}>
         {/* <Background/> */}
-        <div
-        // style={{
-        //     backgroundColor: position === 0 ? 'transparent' : 'var(--blink-main)'
-        // }}
-        className='loginViewContainer'>
+        <div className='loginViewContainer'>
             <AnimatePresence>
                 <LoginForm position={position} setPosition={setPosition}/>
             </AnimatePresence>

@@ -19,21 +19,33 @@ const Filters = ({ displayed }) => {
                         <label>Estado de venta</label>
                         <FormGroup>
                             <FormControlLabel
-                                control={<Checkbox
-                                // checked={benefitsFiltereds.indexOf('copay') > -1}
-                                // onChange={(e) => handleBenefits(e, 'copay')}
-                                />}
+                                sx={{
+                                    '& .MuiTypography-root': {fontFamily: "'Poppins', sans-serif"}
+                                }}
+                                control={<Checkbox/>}
                                 label='Ingresada' />
                             <FormControlLabel
+                                sx={{
+                                    '& .MuiTypography-root': {fontFamily: "'Poppins', sans-serif"}
+                                }}
                                 control={<Checkbox />}
                                 label='Procesada' />
                             <FormControlLabel
+                                sx={{
+                                    '& .MuiTypography-root': {fontFamily: "'Poppins', sans-serif"}
+                                }}
                                 control={<Checkbox />}
                                 label='A Liquidar' />
                             <FormControlLabel
+                                sx={{
+                                    '& .MuiTypography-root': {fontFamily: "'Poppins', sans-serif"}
+                                }}
                                 control={<Checkbox />}
                                 label='Observada' />
                             <FormControlLabel
+                                sx={{
+                                    '& .MuiTypography-root': {fontFamily: "'Poppins', sans-serif"}
+                                }}
                                 control={<Checkbox />}
                                 label='Rechazada' />
                         </FormGroup>

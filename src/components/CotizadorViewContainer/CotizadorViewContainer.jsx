@@ -72,10 +72,10 @@ const CotizadorViewContainer = () => {
             </div>
 
             <div className="sliderContainer" style={{ flexGrow: '1' }}>
-                <div className="sliderItem">
+                <div className="sliderItem firstLevelItem">
                     <Cotizador />
                 </div>
-                <div className="sliderItem">
+                <div className="sliderItem firstLevelItem">
                     <CotizadorCotizaciones setClient={setClient} setOpen={setOpen} setOpen2={setOpen2} />
                 </div>
             </div>

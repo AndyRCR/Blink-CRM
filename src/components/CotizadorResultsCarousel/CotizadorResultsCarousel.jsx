@@ -1,10 +1,10 @@
-import { useContext, useEffect, useState } from 'react'
+import { useContext, useEffect } from 'react'
 import { GlobalContext } from '../../context/GlobalStateContext'
 import CotizadorBenefits from '../CotizadorBenefits/CotizadorBenefits'
 import ArrowBackIosRoundedIcon from '@mui/icons-material/ArrowBackIosRounded'
 import ArrowForwardIosRoundedIcon from '@mui/icons-material/ArrowForwardIosRounded'
-import './CotizadorResultsCarousel.css'
 import CotizadorResultItem from '../CotizadorResultItem/CotizadorResultItem'
+import './CotizadorResultsCarousel.css'
 
 const CotizadorResultsCarousel = () => {
 

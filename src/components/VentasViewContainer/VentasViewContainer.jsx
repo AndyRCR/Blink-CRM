@@ -53,10 +53,10 @@ const VentasViewContainer = () => {
             </div>
 
             <div className="sliderContainer" style={{ flexGrow: '1' }}>
-                <div className="sliderItem">
+                <div className="sliderItem firstLevelItem">
                     <VentasMisVentas />
                 </div>
-                <div className="sliderItem">
+                <div className="sliderItem firstLevelItem">
                     <VentasMisLiquidaciones />
                 </div>
             </div>

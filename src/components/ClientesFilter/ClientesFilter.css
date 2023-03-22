@@ -5,12 +5,9 @@
     margin-bottom: 48px;
 }
 
-.clientesFilter .searchBar{
-    width: 30%;
-}
-
 .clientesFilter .filterButtons{
     display: flex;
+    align-items: center;
     gap: 10px;
 }
 
@@ -21,12 +18,19 @@
 }
 
 .clientesFilter .filterItem p{
-    font-size: 15px;
+    font-size: 12px;
     font-weight: 700;
 }
 
 .clientesFilter .secondaryButton{
     padding: 16px 20px;
+    width: max-content;
+}
+
+@media (max-width: 1400px){
+    .clientesFilter .searchBar{
+        width: 30%;
+    }
 }
 
 @media (max-width: 1200px){

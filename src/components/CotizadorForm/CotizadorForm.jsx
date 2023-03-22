@@ -1,27 +1,19 @@
 import { FormControl, MenuItem, Select } from '@mui/material'
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import ReCAPTCHA from 'react-google-recaptcha'
 import Swal from 'sweetalert2'
 import classes from '../../theme/Styles'
 import Switch from '../Switch/Switch'
 import KeyboardArrowDownOutlinedIcon from '@mui/icons-material/KeyboardArrowDownOutlined'
 import './CotizadorForm.css'
+import { GlobalContext } from '../../context/GlobalStateContext'
 
 const emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 const nameRegex = /^[a-zA-Z\s]*$/
 
-const CotizadorForm = ({setState}) => {
+const CotizadorForm = ({setState, setResults}) => {
 
-  const [user, setUser] = useState({
-    name: '',
-    age: '',
-    email: '',
-    phone: '',
-    zone: 'CABA',
-    situation: 'Monotributista',
-    partnerAge: '',
-    childrens: ''
-  })
+  const {dataQuery, setDataQuery} = useContext(GlobalContext)
 
   const [switchState, setSwitchState] = useState({
     childrens: false,
@@ -41,12 +33,12 @@ const CotizadorForm = ({setState}) => {
 
   const verifyFields = () => {
     if (
-      user.name !== '' &&
-      user.phone !== '' &&
-      user.email !== '' &&
-      user.age !== '' &&
-      (!switchState.partner || user.partnerAge !== '') &&
-      (!switchState.childrens || user.childrens !== '') &&
+      dataQuery.name !== '' &&
+      dataQuery.phone !== '' &&
+      dataQuery.email !== '' &&
+      dataQuery.age !== '' &&
+      (!switchState.partner || dataQuery.partnerAge !== '') &&
+      (!switchState.childrens || dataQuery.childrens !== '') &&
       // eslint-disable-next-line
       captchaState == 1
     ) {
@@ -67,12 +59,12 @@ const CotizadorForm = ({setState}) => {
       }
     }
     else {
-      setValidName(user.name !== '' && validName)
-      setValidPhone(user.phone !== '' && validPhone)
-      setValidEmail(user.email !== '' && validEmail)
-      setValidAge(user.age !== '' && validAge)
-      setValidPartnerAge(switchState.partner ? user.partnerAge !== '' : true)
-      setValidChildrens(switchState.childrens ? user.childrens !== '' : true)
+      setValidName(dataQuery.name !== '' && validName)
+      setValidPhone(dataQuery.phone !== '' && validPhone)
+      setValidEmail(dataQuery.email !== '' && validEmail)
+      setValidAge(dataQuery.age !== '' && validAge)
+      setValidPartnerAge(switchState.partner ? dataQuery.partnerAge !== '' : true)
+      setValidChildrens(switchState.childrens ? dataQuery.childrens !== '' : true)
       setCaptchaState(captchaValue !== null)
       Swal.fire(
         'Intente nuevamente',
@@ -119,8 +111,8 @@ const CotizadorForm = ({setState}) => {
       )
     }
 
-    setUser({
-      ...user,
+    setDataQuery({
+      ...dataQuery,
       [name]: value
     })
   }
@@ -133,48 +125,48 @@ const CotizadorForm = ({setState}) => {
             <p>Nombre completo</p>
             <input
               placeholder='Nombres y apellidos'
-              value={user.name}
+              value={dataQuery.name}
               name='name'
               onChange={handleInputChange}
               type="text" />
             <p className={validName ? 'errorLabel' : 'errorLabel visible'}>
-              {user.name === '' ? 'Campo obligatorio' : 'Nombre no válido'}
+              {dataQuery.name === '' ? 'Campo obligatorio' : 'Nombre no válido'}
             </p>
           </div>
           <div className={validAge ? 'formItem' : 'formItem errorInput'}>
             <p>Edad</p>
             <input
               placeholder='Edad'
-              value={user.age}
+              value={dataQuery.age}
               name='age'
               onChange={handleInputChange}
               type="number" />
             <p className={validAge ? 'errorLabel' : 'errorLabel visible'}>
-              {user.age === '' ? 'Campo obligatorio' : 'Edad no válida'}
+              {dataQuery.age === '' ? 'Campo obligatorio' : 'Edad no válida'}
             </p>
           </div>
           <div className={validEmail ? 'formItem' : 'formItem errorInput'}>
             <p>Correo electrónico</p>
             <input
               placeholder='Correo de contacto'
-              value={user.email}
+              value={dataQuery.email}
               name='email'
               onChange={handleInputChange}
               type="email" />
             <p className={validEmail ? 'errorLabel' : 'errorLabel visible'}>
-              {user.email === '' ? 'Campo obligatorio' : 'Correo no válido'}
+              {dataQuery.email === '' ? 'Campo obligatorio' : 'Correo no válido'}
             </p>
           </div>
           <div className={validPhone ? 'formItem' : 'formItem errorInput'}>
             <p>Celular</p>
             <input
               placeholder='Número de contacto'
-              value={user.phone}
+              value={dataQuery.phone}
               name='phone'
               onChange={handleInputChange}
               type="text" />
             <p className={validPhone ? 'errorLabel' : 'errorLabel visible'}>
-              {user.phone === '' ? 'Campo obligatorio' : 'Número no válido'}
+              {dataQuery.phone === '' ? 'Campo obligatorio' : 'Número no válido'}
             </p>
           </div>
           <div className='formItem'>
@@ -182,7 +174,7 @@ const CotizadorForm = ({setState}) => {
             <FormControl sx={{width: '100%'}}>
               <Select
                 name='zone'
-                value={user.zone}
+                value={dataQuery.zone}
                 onChange={handleInputChange}
                 sx={classes.input}
                 IconComponent={KeyboardArrowDownOutlinedIcon}
@@ -202,7 +194,7 @@ const CotizadorForm = ({setState}) => {
             <FormControl sx={{width: '100%'}}>
               <Select
                 name='situation'
-                value={user.situation}
+                value={dataQuery.situation}
                 onChange={handleInputChange}
                 sx={classes.input}
                 IconComponent={KeyboardArrowDownOutlinedIcon}
@@ -235,12 +227,12 @@ const CotizadorForm = ({setState}) => {
             <input
               disabled={!switchState.partner}
               placeholder='Edad de la pareja'
-              value={user.partnerAge}
+              value={dataQuery.partnerAge}
               name='partnerAge'
               onChange={handleInputChange}
               type="number" />
             <p className={validPartnerAge ? 'errorLabel' : 'errorLabel visible'}>
-              {user.partnerAge === '' ? 'Campo obligatorio' : 'Edad no válida'}
+              {dataQuery.partnerAge === '' ? 'Campo obligatorio' : 'Edad no válida'}
             </p>
           </div>
           <div className="formItem switchItem">
@@ -259,12 +251,12 @@ const CotizadorForm = ({setState}) => {
             <input
               disabled={!switchState.childrens}
               placeholder='Cantidad de hijo/as'
-              value={user.childrens}
+              value={dataQuery.childrens}
               name='childrens'
               onChange={handleInputChange}
               type="number" />
             <p className={validChildrens ? 'errorLabel' : 'errorLabel visible'}>
-              {user.childrens === '' ? 'Campo obligatorio' : 'Cantidad no válida'}
+              {dataQuery.childrens === '' ? 'Campo obligatorio' : 'Cantidad no válida'}
             </p>
           </div>
           <div className="formItem formCaptcha" style={{ textAlign: 'center' }}>

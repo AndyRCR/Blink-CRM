@@ -13,6 +13,9 @@ const classes = {
         borderRadius: "4px 4px 0 0",
         borderBottom: "0px solid #383838",
         fontFamily: "'Poppins', sans-serif",
+        '& .MuiInputBase-input': {
+            fontFamily: "'Poppins', sans-serif"
+        },
         '&.Mui-focused': {
             borderBottom: "1px solid var(--blink-main)",
         },
@@ -26,6 +29,9 @@ const classes = {
             fill: 'var(--blink-gray)'
         },
         '& .Mui-focused .MuiInputAdornment-root svg': {
+            fill: 'var(--blink-main)'
+        },
+        '&.Mui-focused .MuiInputAdornment-root svg': {
             fill: 'var(--blink-main)'
         },
         '&.Mui-focused .MuiIconButton-root': {
@@ -45,11 +51,12 @@ const classes = {
         width: "100%",
     },
     searchBar: {
-        height: "58px",
+        height: "48px",
         boxSizing: "border-box",
         backgroundColor: "white",
         border: "1px solid black",
         borderRadius: "12px",
+        fontFamily: "'Poppins', sans-serif",
         '&.Mui-focused .MuiInputAdornment-root': {
             color: 'var(--blink-main)'
         },
