@@ -203,7 +203,7 @@ const GlobalStateContext = ({ children }) => {
             ? 2
             : 3
 
-        fetch(`https://quoter.blinksalud.com/api/v1/quote?firstname=${dataQuery.name}&email=${dataQuery.email}&phone=${dataQuery.phone}&age=${dataQuery.age}&employ=${idSituation}&couple=${dataQuery.partnerAge === '' ? 0 : 1}&coupleage=${dataQuery.partnerAge === '' ? 0 : dataQuery.partnerAge}&sons=${dataQuery.childrens === '' ? 0 : dataQuery.childrens}&zone=${idZone}`)
+        fetch(`https://bff.blinksalud.com/api/v1/quote?firstname=${dataQuery.name}&email=${dataQuery.email}&phone=${dataQuery.phone}&age=${dataQuery.age}&employ=${idSituation}&couple=${dataQuery.partnerAge === '' ? 0 : 1}&coupleage=${dataQuery.partnerAge === '' ? 0 : dataQuery.partnerAge}&sons=${dataQuery.childrens === '' ? 0 : dataQuery.childrens}&zone=${idZone}`)
         .then(res => res.json())
         .then(data => {
             let resultArr = data[0]

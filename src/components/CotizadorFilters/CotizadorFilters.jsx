@@ -5,6 +5,7 @@ import ExpandLessRoundedIcon from '@mui/icons-material/ExpandLessRounded'
 import ExpandMoreRoundedIcon from '@mui/icons-material/ExpandMoreRounded'
 import KeyboardArrowDownOutlinedIcon from '@mui/icons-material/KeyboardArrowDownOutlined'
 import classes from '../../theme/Styles'
+import useList from '../../hooks/useList'
 import './CotizadorFilters.css'
 
 const ITEM_HEIGHT = 48;
@@ -18,12 +19,21 @@ const MenuProps = {
     },
 }
 
+const formatClinic = (clinic) => {
+    return clinic.length < 6
+    ? clinic.toUpperCase()
+    : clinic
+    .trim()
+    .toLowerCase()
+    .replace(/\b\w/g, letra => letra.toUpperCase())
+}
+
 const CotizadorFilters = () => {
 
     const {
         obtainResults,
         filtersDisplayed, setFiltersDisplayed,
-        results, resultClinics,
+        results,
         clinicsFiltereds, setClinicsFiltereds,
         orderBy, setOrderBy,
         benefitsFiltereds, setBenefitsFiltereds,
@@ -31,6 +41,10 @@ const CotizadorFilters = () => {
         minBudget, setMinBudget,
         maxBudget, setMaxBudget,
         setFilteredResults, setPosition } = useContext(GlobalContext)
+
+
+    const { providers } = useList('providers')
+    const { clinics } = useList('clinics')
 
     const handleChange = (e) => {
         const { value } = e.target
@@ -168,12 +182,12 @@ const CotizadorFilters = () => {
                         IconComponent={KeyboardArrowDownOutlinedIcon}
                         MenuProps={MenuProps}
                     >
-                        {resultClinics !== null && (
-                            resultClinics.map((clinic, index) => {
+                        {clinics !== null && (
+                            clinics.map((clinic, index) => {
                                 return (
-                                    <MenuItem value={clinic} key={`clinicCheckbox${index + 1}`}>
-                                        <Checkbox checked={clinicsFiltereds.indexOf(clinic) > -1} />
-                                        <ListItemText primary={clinic} />
+                                    <MenuItem value={formatClinic(clinic.nameclinic)} key={`clinicCheckbox${index + 1}`}>
+                                        <Checkbox checked={clinicsFiltereds.indexOf(formatClinic(clinic.nameclinic)) > -1} />
+                                        <ListItemText primary={formatClinic(clinic.nameclinic)} />
                                     </MenuItem>
                                 )
                             })
@@ -246,7 +260,17 @@ const CotizadorFilters = () => {
                         {/* <FormControlLabel
                             control={<Checkbox />}
                             label='Todas' /> */}
-                        <FormControlLabel
+                        {providers !== null && (
+                            providers.map(provider => (
+                                <FormControlLabel
+                                    key={provider.id}
+                                    control={<Checkbox
+                                        checked={providersFiltereds.indexOf(provider.nameprovider.toLowerCase()) > -1}
+                                        onChange={(e) => handleProviders(e, provider.nameprovider.toLowerCase())} />}
+                                    label={<img src={`https://blinkimages.s3.amazonaws.com/os/logo-${provider.nameprovider.toLowerCase()}.png`} alt='' />} />
+                            ))
+                        )}
+                        {/* <FormControlLabel
                             control={<Checkbox
                                 checked={providersFiltereds.indexOf('doctored') > -1}
                                 onChange={(e) => handleProviders(e, 'doctored')} />}
@@ -275,7 +299,7 @@ const CotizadorFilters = () => {
                             control={<Checkbox
                                 checked={providersFiltereds.indexOf('prevencionsalud') > -1}
                                 onChange={(e) => handleProviders(e, 'prevencionsalud')} />}
-                            label={<img src='https://blinkimages.s3.amazonaws.com/os/logo-ps.png' alt='' />} />
+                            label={<img src='https://blinkimages.s3.amazonaws.com/os/logo-ps.png' alt='' />} /> */}
                     </FormGroup>
                 </div>
             </div>

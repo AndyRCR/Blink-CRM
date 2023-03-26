@@ -1,15 +1,10 @@
 import { AnimatePresence } from 'framer-motion'
-import React, { useState, useContext } from 'react'
-import { GlobalContext } from '../../context/GlobalStateContext'
-import Background from '../Background/Background'
+import React, { useState } from 'react'
 import LoginForm from '../LoginForm/LoginForm'
 import RegisterForm from '../RegisterForm/RegisterForm'
 import './LoginViewContainer.css'
 
 const LoginViewContainer = () => {
-
-    const {windowHeight} = useContext(GlobalContext)
-
     const [position, setPosition] = useState(0)
 
   return (

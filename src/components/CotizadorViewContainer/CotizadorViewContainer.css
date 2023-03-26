@@ -1,5 +1,5 @@
 .cotizadorViewContainer {
-    /* height: 100%; */
+    min-height: 1200px;
     padding: 25px 0;
     display: flex;
     flex-direction: column;

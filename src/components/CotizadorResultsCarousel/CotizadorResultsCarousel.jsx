@@ -88,7 +88,7 @@ const CotizadorResultsCarousel = () => {
 
         if (results !== null) {
 
-            if (filteredResults.length > 0) {
+            if (filteredResults?.length > 0) {
                 const carousel = document.querySelector('.carousel')
                 const width = document.querySelector('.carousel .result').clientWidth
                 carousel.style.width = `${width * 4 + 16 * 4}px`
@@ -113,7 +113,7 @@ const CotizadorResultsCarousel = () => {
         }
 
         // eslint-disable-next-line
-    }, [position, windowHeight])
+    }, [position, windowHeight, results])
 
     return (
         <div className='cotizadorResultsCarousel' style={{ width: windowHeight < 900 ? 'fit-content' : '100%' }}>
