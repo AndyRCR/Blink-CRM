@@ -1,10 +1,10 @@
-import "./DashboardLiquidations.css";
-import { useContext } from "react";
-import { GlobalContext } from "../../context/GlobalStateContext";
+import "./DashboardLiquidations.css"
+import { useContext } from "react"
+import { UserGlobalContext } from "../../context/UserContex"
 
 const DashboardLiquidations = () => {
 
-  const { user, userStatuses } = useContext(GlobalContext)
+  const { user, userStatuses } = useContext(UserGlobalContext)
 
   return (
     <div className="dashboardLiquidations dashboardGridItem">

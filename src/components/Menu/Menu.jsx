@@ -2,14 +2,24 @@ import { useNavigate } from 'react-router-dom';
 import { GlobalContext } from '../../context/GlobalStateContext';
 import { useContext } from 'react';
 import './Menu.css'
+import { UserGlobalContext } from '../../context/UserContex'
 
 const Menu = () => {
 
     const navigate = useNavigate()
 
-    const { user, userStatuses, menuState } = useContext(GlobalContext)
+    const { menuState } = useContext(GlobalContext)
+    const { user, setUser, userStatuses } = useContext(UserGlobalContext)
 
     const handleNavigation = path => user.status === userStatuses['completo'] ? navigate(path) : false
+
+    const salir = () => {
+        navigate('/')
+        setTimeout(() => {
+            localStorage.removeItem('user')
+            setUser(null)
+        }, 1000)
+    }
 
     return (
         <div className={user.status === userStatuses['nuevo']
@@ -129,7 +139,7 @@ const Menu = () => {
                 </div>
             </div>
             <div
-                onClick={() => navigate('/')}
+                onClick={salir}
                 className='menuItem active'>
                 <div style={{width: '24px', height: '24px'}}>
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

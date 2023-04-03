@@ -1,7 +1,7 @@
 import { Area } from "@ant-design/plots"
 import { useContext } from "react"
-import { GlobalContext } from "../../context/GlobalStateContext"
 import "./DashboardGraph.css"
+import { UserGlobalContext } from "../../context/UserContex"
 
 const data = [
   { month: "Ene", ammount: 550 },
@@ -79,7 +79,7 @@ const config = {
 
 const DashboardGraph = () => {
 
-  const { user, userStatuses } = useContext(GlobalContext)
+  const { user, userStatuses } = useContext(UserGlobalContext)
 
   return (
     <div className="dashboardGraph dashboardGridItem">

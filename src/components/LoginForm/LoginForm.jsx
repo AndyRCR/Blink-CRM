@@ -6,125 +6,128 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined'
 import { motion } from 'framer-motion'
 import {
   Checkbox,
+  CircularProgress,
   FormControlLabel,
   IconButton,
   InputAdornment,
   OutlinedInput,
 } from "@mui/material"
 import classes from "../../theme/Styles"
-import { useNavigate } from "react-router-dom"
 import "./LoginForm.css"
+import useAuth from "../../hooks/useAuth"
 
 const LoginForm = ({ position, setPosition }) => {
+    
+	const { values, errors, loading, handleChange, handleBlur, verificar } = useAuth({
+        email: '',
+        password: ''
+    })
+    
+	const [showPassword, setShowPassword] = useState(false)
+    	
+	const handleClickShowPassword = () => setShowPassword((show) => !show)
 
-  const navigate = useNavigate()
+	const handleMouseDownPassword = (event) => event.preventDefault()
 
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  const [showPassword, setShowPassword] = useState(false)
+	return position === 0 ? (
+		<motion.div
+			className='loginForm section'
+			initial={{ opacity: 0 }}
+			animate={{ opacity: 1 }}
+			exit={{ opacity: 0 }}
+		>
+			<div className='banner'>¡Te damos la bienvenida!</div>
+			<div className='formSection'>
+				<p>¡Que bueno verte!</p>
 
-  const handleClickShowPassword = () => setShowPassword((show) => !show)
+				<div className='form'>
+					<div
+						className={errors.email ? 'formItem error' : 'formItem'}
+					>
+						<label>Correo electrónico</label>
+						<OutlinedInput
+							type='email'
+							name='email'
+							value={values.email}
+							onChange={(e) => handleChange(e)}
+							onBlur={(e) => handleBlur(e)}
+							sx={classes.input}
+							startAdornment={
+								<InputAdornment position='start'>
+									<MailOutlineIcon />
+								</InputAdornment>
+							}
+						/>
+						<p className='errorLabel'>
+							{values.email === ''
+								? 'Este campo es obligatorio'
+								: 'Ingresa un e-mail válido'}
+						</p>
+					</div>
 
-  const handleMouseDownPassword = (event) => event.preventDefault()
+					<div
+						className={
+							errors.password ? 'formItem error' : 'formItem'
+						}
+					>
+						<label>Contraseña</label>
+						<OutlinedInput
+							type={showPassword ? 'text' : 'password'}
+							name='password'
+							value={values.password}
+							onChange={(e) => handleChange(e)}
+							onBlur={(e) => handleBlur(e)}
+							sx={classes.input}
+							startAdornment={
+								<InputAdornment position='start'>
+									<LockOutlinedIcon />
+								</InputAdornment>
+							}
+							endAdornment={
+								<InputAdornment position='end'>
+									<IconButton
+										onClick={handleClickShowPassword}
+										onMouseDown={handleMouseDownPassword}
+										edge='end'
+									>
+										{showPassword ? (
+											<VisibilityOffOutlinedIcon />
+										) : (
+											<VisibilityOutlinedIcon />
+										)}
+									</IconButton>
+								</InputAdornment>
+							}
+						/>
+						<p className='errorLabel'>Este campo es obligatorio</p>
+					</div>
 
-  return (
-    position === 0 ? (
-      <motion.div
-        className="loginForm section"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}>
-        <div className="banner">
-          ¡Te damos la bienvenida!
-        </div>
-        <div className="formSection">
-          <p>¡Que bueno verte!</p>
+					<div className='formOptions'>
+						<FormControlLabel
+							sx={classes.checkbox}
+							control={<Checkbox />}
+							label='Recordarme'
+						/>
+						<p>¿Olvidaste tu contraseña?</p>
+					</div>
 
-          <div className="form">
-            <div className="formItem">
-              <label>Correo electrónico</label>
-              <OutlinedInput
-                type='email'
-                name='email'
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                sx={{
-                  ...classes.input,
-                  borderBottom: email === '' ? '0px solid #383838' : '1px solid #383838'
-                }}
-                startAdornment={
-                  <InputAdornment position="start">
-                    <MailOutlineIcon />
-                  </InputAdornment>
-                }
-              />
-            </div>
+					<button onClick={verificar} className='secondaryButton'>
+						{loading ? (
+                            <CircularProgress size={'25px'} sx={classes.circularProgress} />
+                        ): 'Iniciar sesión'}
+					</button>
 
-            <div className="formItem">
-              <label>Contraseña</label>
-              <OutlinedInput
-                type={showPassword ? "text" : "password"}
-                name='password'
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                sx={{
-                  ...classes.input,
-                  borderBottom: password === '' ? '0px solid #383838' : '1px solid #383838'
-                }}
-                startAdornment={
-                  <InputAdornment position="start">
-                    <LockOutlinedIcon />
-                  </InputAdornment>
-                }
-                endAdornment={
-                  <InputAdornment position="end">
-                    <IconButton
-                      onClick={handleClickShowPassword}
-                      onMouseDown={handleMouseDownPassword}
-                      edge="end"
-                    >
-                      {showPassword ? <VisibilityOffOutlinedIcon /> : <VisibilityOutlinedIcon />}
-                    </IconButton>
-                  </InputAdornment>
-                }
-              />
-            </div>
-
-            <div className="formOptions">
-              <FormControlLabel
-                sx={classes.checkbox}
-                control={<Checkbox />}
-                label="Recordarme" />
-              <p>¿Olvidaste tu contraseña?</p>
-            </div>
-
-            <button
-              onClick={() => {
-                // setUser({
-                //   id: 18,
-                //   firstname: "Paul",
-                //   surname: "Welsch",
-                //   username: "paul",
-                //   level: 1,
-                //   email: "p@gmail.com",
-                //   status: 1
-                // })
-                navigate('/home')
-              }}
-              className="secondaryButton">
-              Iniciar sesión
-            </button>
-
-            <div
-              onClick={() => setPosition(1)}
-              className="registerText">
-              Quiero sumarme a la comunidad
-            </div>
-          </div>
-        </div>
-      </motion.div>
-    ) : false
-  )
+					<div
+						onClick={() => setPosition(1)}
+						className='registerText'
+					>
+						Quiero sumarme a la comunidad
+					</div>
+				</div>
+			</div>
+		</motion.div>
+	) : (
+		false
+	)
 }
-
 export default LoginForm

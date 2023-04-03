@@ -38,7 +38,7 @@
 .section .formItem {
   display: flex;
   flex-direction: column;
-  margin: 8px 0;
+  margin: 12px 0;
   width: 330px;
 }
 
@@ -54,6 +54,10 @@
   font-size: 15px;
   font-weight: 600;
   color: var(--blink-main);
+}
+
+.section .error label{
+  color: red;
 }
 
 .section .formOptions {
@@ -73,6 +77,18 @@
 
 .section .secondaryButton {
   width: 100%;
+}
+
+.section .formItem p.errorLabel{
+  color: red;
+  font-size: 12px;
+  font-weight: 500;
+  margin: 5px 0 0 5px;
+  visibility: hidden;
+}
+
+.section .formItem.error p.errorLabel{
+  visibility: visible;
 }
 
 @media (max-width: 1400px) {

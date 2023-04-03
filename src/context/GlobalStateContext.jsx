@@ -94,20 +94,22 @@ const GlobalStateContext = ({ children }) => {
         childrens: ''
     })
 
-    const [user, setUser] = useState({
-        id: 18,
-        firstname: "Julián",
-        surname: "Gómez",
-        username: "Julian",
-        level: 0,
-        email: "test@gmail.com",
-        birth: null,
-        tel: null,
-        telReg: '+54',
-        docunent: null,
-        address: null,
-        status: 2
-    })
+    // const [user, setUser] = useState({
+    //     id: 18,
+    //     firstname: "Julián",
+    //     surname: "Gómez",
+    //     username: "Julian",
+    //     level: 0,
+    //     email: "test@gmail.com",
+    //     birth: null,
+    //     tel: null,
+    //     telReg: '+54',
+    //     docunent: null,
+    //     address: null,
+    //     status: 2
+    // })
+
+    const [user, setUser] = useState(localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : null)
 
     const [lastSales, setLastSales] = useState([
         { id: 1221, prepaga: 'SMG', plan: 'SMG 50', capitas: 1, titular: 'Avan Fátima', monto: '24.877' },
@@ -121,12 +123,6 @@ const GlobalStateContext = ({ children }) => {
         { id: 1, fecha: '14/11/2022', nombre: 'Buscaglia', apellido: 'Rosana Nilda', prepaga: 'OMINT', plan: 4500, capitas: 1 },
         { id: 2, fecha: '14/11/2022', nombre: 'Busca', apellido: 'Rosda', prepaga: 'OMINT', plan: 4500, capitas: 2 }
     ])
-
-    const userStatuses = {
-        nuevo: 0,
-        aprobado: 1,
-        completo: 2
-    }
 
     const [clients, setClients] = useState([
         { id: '0001', cotizedBy: cotizedBy[random(0, 3)], client: 'Buscaglia test1', capitas: random(1, 5), prepaga: 'OMINT', plan: 'PLAN 4500', situation: situation[random(0, 1)], date: '14/11/2022' },
@@ -246,7 +242,6 @@ const GlobalStateContext = ({ children }) => {
     return (
         <GlobalContext.Provider
             value={{
-                userStatuses,
                 user, setUser,
                 dataQuery, setDataQuery,
                 lastSales, setLastSales,

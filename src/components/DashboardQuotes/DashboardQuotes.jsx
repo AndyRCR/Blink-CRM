@@ -3,10 +3,12 @@ import { useContext } from "react";
 import { GlobalContext } from "../../context/GlobalStateContext";
 import classes from "../../theme/Styles";
 import "./DashboardQuotes.css";
+import { UserGlobalContext } from "../../context/UserContex"
 
 const DashboardQuotes = () => {
 
-  const { quotes, user, userStatuses } = useContext(GlobalContext)
+  const { quotes } = useContext(GlobalContext)
+  const { user, userStatuses } = useContext(UserGlobalContext)
 
   return (
     <div className="dashboardQuotes dashboardGridItem">

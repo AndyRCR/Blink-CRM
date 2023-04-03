@@ -10,9 +10,12 @@ import {
 import { GlobalContext } from "../../context/GlobalStateContext";
 import classes from "../../theme/Styles";
 import "./DashboardLastSales.css";
+import { UserGlobalContext } from "../../context/UserContex"
 
 const DashboardLastSales = () => {
-  const { lastSales, user, userStatuses } = useContext(GlobalContext);
+
+  const { lastSales } = useContext(GlobalContext)
+  const { user, userStatuses } = useContext(UserGlobalContext)
 
   return (
     <div className="dashboardLastSales dashboardGridItem">

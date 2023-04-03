@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { GlobalContext } from '../../context/GlobalStateContext'
 import { IconButton } from '@mui/material'
 import './DashboardNavbar.css'
+import { UserGlobalContext } from '../../context/UserContex'
 
 const obtainTranslateX = (el) => {
     return parseInt(el.style.transform
@@ -14,7 +15,8 @@ const DashboardNavbar = () => {
 
     const navigate = useNavigate()
 
-    const {windowHeight, user, menuState, setMenuState, setResponsiveMenuDisplayed, responsiveMenuDisplayed } = useContext(GlobalContext)
+    const {windowHeight, menuState, setMenuState, setResponsiveMenuDisplayed, responsiveMenuDisplayed } = useContext(GlobalContext)
+    const { user } = useContext(UserGlobalContext)
 
     const handleMenu = () => {
         if(windowHeight <= 900) setResponsiveMenuDisplayed(!responsiveMenuDisplayed)
@@ -69,8 +71,8 @@ const DashboardNavbar = () => {
             <div className='navbarOptions'>
                 <div className='user'>
                     <div className='userInfo'>
-                        <div className="userName">Hola, {user.firstname}</div>
-                        <div className="userLevel">Nivel {user.level}</div>
+                        <div className="userName">Hola, {user.name.split(' ')[0]}</div>
+                        <div className="userLevel">Nivel {user.level || 0}</div>
                     </div>
                     <div
                         onClick={() => navigate('/perfil')}

@@ -13,30 +13,33 @@ const classes = {
         borderRadius: "4px 4px 0 0",
         borderBottom: "0px solid #383838",
         fontFamily: "'Poppins', sans-serif",
+        width: "100%",
+
         '& .MuiInputBase-input': {
             fontFamily: "'Poppins', sans-serif"
         },
-        '&.Mui-focused': {
-            borderBottom: "1px solid var(--blink-main)",
+        '.error &.Mui-focused fieldset': {
+            borderColor: 'red'
         },
-        '&.Mui-focused .MuiSelect-icon': {
-            color: 'var(--blink-main)'
-        },
-        '&.Mui-focused .MuiInputAdornment-root': {
-            color: 'var(--blink-main)'
-        },
+
         '& .MuiInputAdornment-root svg': {
             fill: 'var(--blink-gray)'
         },
-        '& .Mui-focused .MuiInputAdornment-root svg': {
+        '& .Mui-focused .MuiInputAdornment-root svg, &.Mui-focused .MuiInputAdornment-root svg': {
             fill: 'var(--blink-main)'
         },
-        '&.Mui-focused .MuiInputAdornment-root svg': {
-            fill: 'var(--blink-main)'
+        '.error & .Mui-focused .MuiInputAdornment-root svg, .error &.Mui-focused .MuiInputAdornment-root svg, .error & .MuiInputAdornment-root svg': {
+            fill: 'red'
         },
-        '&.Mui-focused .MuiIconButton-root': {
+
+        '&.Mui-focused .MuiSelect-icon, &.Mui-focused .MuiInputAdornment-root, &.Mui-focused .MuiIconButton-root': {
             color: 'var(--blink-main)'
         },
+
+        '.error &.Mui-focused .MuiSelect-icon, .error &.Mui-focused .MuiInputAdornment-root, .error &.Mui-focused .MuiIconButton-root': {
+            color: 'red'
+        },
+
         "& fieldset": {
             border: "none",
             borderBottom: "1px solid #383838",
@@ -47,8 +50,7 @@ const classes = {
         '& .MuiTypography-root': {
             color: 'var(--blink-main)',
             fontWeight: '700'
-        },
-        width: "100%",
+        }
     },
     searchBar: {
         height: "48px",
@@ -105,7 +107,7 @@ const classes = {
             height: 32,
             width: 32,
             "&:focus, &:hover, &.Mui-active, &.Mui-focusVisible": {
-            boxShadow: "inherit",
+                boxShadow: "inherit",
             },
         },
         "& .MuiSlider-rail": {
@@ -121,17 +123,17 @@ const classes = {
             transformOrigin: "bottom left",
             transform: "translate(50%, -30%) scale(0)",
             "&:before": {
-                    content: '""',
-                    position: "absolute",
-                    width: "20px",
-                    height: "20px",
-                    top: "-10px",
-                    left: "10px",
-                    transform: "rotateX(45deg) rotateZ(45deg)",
-                    backgroundColor: "var(--blink-main)",
-                },
-                "&.MuiSlider-valueLabelOpen": {
-                    transform: "translate(120px, 90%)",
+                content: '""',
+                position: "absolute",
+                width: "20px",
+                height: "20px",
+                top: "-10px",
+                left: "10px",
+                transform: "rotateX(45deg) rotateZ(45deg)",
+                backgroundColor: "var(--blink-main)",
+            },
+            "&.MuiSlider-valueLabelOpen": {
+                transform: "translate(120px, 90%)",
             },
         },
     },
@@ -157,10 +159,10 @@ const classes = {
         },
     },
     pagination: {
-        '& ul > li button':{
+        '& ul > li button': {
             fontFamily: "'Poppins', sans-serif",
         },
-        '& ul > li button:not(.Mui-disabled):not(.MuiPaginationItem-page)':{
+        '& ul > li button:not(.Mui-disabled):not(.MuiPaginationItem-page)': {
             color: 'var(--blink-main)'
         },
         "& ul > li:not(:first-of-type):not(:last-child) > button.Mui-selected": {
@@ -169,9 +171,9 @@ const classes = {
             fontWeight: "bold",
         },
         "& ul > li:not(:first-of-type):not(:last-child) > button:not(.Mui-selected)":
-            {
+        {
             fontWeight: "bold",
-            },
+        },
     },
     accordion: {
         "&.MuiAccordion-root": {
@@ -240,6 +242,12 @@ const classes = {
             cursor: 'pointer'
         },
     },
+    circularProgress: {
+        color: '#4744cc',
+        'button:hover &': {
+            color: '#34e8ca'
+        }
+    }
 }
 
 export default classes

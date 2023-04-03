@@ -1,6 +1,5 @@
 import { Slider } from "@mui/material"
 import AddCircleOutlineOutlinedIcon from "@mui/icons-material/AddCircleOutlineOutlined"
-import { GlobalContext } from "../../context/GlobalStateContext"
 import { useContext, useEffect } from "react"
 import classes from "../../theme/Styles"
 import DashboardGraph from "../DashboardGraph/DashboardGraph"
@@ -10,10 +9,11 @@ import DashboardLiquidations from "../DashboardLiquidations/DashboardLiquidation
 import "./HomeViewContainer.css"
 import Swal from "sweetalert2"
 import { useNavigate } from "react-router-dom"
+import { UserGlobalContext } from "../../context/UserContex"
 
 const HomeViewContainer = () => {
 
-    const { user, userStatuses } = useContext(GlobalContext)
+    const { user, userStatuses } = useContext(UserGlobalContext)
 
     const navigate = useNavigate()
 

@@ -1,6 +1,6 @@
 import { AnimatePresence } from 'framer-motion'
-import React from 'react'
-import { Route, Routes, useLocation } from 'react-router-dom'
+import React, { useContext, useEffect } from 'react'
+import { Route, Routes, useLocation, useNavigate } from 'react-router-dom'
 import Layout from '../components/Layout'
 import ClientesView from '../views/ClientesView'
 import CotizadorView from '../views/CotizadorView'
@@ -14,33 +14,42 @@ import ValidationView from '../views/ValidationView'
 import VentasLiquidacionView from '../views/VentasLiquidacionView'
 import VentasVentaView from '../views/VentasVentaView'
 import VentasView from '../views/VentasView'
+import { UserGlobalContext } from '../context/UserContex'
 
 const AnimatedRoutes = () => {
 
     const location = useLocation()
 
-  return (
-    <AnimatePresence>
-        <Routes location={location} key={location.pathname}>
-            <Route path='/' element={<Layout/>}>
-                <Route index element={<LoginView/>} />
-                <Route path='/validation' element={<ValidationView/>} />
-                <Route path='/home' element={<HomeView/>} />
-                <Route path='/perfil' element={<PerfilView/>} />
-                <Route path='/clientes' element={<ClientesView/>} />
-                <Route path='/prepagas' element={<PrepagasView/>} />
-                <Route path='/soporte' element={<SoporteView/>} />
-                <Route path='/cotizador' element={<CotizadorView/>} />
-                <Route path='/ventas'>
-                    <Route exact path='/ventas' element={<VentasView/>}/>
-                    <Route path='/ventas/liquidacion/:id' element={<VentasLiquidacionView/>}/>
-                    <Route path='/ventas/venta/:id' element={<VentasVentaView/>}/>
+    const { user } = useContext(UserGlobalContext)
+
+    const navigate = useNavigate()
+
+    useEffect(() => {
+        if(user === null) navigate('/')
+    }, [])
+
+    return (
+        <AnimatePresence>
+            <Routes location={location} key={location.pathname}>
+                <Route path='/' element={<Layout/>}>
+                    <Route index element={<LoginView/>} />
+                    <Route path='/validation' element={<ValidationView/>} />
+                    <Route path='/home' element={<HomeView/>} />
+                    <Route path='/perfil' element={<PerfilView/>} />
+                    <Route path='/clientes' element={<ClientesView/>} />
+                    <Route path='/prepagas' element={<PrepagasView/>} />
+                    <Route path='/soporte' element={<SoporteView/>} />
+                    <Route path='/cotizador' element={<CotizadorView/>} />
+                    <Route path='/ventas'>
+                        <Route exact path='/ventas' element={<VentasView/>}/>
+                        <Route path='/ventas/liquidacion/:id' element={<VentasLiquidacionView/>}/>
+                        <Route path='/ventas/venta/:id' element={<VentasVentaView/>}/>
+                    </Route>
+                    <Route path='/escuelita' element={<EscuelitaView/>} />
                 </Route>
-                <Route path='/escuelita' element={<EscuelitaView/>} />
-            </Route>
-        </Routes>
-    </AnimatePresence>
-)
+            </Routes>
+        </AnimatePresence>
+    )
 }
 
 export default AnimatedRoutes
