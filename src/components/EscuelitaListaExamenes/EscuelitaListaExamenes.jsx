@@ -15,7 +15,7 @@ const EscuelitaListaExamenes = ({ setPosition, setOpen }) => {
     }, [tests])
 
     return (
-        <div className="escuelitaListaCursos">
+        user && <div className="escuelitaListaCursos">
             {tests.map((course, i) => {
                 return (
                     <div

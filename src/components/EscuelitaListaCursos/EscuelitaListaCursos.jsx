@@ -13,7 +13,7 @@ const EscuelitaListaCursos = ({ setPosition }) => {
     const { user } = useContext(UserGlobalContext)
 
     return (
-        <div className="escuelitaListaCursos">
+        user && <div className="escuelitaListaCursos">
             {tests.map((course, i) => {
                 return (
                     <div

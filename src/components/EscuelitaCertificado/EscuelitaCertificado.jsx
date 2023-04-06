@@ -1,22 +1,24 @@
 import { useContext } from 'react'
 import { GlobalContext } from '../../context/GlobalStateContext'
 import './EscuelitaCertificado.css'
+import { UserGlobalContext } from '../../context/UserContex'
 
 let meses = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"];
 
 const EscuelitaCertificado = () => {
 
-    const { currentLevel, user, tests } = useContext(GlobalContext)
+    const { currentLevel, tests } = useContext(GlobalContext)
+    const { user } = useContext(UserGlobalContext)
 
     const obtainDate = (date) => {
         return `${tests[currentLevel].date.getDate()} de ${meses[tests[currentLevel].date.getMonth()]} de ${tests[currentLevel].date.getFullYear()}`
     }
 
     return (
-        <div className="escuelitaCertificado">
+        user && <div className="escuelitaCertificado">
             <div className='certificate'>
                 <h4>Certificado</h4>
-                <h1>{user.firstname} {user.surname}</h1>
+                <h1>{user.name}</h1>
                 <p>Ha realizado y finalizado el curso de Nivel {currentLevel} en la escuelita blink, cumpliendo todos los requisitos exigidos.</p>
                 <div className="date">{currentLevel ? obtainDate(tests[currentLevel].date) : ''}</div>
                 <div className="firm">

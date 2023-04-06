@@ -39,7 +39,7 @@ const PerfilViewContainer = () => {
   }, [position])
 
   return (
-    <div className="perfilViewContainer">
+    user && <div className="perfilViewContainer">
       <div className='sliderBarContainer'>
         <div className="sliderBar">
           <div className="sliderBarItem">
