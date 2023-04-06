@@ -23,8 +23,8 @@
 
 .secondaryButton {
   padding: 16px 70px;
-  /* height: fit-content; */
-  height: 55px;
+  height: fit-content;
+  min-height: 55px;
   border-radius: 56px;
   background-color: var(--blink-secondary);
   color: var(--blink-gray);

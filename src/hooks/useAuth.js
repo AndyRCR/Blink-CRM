@@ -72,7 +72,19 @@ const useAuth = ({ email: initialEmail = '', password: initialPassword = '' }) =
 
     const fetchData = () => {
         setLoading(true)
-        fetch(`https://authen.blinksalud.com/api/v1/login?email=${values.email}&password=${values.password}`)
+
+        const formdata = new FormData()
+        formdata.append('email', values.email)
+        formdata.append('password', values.password)
+
+        fetch("https://bff.blinksalud.com/api/v1/login", {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json'
+            },
+            body: formdata,
+            redirect: 'follow'
+        })
             .then(response => response.json())
             .then(result => {
                 if (result.hasOwnProperty('Status')) {
@@ -89,14 +101,13 @@ const useAuth = ({ email: initialEmail = '', password: initialPassword = '' }) =
                     navigate('/home')
                 }
             })
-            .catch(error => {
+            .catch(() => {
                 Swal.fire({
                     icon: 'error',
                     title: 'Ocurrió un error con el servidor',
                     text: 'Intente más tarde'
                 })
             })
-            .finally(() => setLoading(false))
     }
 
     return { values, errors, loading, handleChange, handleBlur, verificar }

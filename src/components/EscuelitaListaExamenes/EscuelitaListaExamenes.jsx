@@ -5,13 +5,14 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined'
 import StarRoundedIcon from '@mui/icons-material/StarRounded'
 import StarOutlineRoundedIcon from '@mui/icons-material/StarOutlineRounded'
 import Swal from "sweetalert2"
+import { UserGlobalContext } from "../../context/UserContex"
 
 const EscuelitaListaExamenes = ({ setPosition, setOpen }) => {
-    const { tests, user, setQuestionTimer, setCurrentLevel } = useContext(GlobalContext)
+    const { tests, setQuestionTimer, setCurrentLevel } = useContext(GlobalContext)
+    const { user } = useContext(UserGlobalContext)
 
     useEffect(() => {
     }, [tests])
-    
 
     return (
         <div className="escuelitaListaCursos">
@@ -19,9 +20,9 @@ const EscuelitaListaExamenes = ({ setPosition, setOpen }) => {
                 return (
                     <div
                         onClick={() => {
-                            if(user.level >= i) setCurrentLevel(i)
+                            if(user.status >= i) setCurrentLevel(i)
 
-                            if (user.level >= i && !course.approbed) {
+                            if (user.status >= i && !course.approbed) {
                                 Swal.fire({
                                     title: `<p class="modalTitle" style="text-align: left">Antes de empezar recordá que:</p>`,
                                     html: `<ul class="modalTextStepOne">
@@ -50,7 +51,7 @@ const EscuelitaListaExamenes = ({ setPosition, setOpen }) => {
                             if(course.approbed) setOpen(true)
                         }}
                         className={
-                            user.level < i
+                            user.status < i
                                 ? 'escuelitaCard locked'
                                 : course.approbed
                                     ? 'escuelitaCard approbed'
@@ -72,7 +73,7 @@ const EscuelitaListaExamenes = ({ setPosition, setOpen }) => {
                             </div>
                         </div>
                         <div className='cardOptions'>
-                            {user.level < i
+                            {user.status < i
                                 ? <LockOutlinedIcon className='escuelitaIcon' />
                                 : course.approbed
                                     ? (

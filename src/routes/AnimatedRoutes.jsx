@@ -1,6 +1,6 @@
 import { AnimatePresence } from 'framer-motion'
-import React, { useContext, useEffect } from 'react'
-import { Route, Routes, useLocation, useNavigate } from 'react-router-dom'
+import React, { useContext } from 'react'
+import { Navigate, Route, Routes, useLocation } from 'react-router-dom'
 import Layout from '../components/Layout'
 import ClientesView from '../views/ClientesView'
 import CotizadorView from '../views/CotizadorView'
@@ -22,30 +22,26 @@ const AnimatedRoutes = () => {
 
     const { user } = useContext(UserGlobalContext)
 
-    const navigate = useNavigate()
-
-    useEffect(() => {
-        if(user === null) navigate('/')
-    }, [])
+    const redirect = ({component: Component}) => user === null ? <Navigate to='/' /> : <Component/>
 
     return (
         <AnimatePresence>
             <Routes location={location} key={location.pathname}>
                 <Route path='/' element={<Layout/>}>
-                    <Route index element={<LoginView/>} />
+                    <Route index element={user === null ? <LoginView/> : <Navigate to='/home' />} />
                     <Route path='/validation' element={<ValidationView/>} />
-                    <Route path='/home' element={<HomeView/>} />
-                    <Route path='/perfil' element={<PerfilView/>} />
-                    <Route path='/clientes' element={<ClientesView/>} />
-                    <Route path='/prepagas' element={<PrepagasView/>} />
-                    <Route path='/soporte' element={<SoporteView/>} />
-                    <Route path='/cotizador' element={<CotizadorView/>} />
+                    <Route path='/home' element={redirect({component: HomeView})} />
+                    <Route path='/perfil' element={redirect({component: PerfilView})} />
+                    <Route path='/clientes' element={redirect({component: ClientesView})} />
+                    <Route path='/prepagas' element={redirect({component: PrepagasView})} />
+                    <Route path='/soporte' element={redirect({component: SoporteView})} />
+                    <Route path='/cotizador' element={redirect({component: CotizadorView})} />
                     <Route path='/ventas'>
-                        <Route exact path='/ventas' element={<VentasView/>}/>
-                        <Route path='/ventas/liquidacion/:id' element={<VentasLiquidacionView/>}/>
-                        <Route path='/ventas/venta/:id' element={<VentasVentaView/>}/>
+                        <Route exact path='/ventas' element={redirect({component: VentasView})}/>
+                        <Route path='/ventas/liquidacion/:id' element={redirect({component: VentasLiquidacionView})}/>
+                        <Route path='/ventas/venta/:id' element={redirect({component: VentasVentaView})}/>
                     </Route>
-                    <Route path='/escuelita' element={<EscuelitaView/>} />
+                    <Route path='/escuelita' element={redirect({component: EscuelitaView})} />
                 </Route>
             </Routes>
         </AnimatePresence>

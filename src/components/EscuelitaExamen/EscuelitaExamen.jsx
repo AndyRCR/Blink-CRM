@@ -5,6 +5,7 @@ import EscuelitaPregunta from '../EscuelitaPregunta/EscuelitaPregunta'
 import EscuelitaRespuestas from '../EscuelitaRespuestas/EscuelitaRespuestas'
 import EscuelitaTimer from '../EscuelitaTimer/EscuelitaTimer'
 import './EscuelitaExamen.css'
+import { UserGlobalContext } from '../../context/UserContex'
 
 const questions = [
     {
@@ -61,7 +62,8 @@ const questions = [
 
 const EscuelitaExamen = ({ position, setPosition, setOpen }) => {
 
-    const { questionTimer, setQuestionTimer, currentLevel, secondsForTest, tests, setTests, user, setUser } = useContext(GlobalContext)
+    const { questionTimer, setQuestionTimer, currentLevel, secondsForTest, tests, setTests } = useContext(GlobalContext)
+    const { user, setUser } = useContext(UserGlobalContext)
 
     const [subPosition, setSubPosition] = useState(0)
     const [accerts, setAccerts] = useState(0)
@@ -95,7 +97,7 @@ const EscuelitaExamen = ({ position, setPosition, setOpen }) => {
                 }
                 setUser({
                     ...user,
-                    level: currentLevel + 1
+                    status: currentLevel + 1
                 })
             } else{
                 newTests[currentLevel] = {

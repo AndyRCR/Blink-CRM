@@ -89,9 +89,9 @@ const PerfilViewContainer = () => {
           </div>
 
           <div className='sliderHeaderInfo'>
-            <div className='sliderHeaderInfoMain'>{user.firstname} {user.surname}</div>
+            <div className='sliderHeaderInfoMain'>{user.name}</div>
             <div className='sliderHeaderInfoSecondary'>
-              Nº de vendedor | <span>Nivel {user.level}</span>
+              Nº de vendedor | <span>Nivel {user.status}</span>
             </div>
           </div>
         </div>

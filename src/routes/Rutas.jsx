@@ -4,7 +4,8 @@ import ScrollToTop from '../tools/ScrollToTop'
 import AnimatedRoutes from './AnimatedRoutes'
 
 const Rutas = () => {
-  return (
+  
+  return (  
     <BrowserRouter>
         <ScrollToTop>
             <AnimatedRoutes/>

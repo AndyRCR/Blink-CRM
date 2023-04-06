@@ -1,4 +1,5 @@
 import { useContext } from 'react'
+import { UserGlobalContext } from '../../context/UserContex'
 import { GlobalContext } from '../../context/GlobalStateContext'
 import ArrowForwardOutlinedIcon from '@mui/icons-material/ArrowForwardOutlined'
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined'
@@ -8,7 +9,8 @@ import './EscuelitaListaCursos.css'
 
 const EscuelitaListaCursos = ({ setPosition }) => {
 
-    const { tests, user } = useContext(GlobalContext)
+    const { tests } = useContext(GlobalContext)
+    const { user } = useContext(UserGlobalContext)
 
     return (
         <div className="escuelitaListaCursos">
@@ -16,10 +18,10 @@ const EscuelitaListaCursos = ({ setPosition }) => {
                 return (
                     <div
                         onClick={() => {
-                            if(user.level >= i) setPosition(1)
+                            if(user.status >= i) setPosition(1)
                         }}
                         className={
-                            user.level < i
+                            user.status < i
                             ? 'escuelitaCard locked'
                             : course.approbed
                             ? 'escuelitaCard approbed'

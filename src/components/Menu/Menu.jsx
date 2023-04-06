@@ -15,14 +15,14 @@ const Menu = () => {
 
     const salir = () => {
         navigate('/')
-        setTimeout(() => {
-            localStorage.removeItem('user')
-            setUser(null)
-        }, 1000)
+        localStorage.removeItem('user')
+        setUser(null)
+        // setTimeout(() => {
+        // }, 1000)
     }
 
     return (
-        <div className={user.status === userStatuses['nuevo']
+        user && <div className={ user.status === userStatuses['nuevo']
             ? `menu inactiveMenu ${menuState ? 'folded' : ''}`
             : user.status === userStatuses['aprobado']
                 ? `menu semiActiveMenu ${menuState ? 'folded' : ''}`

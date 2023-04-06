@@ -108,7 +108,7 @@ const HomeViewContainer = () => {
     }, [])
 
     return (
-        <div
+        user && <div
             className={
                 user.status !== userStatuses["completo"]
                     ? "homeViewContainer inactive"

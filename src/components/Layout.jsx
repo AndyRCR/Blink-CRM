@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext  } from 'react'
 import { Person2Outlined } from '@mui/icons-material'
 import { Outlet, useNavigate } from 'react-router-dom'
 import DashboardNavbar from './DashboardNavbar/DashboardNavbar'
@@ -11,56 +11,59 @@ import ResponsiveMenu from './ResponsiveMenu/ResponsiveMenu'
 import { UserGlobalContext } from '../context/UserContex'
 
 const Layout = () => {
+	const navigate = useNavigate()
 
-  const navigate = useNavigate()
+	const { user } = useContext(UserGlobalContext)
 
-  const { user } = useContext(UserGlobalContext)
+	const allowView = () =>
+		window.location.pathname === '/' ||
+		window.location.pathname === '/validation'
 
-  return (
-    window.location.pathname === '/' || window.location.pathname === '/validation' ? (
-      <>
-        <Navbar />
-        <Outlet />
-      </>
-    ) : (
-      <>
-        <div
-          onClick={() => {
-            Swal.close()
-            document.querySelector('.userStep').style.display = 'none'
-            navigate('/perfil')
-          }}
-          className='userStep'>
-          <div className='userInfo'>
-            <div className="userName">Hola, {user?.name.split(' ')[0]}</div>
-            <div className="userLevel">Nivel {user?.level}</div>
-          </div>
-          <div className='userIcon'>
-            <Person2Outlined fontSize='large' />
-          </div>
-        </div>
-        <DashboardNavbar />
-        <ResponsiveMenu />
-        <div className='panelContainer'>
-          <Menu />
-          <Outlet />
-          <ToastContainer
-            position="bottom-center"
-            autoClose={2000}
-            limit={3}
-            hideProgressBar={false}
-            newestOnTop
-            closeOnClick
-            rtl={false}
-            pauseOnFocusLoss={false}
-            draggable
-            pauseOnHover={false}
-            theme="colored"
-          />
-        </div>
-      </>
-    )
-  )
+	return allowView() ? (
+		<>
+			<Navbar />
+			<Outlet />
+		</>
+	) : (
+		<>
+			<div
+				onClick={() => {
+					Swal.close()
+					document.querySelector('.userStep').style.display = 'none'
+					navigate('/perfil')
+				}}
+				className='userStep'
+			>
+				{ user  && (
+					<div className='userInfo'>
+						<div className='userName'>Hola, {user.name}</div>
+						<div className='userLevel'>Nivel {user.level}</div>
+					</div>
+				)}
+				<div className='userIcon'>
+					<Person2Outlined fontSize='large' />
+				</div>
+			</div>
+			<DashboardNavbar />
+			<ResponsiveMenu />
+			<div className='panelContainer'>
+				<Menu />
+				<Outlet />
+				<ToastContainer
+					position='bottom-center'
+					autoClose={2000}
+					limit={3}
+					hideProgressBar={false}
+					newestOnTop
+					closeOnClick
+					rtl={false}
+					pauseOnFocusLoss={false}
+					draggable
+					pauseOnHover={false}
+					theme='colored'
+				/>				
+			</div>
+		</>
+	)
 }
-
 export default Layout

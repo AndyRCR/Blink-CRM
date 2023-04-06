@@ -71,8 +71,8 @@ const DashboardNavbar = () => {
             <div className='navbarOptions'>
                 <div className='user'>
                     <div className='userInfo'>
-                        <div className="userName">Hola, {user.name.split(' ')[0]}</div>
-                        <div className="userLevel">Nivel {user.level || 0}</div>
+                        <div className="userName">Hola, {user?.name.split(' ')[0]}</div>
+                        <div className="userLevel">Nivel {user?.level || 0}</div>
                     </div>
                     <div
                         onClick={() => navigate('/perfil')}
