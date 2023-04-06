@@ -107,7 +107,7 @@ const useAuth = ({ email: initialEmail = '', password: initialPassword = '' }) =
                     title: 'Ocurrió un error con el servidor',
                     text: 'Intente más tarde'
                 })
-            })
+            }).finally(() => setLoading(false))
     }
 
     return { values, errors, loading, handleChange, handleBlur, verificar }
