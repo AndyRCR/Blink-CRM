@@ -26,7 +26,6 @@ const UserContext = ({ children }) => {
     }
 
     const [user, setUser] = useState(localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : null)
-
     return (
         <UserGlobalContext.Provider
             value={{user, setUser, userStatuses}}

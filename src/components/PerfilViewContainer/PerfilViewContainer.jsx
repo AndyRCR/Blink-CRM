@@ -19,7 +19,7 @@ const PerfilViewContainer = () => {
   const [disabledStatus, setDisabledStatus] = useState(false)
 
   const handleResize = () => {
-    const width = document.querySelector(".perfilViewContainer .sliderContainer").clientWidth
+    const width = document.querySelector(".perfilViewContainer .sliderContainer")?.clientWidth
 
     document
       .querySelectorAll(".perfilViewContainer .sliderContainer .sliderItem")

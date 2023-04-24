@@ -87,18 +87,18 @@ const useAuth = ({ email: initialEmail = '', password: initialPassword = '' }) =
         })
             .then(response => response.json())
             .then(result => {
-                if (result.hasOwnProperty('Status')) {
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'E-mail o contraseña incorrectos'
-                    })
-                } else {
+                if (result instanceof Object) {
                     setUser({
                         ...result,
                         status: 2
                     })
                     localStorage.setItem('user', JSON.stringify({ ...result, status: 2 }))
                     navigate('/home')
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'E-mail o contraseña incorrectos'
+                    })
                 }
             })
             .catch(() => {
