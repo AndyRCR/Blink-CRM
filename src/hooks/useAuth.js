@@ -79,11 +79,7 @@ const useAuth = ({ email: initialEmail = '', password: initialPassword = '' }) =
 
         fetch("https://bff.blinksalud.com/api/v1/login", {
             method: 'POST',
-            headers: {
-                'Accept': 'application/json'
-            },
-            body: formdata,
-            redirect: 'follow'
+            body: formdata
         })
             .then(response => response.json())
             .then(result => {

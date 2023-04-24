@@ -132,19 +132,16 @@ const useAddUser = () => {
     const fetchData = () => {
         setLoading(true)
 
+        const formdata = new FormData()
+        formdata.append('email', values.email)
+        formdata.append('password', values.password)
+        formdata.append('surname', values.surname)
+        formdata.append('roleId', 1)
+        formdata.append('status', 1)
+
         fetch("https://bff.blinksalud.com/api/v1/user", {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                surname: values.surname,
-                email: values.email,
-                password: values.password,
-                roleId: 1,
-                status: 1
-            }),
-            redirect: 'follow'
+            body: formdata
         })
             .then(response => response.json())
             .then(() => handleRegister())
