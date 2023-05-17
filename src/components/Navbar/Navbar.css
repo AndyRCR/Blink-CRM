@@ -29,6 +29,10 @@
     align-items: center;
 }
 
+.navbar .logo img{
+    height: 32px;
+}
+
 @media (max-width: 900px) {
     .navbar{
         padding: 25px 25px;

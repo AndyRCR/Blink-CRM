@@ -55,6 +55,10 @@
     align-items: center;
 }
 
+.dashboardNavbar .logo img{
+    height: 32px;
+}
+
 .dashboardNavbar .navbarOptions{
     display: flex;
     align-items: center;
