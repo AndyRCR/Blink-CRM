@@ -1,8 +1,6 @@
-# Getting Started with Create React App
+# Blink CRM
 
-# Mi Proyecto de React
-
-Este es un proyecto de React simple creado con Create React App. Aquí encontrarás información sobre cómo ejecutar y construir la aplicación.
+Sistema de gestión de relaciones y servicios, desarrollado para el uso de asesores y personal administrativo de Blink.
 
 ## Requisitos Previos
 
@@ -14,3 +12,11 @@ Asegúrate de tener instalada la versión mínima de Node.js 14 en tu sistema. P
 
    ```bash
    git clone https://github.com/tu-usuario/tu-proyecto.git
+   ```
+
+2. Navega al directorio del proyecto:
+
+   ```bash
+   cd blink-crm
+   ```
+   
