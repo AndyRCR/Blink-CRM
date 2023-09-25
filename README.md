@@ -4,7 +4,7 @@ Sistema de gestión de relaciones y servicios, desarrollado para el uso de aseso
 
 ## Requisitos Previos
 
-Asegúrate de tener instalada la versión mínima de Node.js 14 en tu sistema. Puedes descargarla desde [el sitio web oficial de Node.js](https://nodejs.org/).
+Asegúrate de tener instalada la versión de Node.js 14 y npm 6 como mínimo en tu sistema.
 
 ## Instalación
 
