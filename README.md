@@ -11,7 +11,7 @@ Asegúrate de tener instalada la versión mínima de Node.js 14 en tu sistema. P
 1. Clona este repositorio en tu máquina local:
 
    ```bash
-   git clone [https://github.com/tu-usuario/tu-proyecto.git](https://github.com/AndyRCR/Blink-CRM.git)
+   git clone https://github.com/AndyRCR/Blink-CRM.git
    ```
 
 2. Navega al directorio del proyecto:
