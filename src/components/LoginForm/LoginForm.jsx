@@ -36,7 +36,7 @@ const LoginForm = ({ position, setPosition }) => {
 			animate={{ opacity: 1 }}
 			exit={{ opacity: 0 }}
 		>
-			<div className='banner'>¡Te damos la bienvenida!</div>
+			<div className='banner'>¡Te damos la bienvenida2!</div>
 			<div className='formSection'>
 				<p>¡Que bueno verte!</p>
 

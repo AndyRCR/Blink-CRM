@@ -1,0 +1,37 @@
+.ContainerExport{
+    padding: 46px;
+    border-radius: 26px;
+}
+.ContainerExport h2{
+    color: var(--blink-main);
+    font-size: 19px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 8px;
+}
+.Flex{
+    display: flex;
+    gap: 50px;
+    justify-content: space-evenly;
+}
+.MuiDialog-paper{
+    border-radius: 26px!important;
+}
+.Subtitle_Exportar h3{
+    color: var(--blink-gray);
+    font-size: 15px;
+    font-weight: 600;
+    font-style: normal;
+    text-align: center;
+}
+.Subtitle_Exportar{
+    margin-bottom: 32px;
+}
+
+@media (max-width:480px) {
+    .Flex{
+        flex-direction: column;
+        gap: 16px;
+    }
+    
+}

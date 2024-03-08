@@ -74,10 +74,11 @@ const classes = {
         marginBottom: "0 !important",
         "&.MuiFormControlLabel-root .MuiTypography-root": {
             fontFamily: "'Poppins', sans-serif",
-            fontSize: "13px",
+            fontSize: "16px",
             fontWeight: "500",
             color: "var(--blink-main)",
         },
+       
     },
     radioGroup: {
         padding: "12px",

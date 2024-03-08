@@ -1,0 +1,53 @@
+.AbmCuentasForm h3{
+    color: var(--blink-main);
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+.AbmCuentasForm .subtitle{
+    font-size: 19px;
+}
+.AbmCuentasForm .formGrid{
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    gap: 24px;
+}
+.formItem{
+    grid-column: span 3;
+}
+.formItem label{
+    grid-column-start: span 1;
+}
+.AbmCuentasForm .inputContainer.telInput{
+    display: grid;
+    grid-template-columns: repeat( 3 , 1fr);
+    gap: 24px;
+}
+.AbmCuentasForm .formItem.email{
+    grid-column: 1 / span 3;
+}
+.AbmCuentasForm .tel{
+    grid-column: 2/4;
+}
+.AbmCuentasForm .formSection:nth-child(2){
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+.AbmCuentasForm .flex{
+    display: flex;
+    gap: 50px;
+}
+.AbmCuentasForm .redirectContainers{
+    display: flex;
+    gap: 20px;
+    color: #4744CC;
+    font-weight: bold;
+    cursor: pointer;
+}
+.AbmCuentasForm .formSection.buttons{
+    margin-top: 100px;
+    margin-bottom: 100px;
+    display: flex;
+    justify-content: space-around;
+    gap: 100px;
+}

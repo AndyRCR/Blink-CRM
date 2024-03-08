@@ -47,6 +47,8 @@ const ClientesProspect = ({handleClientModal}) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [filter.client, filter.situation])
 
+ 
+
   return (
     <div className="clientesProspect">
       <div>
@@ -97,7 +99,7 @@ const ClientesProspect = ({handleClientModal}) => {
                     <TableCell>{client.date}</TableCell>
                     <TableCell>
                       <VisibilityOutlinedIcon
-                        onClick={() => handleClientModal(client)}
+                        onClick={() => handleClientModal(client)}//
                         sx={{
                           ...classes.menuIcon,
                           color: "var(--blink-main)",

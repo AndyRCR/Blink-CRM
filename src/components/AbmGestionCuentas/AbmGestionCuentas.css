@@ -1,0 +1,15 @@
+.abmGestionCuentas {
+    padding: 0 24px;
+}
+
+.abmGestionCuentas .tableButton{
+    font-size: 13px;
+    font-weight: 500;
+    padding: 6px 23px;
+    border-radius: 4px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    color: #fff;
+    background-color: #4744CC;
+}

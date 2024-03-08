@@ -15,6 +15,8 @@ import VentasLiquidacionView from '../views/VentasLiquidacionView'
 import VentasVentaView from '../views/VentasVentaView'
 import VentasView from '../views/VentasView'
 import { UserGlobalContext } from '../context/UserContex'
+import Abmview from '../views/Abmview'
+
 
 const AnimatedRoutes = () => {
 
@@ -42,6 +44,7 @@ const AnimatedRoutes = () => {
                         <Route path='/ventas/venta/:id' element={redirect({component: VentasVentaView})}/>
                     </Route>
                     <Route path='/escuelita' element={redirect({component: EscuelitaView})} />
+                    <Route path='/abm' element={redirect({component: Abmview})}/>
                 </Route>
             </Routes>
         </AnimatePresence>

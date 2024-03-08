@@ -5,51 +5,56 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs"
 import { useState } from 'react'
 import classes from '../../theme/Styles'
 import './Filters.css'
+import { red } from '@mui/material/colors'
 
 const Filters = ({ displayed }) => {
-
     const [initialDate, setInitialDate] = useState(new Date())
     const [finalDate, setFinalDate] = useState(new Date())
-
     return (
         <div className={displayed ? 'filters displayed' : 'filters'}>
             <div className='filtersContainer'>
                 <div className="filterSection">
                     <div className="filterItem">
-                        <label>Estado de venta</label>
+                        <label>{window.location.pathname === '/ventas' ? 'Estado de Venta' 
+                        : (window.location.pathname === '/abm' ? 'Perfil': false)}</label>
+                    
                         <FormGroup>
-                            <FormControlLabel
-                                sx={{
-                                    '& .MuiTypography-root': {fontFamily: "'Poppins', sans-serif"}
-                                }}
-                                control={<Checkbox/>}
-                                label='Ingresada' />
+        
                             <FormControlLabel
                                 sx={{
                                     '& .MuiTypography-root': {fontFamily: "'Poppins', sans-serif"}
                                 }}
                                 control={<Checkbox />}
-                                label='Procesada' />
+                                label='Ingresada'/>         
                             <FormControlLabel
                                 sx={{
                                     '& .MuiTypography-root': {fontFamily: "'Poppins', sans-serif"}
                                 }}
                                 control={<Checkbox />}
-                                label='A Liquidar' />
+                                label='Procesada'/>
                             <FormControlLabel
                                 sx={{
                                     '& .MuiTypography-root': {fontFamily: "'Poppins', sans-serif"}
                                 }}
                                 control={<Checkbox />}
-                                label='Observada' />
+                                label='A Liquidar'/>
                             <FormControlLabel
                                 sx={{
                                     '& .MuiTypography-root': {fontFamily: "'Poppins', sans-serif"}
                                 }}
                                 control={<Checkbox />}
-                                label='Rechazada' />
+                                label='Observada'/>
+                            <FormControlLabel
+                              sx={{
+                                  '& .MuiTypography-root': {fontFamily: "'Poppins', sans-serif"}
+                              }}
+                              control={<Checkbox />}
+                              label='Rechazada' />
+                         
+                           
                         </FormGroup>
                     </div>
+                    
                 </div>
                 <div className="filterSection">
                     <div className="filterItem">

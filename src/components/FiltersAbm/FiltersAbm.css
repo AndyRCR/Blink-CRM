@@ -1,0 +1,7 @@
+.filtercolumn{
+    display: flex;
+    gap: 66px;
+}
+.filtercolumn.nivels{
+    gap: 155px;
+}

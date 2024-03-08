@@ -10,6 +10,7 @@ import theme from './theme/Theme'
 import UserContext from './context/UserContex'
 import { useEffect, useState } from 'react'
 import Loader from './components/Loader/Loader'
+import AbmContext from './context/AbmContext'
 
 function App() {
 
@@ -23,9 +24,11 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStateContext>
-        <UserContext>
-          {isLoading ? <Loader /> : <Rutas />}
-        </UserContext>
+        <AbmContext>
+          <UserContext>
+            {isLoading ? <Loader /> : <Rutas />}
+          </UserContext>
+        </AbmContext>
       </GlobalStateContext>
     </ThemeProvider>
   )
