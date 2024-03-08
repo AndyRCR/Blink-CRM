@@ -11,7 +11,7 @@ Asegúrate de tener instalada la versión de Node.js 14 y npm 6 como mínimo en 
 1. Clona este repositorio en tu máquina local:
 
    ```bash
-   git clone https://github.com/alderaban29/ProyectReact-Blim.git
+   git clone https://github.com/AndyRCR/Blink-CRM.git
    ```
 
 2. Navega al directorio del proyecto:
